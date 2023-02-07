@@ -9,12 +9,11 @@ module ApplicationHelper
 
     def display_navbar_options
         if user_signed_in?
-            render 'loggedInNav'
+            render 'dropdown_options'
         else
-            render 'loggedOutNav'
+            render 'login_buttons'
         end
     end
-    
     
     def display_active_class(link_path)
         "active" if current_page?(link_path)
