@@ -8901,3 +8901,242 @@ ActionView::Template::Error (undefined method `ime' for #<Post id: 2, title: "ha
 app/views/posts/index.html.erb:11
 app/views/posts/index.html.erb:10
 app/views/posts/index.html.erb:4
+Started GET "/" for ::1 at 2023-02-07 08:58:53 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-07 07:58:53.115066')[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 2.3ms | Allocations: 945)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2147)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 1.9ms | Allocations: 276)
+  Rendered application/_navbar.html.erb (Duration: 5.5ms | Allocations: 1650)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 7040)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.7ms | Allocations: 8038)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-07 08:58:55 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 6.3ms | Allocations: 2174)
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 2455)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 6015)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.6ms | Allocations: 6348)
+
+
+Started POST "/posts" for ::1 at 2023-02-07 08:59:00 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"dsakhjkdsa", "body"=>"<div>asdjkjkhdaskhjas</div>", "published_at"=>"2023-02-07T08:58"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Create (0.5ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at", "user_id", "published_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "dsakhjkdsa"], ["body", nil], ["created_at", "2023-02-07 07:59:00.605803"], ["updated_at", "2023-02-07 07:59:00.605803"], ["user_id", 4], ["published_at", "2023-02-07 08:58:00"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActionText::RichText Create (0.3ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "body"], ["body", "<div>asdjkjkhdaskhjas</div>"], ["record_type", "Post"], ["record_id", 5], ["created_at", "2023-02-07 07:59:00.609725"], ["updated_at", "2023-02-07 07:59:00.609725"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-07 07:59:00.611577"], ["id", 5]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+Redirected to http://localhost:3000/posts/5
+Completed 302 Found in 22ms (ActiveRecord: 3.0ms | Allocations: 7161)
+
+
+Started GET "/posts/5" for ::1 at 2023-02-07 08:59:00 +0100
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"5"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered comments/_form.html.erb (Duration: 1.8ms | Allocations: 785)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 5]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3828)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 7382)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.8ms | Allocations: 8292)
+
+
+Started GET "/" for ::1 at 2023-02-07 08:59:03 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (4.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-07 07:59:03.726592')[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 3.3ms | Allocations: 720)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 1446)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 5167)
+Completed 200 OK in 19ms (Views: 12.0ms | ActiveRecord: 6.1ms | Allocations: 5552)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-07 08:59:08 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 6.7ms | Allocations: 1670)
+  Rendered posts/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1757)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.6ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 5317)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.3ms | Allocations: 5574)
+
+
+Started POST "/posts" for ::1 at 2023-02-07 08:59:12 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"klhlhjl", "body"=>"<div>knnjljkl</div>", "published_at"=>""}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3404)
+
+
+  
+NameError (uninitialized constant PostsController::TimeDate
+
+    @post.published_at = TimeDate.now if @post.published_at.blank?
+                         ^^^^^^^^
+Did you mean?  Timeout):
+  
+app/controllers/posts_controller.rb:29:in `create'
+Started GET "/" for ::1 at 2023-02-07 08:59:14 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (3.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-07 07:59:14.508225')[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 1.8ms | Allocations: 720)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1446)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 3.3ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 5222)
+Completed 200 OK in 17ms (Views: 11.5ms | ActiveRecord: 4.5ms | Allocations: 5576)
+
+
+Started GET "/" for ::1 at 2023-02-07 08:59:14 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-07 07:59:14.560596')[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 1.1ms | Allocations: 720)
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1446)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 5179)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.7ms | Allocations: 5531)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-07 08:59:16 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 4.8ms | Allocations: 1679)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1766)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.8ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 11.5ms | Allocations: 5326)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.3ms | Allocations: 5583)
+
+
+Started POST "/posts" for ::1 at 2023-02-07 08:59:29 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"jhghhuk", "body"=>"<div>hgcfgfhklhj</div>", "published_at"=>"2023-02-03T08:59"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Create (0.4ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at", "user_id", "published_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "jhghhuk"], ["body", nil], ["created_at", "2023-02-07 07:59:30.002533"], ["updated_at", "2023-02-07 07:59:30.002533"], ["user_id", 4], ["published_at", "2023-02-03 08:59:00"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActionText::RichText Create (0.3ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "body"], ["body", "<div>hgcfgfhklhj</div>"], ["record_type", "Post"], ["record_id", 6], ["created_at", "2023-02-07 07:59:30.006819"], ["updated_at", "2023-02-07 07:59:30.006819"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 4], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-07 07:59:30.009350"], ["id", 6]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+Redirected to http://localhost:3000/posts/6
+Completed 302 Found in 20ms (ActiveRecord: 2.2ms | Allocations: 6982)
+
+
+Started GET "/posts/6" for ::1 at 2023-02-07 08:59:30 +0100
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered comments/_form.html.erb (Duration: 0.8ms | Allocations: 597)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3239)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 6808)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 7587)
+
+
+Started GET "/" for ::1 at 2023-02-07 08:59:31 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (2.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-07 07:59:31.239749')[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 2.4ms | Allocations: 720)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 1.4ms | Allocations: 646)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.2ms | Allocations: 2206)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.6ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 20.0ms | Allocations: 5948)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 3.7ms | Allocations: 6302)
+
+
