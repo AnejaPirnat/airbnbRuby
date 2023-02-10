@@ -1,8 +1,13 @@
-<%= form_with(model: [post, comment]) do |form| %>
+<%= form_with(model: [post, category, comment]) do |form| %>
   <div>
    <%= form.label :body, style: "display: block"%>
    <%= form.text_area :body, required: true%>
    </div>
+   <div>
+    <%= form.label :category_id %>
+    <%= form.collection_select :category_id, Category.all, :id, :name %>
+  </div>
+
    <div>
     <%= form.submit %>
    </div>
