@@ -4,11 +4,11 @@
   </a>
   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
     <li>
-      <%= link_to 'Uredi profil', edit_user_registration_path, class: 'dropdown-item' %>
+      <%= link_to 'Edit Profile', edit_user_registration_path, class: 'dropdown-item' %>
     </li>
     <li><hr class="dropdown-divider"></li>
     <li>
-      <%= link_to 'Izpis', destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
+      <%= link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete } %>
     </li>
   </ul>
 </li>

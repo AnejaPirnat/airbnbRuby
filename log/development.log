@@ -18433,3 +18433,227 @@ Migrating to AdCountryToCity (20230210172148)
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(511626824538614085)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2023-02-10 18:23:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-10 17:23:38.118212')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 74.0ms | Allocations: 24816)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 346)
+  Rendered application/_navbar.html.erb (Duration: 17.5ms | Allocations: 9416)
+  Rendered layout layouts/application.html.erb (Duration: 95.9ms | Allocations: 37616)
+Completed 200 OK in 108ms (Views: 87.6ms | ActiveRecord: 13.0ms | Allocations: 45548)
+
+
+Started GET "/css.css" for ::1 at 2023-02-10 18:23:38 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/" for ::1 at 2023-02-10 18:23:55 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-10 17:23:55.017718')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2007)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.6ms | Allocations: 280)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 1703)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 6683)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.6ms | Allocations: 7738)
+
+
+Started GET "/css.css" for ::1 at 2023-02-10 18:23:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/" for ::1 at 2023-02-10 18:24:07 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-10 17:24:07.087991')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1997)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 280)
+  Rendered application/_navbar.html.erb (Duration: 2.9ms | Allocations: 1700)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 6645)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.8ms | Allocations: 7643)
+
+
+Started GET "/css.css" for ::1 at 2023-02-10 18:24:07 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/edit" for ::1 at 2023-02-10 18:24:08 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 251)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 12.2ms | Allocations: 5127)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 110)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 538)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 8507)
+Completed 200 OK in 23ms (Views: 18.6ms | ActiveRecord: 0.3ms | Allocations: 11161)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-10 18:24:21 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2685)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 272)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 937)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 6681)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 9177)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-10 18:24:30 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 2.1ms | Allocations: 2686)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 271)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 936)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 6680)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms | Allocations: 9147)
+
+
+Started GET "/" for ::1 at 2023-02-10 18:24:33 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-10 17:24:33.742143')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1997)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 3.5ms | Allocations: 1292)
+  Rendered layout layouts/application.html.erb (Duration: 11.3ms | Allocations: 5950)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.9ms | Allocations: 6790)
+
+
+Started GET "/css.css" for ::1 at 2023-02-10 18:24:33 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  [1m[36mCountry Load (1.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (1.2ms)[0m  [1m[32mINSERT INTO "countries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Slovenia"], ["created_at", "2023-02-10 17:26:27.503815"], ["updated_at", "2023-02-10 17:26:27.503815"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AdCountryToCity (20230210172148)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.7ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230210172148"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddCountryToCity (20230210172814)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "cities" ADD "country_id" bigint NOT NULL[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_cities_on_country_id" ON "cities" ("country_id")[0m
+  [1m[35m (1.7ms)[0m  [1m[35mALTER TABLE "cities" ADD CONSTRAINT "fk_rails_996e05be41"
+FOREIGN KEY ("country_id")
+  REFERENCES "countries" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230210172814"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (2.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ljubljana"], ["created_at", "2023-02-10 17:29:42.547145"], ["updated_at", "2023-02-10 17:29:42.547145"], ["country_id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Update (0.6ms)[0m  [1m[33mUPDATE "cities" SET "name" = $1, "updated_at" = $2 WHERE "cities"."id" = $3[0m  [["name", "Velika Planina"], ["updated_at", "2023-02-10 17:31:11.630094"], ["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Update (0.4ms)[0m  [1m[33mUPDATE "cities" SET "name" = $1, "updated_at" = $2 WHERE "cities"."id" = $3[0m  [["name", "Piran"], ["updated_at", "2023-02-10 17:31:45.118857"], ["id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ljubljana"], ["created_at", "2023-02-10 17:33:01.992993"], ["updated_at", "2023-02-10 17:33:01.992993"], ["country_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Velika Planina"], ["created_at", "2023-02-10 17:33:21.767002"], ["updated_at", "2023-02-10 17:33:21.767002"], ["country_id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bled"], ["created_at", "2023-02-10 17:33:29.314838"], ["updated_at", "2023-02-10 17:33:29.314838"], ["country_id", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.8ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Koper"], ["created_at", "2023-02-10 17:33:42.101822"], ["updated_at", "2023-02-10 17:33:42.101822"], ["country_id", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Piran"], ["created_at", "2023-02-10 17:34:00.649934"], ["updated_at", "2023-02-10 17:34:00.649934"], ["country_id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Kranjska Gora"], ["created_at", "2023-02-10 17:34:09.211461"], ["updated_at", "2023-02-10 17:34:09.211461"], ["country_id", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Austria"], ["created_at", "2023-02-10 17:35:59.756490"], ["updated_at", "2023-02-10 17:35:59.756490"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vienna"], ["created_at", "2023-02-10 17:36:15.944582"], ["updated_at", "2023-02-10 17:36:15.944582"], ["country_id", 2]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.4ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Graz"], ["created_at", "2023-02-10 17:36:25.080186"], ["updated_at", "2023-02-10 17:36:25.080186"], ["country_id", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Salzburg"], ["created_at", "2023-02-10 17:36:31.818894"], ["updated_at", "2023-02-10 17:36:31.818894"], ["country_id", 2]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Italy"], ["created_at", "2023-02-10 17:36:54.512459"], ["updated_at", "2023-02-10 17:36:54.512459"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rome"], ["created_at", "2023-02-10 17:37:15.784192"], ["updated_at", "2023-02-10 17:37:15.784192"], ["country_id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Milan"], ["created_at", "2023-02-10 17:37:33.693993"], ["updated_at", "2023-02-10 17:37:33.693993"], ["country_id", 3]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Naples"], ["created_at", "2023-02-10 17:37:40.340061"], ["updated_at", "2023-02-10 17:37:40.340061"], ["country_id", 3]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Turin"], ["created_at", "2023-02-10 17:37:48.970843"], ["updated_at", "2023-02-10 17:37:48.970843"], ["country_id", 3]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCountry Create (0.5ms)[0m  [1m[32mINSERT INTO "countries" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Croatia"], ["created_at", "2023-02-10 17:38:01.676794"], ["updated_at", "2023-02-10 17:38:01.676794"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Zagreb"], ["created_at", "2023-02-10 17:38:15.331927"], ["updated_at", "2023-02-10 17:38:15.331927"], ["country_id", 4]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Medulin"], ["created_at", "2023-02-10 17:38:24.241964"], ["updated_at", "2023-02-10 17:38:24.241964"], ["country_id", 4]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.5ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pula"], ["created_at", "2023-02-10 17:38:30.263968"], ["updated_at", "2023-02-10 17:38:30.263968"], ["country_id", 4]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.6ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vrsar"], ["created_at", "2023-02-10 17:38:48.824399"], ["updated_at", "2023-02-10 17:38:48.824399"], ["country_id", 4]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCity Create (0.7ms)[0m  [1m[32mINSERT INTO "cities" ("name", "created_at", "updated_at", "country_id") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Krk"], ["created_at", "2023-02-10 17:39:00.481635"], ["updated_at", "2023-02-10 17:39:00.481635"], ["country_id", 4]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCity Delete All (3.4ms)[0m  [1m[31mDELETE FROM "cities" WHERE "cities"."id" = $1[0m  [["id", 6]]
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
