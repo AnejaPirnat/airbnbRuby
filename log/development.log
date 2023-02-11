@@ -18657,3 +18657,1383 @@ FOREIGN KEY ("country_id")
   [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
   [1m[36mCity Delete All (3.4ms)[0m  [1m[31mDELETE FROM "cities" WHERE "cities"."id" = $1[0m  [["id", 6]]
   [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+Started GET "/" for ::1 at 2023-02-11 16:19:38 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-11 15:19:39.031603')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 75.8ms | Allocations: 24848)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 273)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 1037)
+  Rendered layout layouts/application.html.erb (Duration: 82.6ms | Allocations: 29136)
+Completed 200 OK in 95ms (Views: 82.8ms | ActiveRecord: 4.8ms | Allocations: 37055)
+
+
+Started GET "/css.css" for ::1 at 2023-02-11 16:19:39 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-11 16:19:43 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCategory Load (1.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 35.9ms | Allocations: 17432)
+  Rendered posts/new.html.erb within layouts/application (Duration: 36.9ms | Allocations: 17765)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 443)
+  Rendered layout layouts/application.html.erb (Duration: 39.5ms | Allocations: 20819)
+Completed 200 OK in 54ms (Views: 30.9ms | ActiveRecord: 12.8ms | Allocations: 26939)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-11 16:20:28 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 15.2ms | Allocations: 9960)
+  Rendered posts/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 10290)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 263)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 929)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 14282)
+Completed 200 OK in 28ms (Views: 12.0ms | ActiveRecord: 11.3ms | Allocations: 20690)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-11 16:21:05 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:47:in `map'
+  Rendered posts/_form.html.erb (Duration: 34.6ms | Allocations: 16211)
+  Rendered posts/new.html.erb within layouts/application (Duration: 36.4ms | Allocations: 16536)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 908)
+  Rendered layout layouts/application.html.erb (Duration: 41.8ms | Allocations: 20477)
+Completed 200 OK in 46ms (Views: 40.5ms | ActiveRecord: 4.1ms | Allocations: 21335)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:21:32 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"ful je lepo tu", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>prid sm</div>", "published_at"=>"2023-02-10T16:21", "category_id"=>"1"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id, :category_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00000001097b6920>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"ful je lepo tu", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>prid sm</div>", "published_at"=>"2023-02-10T16:21", "category_id"=>"1"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:47:in `map'
+  Rendered posts/_form.html.erb (Duration: 9.8ms | Allocations: 6677)
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 6772)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 104)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 349)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 9708)
+Completed 422 Unprocessable Entity in 28ms (Views: 12.8ms | ActiveRecord: 0.9ms | Allocations: 16096)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-11 16:21:40 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 729)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3210)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 595)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 6568)
+Completed 200 OK in 25ms (Views: 12.5ms | ActiveRecord: 3.6ms | Allocations: 12745)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-11 16:21:51 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aneja@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "aneja@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 282ms (ActiveRecord: 1.1ms | Allocations: 5117)
+
+
+Started GET "/" for ::1 at 2023-02-11 16:21:52 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-11 15:21:52.092127')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1927)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 290)
+  Rendered application/_navbar.html.erb (Duration: 1.8ms | Allocations: 1499)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6021)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.6ms | Allocations: 6705)
+
+
+Started GET "/css.css" for ::1 at 2023-02-11 16:21:52 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/edit" for ::1 at 2023-02-11 16:21:57 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 213)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2879)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 109)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 6157)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 0.3ms | Allocations: 8593)
+
+
+Started GET "/css.css" for ::1 at 2023-02-11 16:21:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-11 16:22:00 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:47:in `map'
+  Rendered posts/_form.html.erb (Duration: 13.3ms | Allocations: 5534)
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.5ms | Allocations: 5621)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 1164)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 9271)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 1.6ms | Allocations: 9558)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:22:15 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>prid sm prosim&nbsp;</div>", "published_at"=>"2023-02-10T16:22", "category_id"=>"1"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id, :category_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x000000010a850420>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>prid sm prosim&nbsp;</div>", "published_at"=>"2023-02-10T16:22", "category_id"=>"1"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (1.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:47:in `map'
+  Rendered posts/_form.html.erb (Duration: 10.9ms | Allocations: 5838)
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 5925)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 315)
+  Rendered layout layouts/application.html.erb (Duration: 19.8ms | Allocations: 8677)
+Completed 422 Unprocessable Entity in 34ms (Views: 18.4ms | ActiveRecord: 2.3ms | Allocations: 11634)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:22:31 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>prid sm prosim&nbsp;</div>", "published_at"=>"2023-02-10T16:22", "category_id"=>"3"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id, :category_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x0000000109966c48>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>prid sm prosim&nbsp;</div>", "published_at"=>"2023-02-10T16:22", "category_id"=>"3"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:47:in `map'
+  Rendered posts/_form.html.erb (Duration: 11.3ms | Allocations: 5828)
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.6ms | Allocations: 5915)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 315)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 8710)
+Completed 422 Unprocessable Entity in 25ms (Views: 14.5ms | ActiveRecord: 1.6ms | Allocations: 11530)
+
+
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+Started GET "/posts/new" for ::1 at 2023-02-11 16:25:10 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (1.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:47:in `map'
+  Rendered posts/_form.html.erb (Duration: 51.4ms | Allocations: 25434)
+  Rendered posts/new.html.erb within layouts/application (Duration: 52.4ms | Allocations: 26041)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 335)
+  Rendered application/_navbar.html.erb (Duration: 13.9ms | Allocations: 8112)
+  Rendered layout layouts/application.html.erb (Duration: 147.1ms | Allocations: 59434)
+Completed 200 OK in 169ms (Views: 125.8ms | ActiveRecord: 31.5ms | Allocations: 72551)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:25:21 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sjjs", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>nsdnsn</div>", "published_at"=>"2023-02-10T16:25", "category_id"=>"1"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id, :category_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x000000010a7599e0>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sjjs", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>nsdnsn</div>", "published_at"=>"2023-02-10T16:25", "category_id"=>"1"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 3022)
+
+
+  
+RuntimeError (#<Post id: nil, title: "sjjs", body: nil, created_at: nil, updated_at: nil, user_id: 1, published_at: "2023-02-10 16:25:00.000000000 +0000", category_id: nil, adress: "ulica 10", city_id: nil>):
+  
+app/controllers/posts_controller.rb:31:in `create'
+Started GET "/posts/new" for ::1 at 2023-02-11 16:34:27 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 12.0ms | Allocations: 12579)
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 12908)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.9ms | Allocations: 278)
+  Rendered application/_navbar.html.erb (Duration: 5.5ms | Allocations: 3999)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 19986)
+Completed 200 OK in 46ms (Views: 24.1ms | ActiveRecord: 9.9ms | Allocations: 28961)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:34:38 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hsdjs", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div><strong>jsdjsjs<br>haaa</strong></div>", "published_at"=>"2023-02-10T16:34", "category_id"=>"1"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id, :category_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x000000010a3f46d8>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hsdjs", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div><strong>jsdjsjs<br>haaa</strong></div>", "published_at"=>"2023-02-10T16:34", "category_id"=>"1"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms | Allocations: 2509)
+
+
+  
+RuntimeError (#<Post id: nil, title: "hsdjs", body: nil, created_at: nil, updated_at: nil, user_id: 1, published_at: "2023-02-10 16:34:00.000000000 +0000", category_id: nil, adress: "ulica 10", city_id: nil>):
+  
+app/controllers/posts_controller.rb:31:in `create'
+Started GET "/posts/new" for ::1 at 2023-02-11 16:36:54 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 22.3ms | Allocations: 13268)
+  Rendered posts/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 13597)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 278)
+  Rendered application/_navbar.html.erb (Duration: 11.4ms | Allocations: 4318)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 20997)
+Completed 200 OK in 57ms (Views: 23.0ms | ActiveRecord: 27.9ms | Allocations: 27523)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:37:02 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>jsdjsdkds</div>", "published_at"=>"2023-02-10T16:37"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x000000010a951a68>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>jsdjsdkds</div>", "published_at"=>"2023-02-10T16:37"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 2492)
+
+
+  
+RuntimeError (#<Post id: nil, title: "hoho", body: nil, created_at: nil, updated_at: nil, user_id: 1, published_at: "2023-02-10 16:37:00.000000000 +0000", category_id: nil, adress: "ulica 10", city_id: nil>):
+  
+app/controllers/posts_controller.rb:31:in `create'
+Started GET "/" for ::1 at 2023-02-11 16:37:11 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-11 15:37:11.318311')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1785)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 103)
+  Rendered application/_navbar.html.erb (Duration: 3.4ms | Allocations: 1116)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 5417)
+Completed 200 OK in 24ms (Views: 18.5ms | ActiveRecord: 2.1ms | Allocations: 6043)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-11 16:37:12 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 12.7ms | Allocations: 5405)
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 5492)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.9ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 9052)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 1.3ms | Allocations: 9313)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-11 16:45:05 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (1.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (1.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  Rendered posts/_form.html.erb (Duration: 49.7ms | Allocations: 14573)
+  Rendered posts/new.html.erb within layouts/application (Duration: 50.3ms | Allocations: 14869)
+  Rendered layout layouts/application.html.erb (Duration: 50.4ms | Allocations: 14954)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 11.7ms | Allocations: 23887)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<ActionView::Base:0x0000000001dad8>
+
+  '.freeze;@output_buffer.append=( f.select :category_id, options_for_select(Category.collect { | category | [category.name, category.id] }, @category.id), {}, {} );@output_buffer.safe_append='
+                                   ^):
+    42:   </div>
+    43: 
+    44:   <div class="field">
+    45:   <%= f.select :category_id, options_for_select(Category.collect { | category | [category.name, category.id] }, @category.id), {}, {} %>
+    46:   </div>
+    47: 
+    48:   <!--<div class="field">
+  
+app/views/posts/_form.html.erb:45
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:3
+Started GET "/posts/new" for ::1 at 2023-02-11 16:45:53 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  Rendered posts/_form.html.erb (Duration: 16.2ms | Allocations: 10473)
+  Rendered posts/new.html.erb within layouts/application (Duration: 17.4ms | Allocations: 10759)
+  Rendered layout layouts/application.html.erb (Duration: 18.6ms | Allocations: 10844)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.6ms | Allocations: 11659)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<ActionView::Base:0x0000000001de48>
+
+  '.freeze;@output_buffer.append=( f.label :category_id );@output_buffer.safe_append='
+                                   ^):
+    42:   </div>
+    43: 
+    44: <div class="field">
+    45:   <%= f.label :category_id %>
+    46:   <%= f.select :category_id, options_for_select(@categories.collect { | category | [category.name, category.id] }, @category.id), {}, {} %>
+    47: </div>
+    48: 
+  
+app/views/posts/_form.html.erb:45
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:3
+Started GET "/posts/new" for ::1 at 2023-02-11 16:46:11 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  Rendered posts/_form.html.erb (Duration: 16.1ms | Allocations: 7690)
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 7976)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 8061)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.8ms | Allocations: 8879)
+
+
+  
+ActionView::Template::Error (undefined method `collect' for nil:NilClass
+
+  '.freeze;@output_buffer.append=( form.select :category_id, options_for_select(@categories.collect { | category | [category.name, category.id] }, @category.id), {}, {} );@output_buffer.safe_append='
+                                                                                           ^^^^^^^^):
+    43: 
+    44: <div class="field">
+    45:   <%= form.label :category_id %>
+    46:   <%= form.select :category_id, options_for_select(@categories.collect { | category | [category.name, category.id] }, @category.id), {}, {} %>
+    47: </div>
+    48: 
+    49: 
+  
+app/views/posts/_form.html.erb:46
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:3
+Started GET "/posts/new" for ::1 at 2023-02-11 16:47:28 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 39.4ms | Allocations: 25420)
+  Rendered posts/new.html.erb within layouts/application (Duration: 40.3ms | Allocations: 26027)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 335)
+  Rendered application/_navbar.html.erb (Duration: 12.5ms | Allocations: 8111)
+  Rendered layout layouts/application.html.erb (Duration: 125.6ms | Allocations: 59392)
+Completed 200 OK in 146ms (Views: 106.0ms | ActiveRecord: 29.0ms | Allocations: 72518)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:47:42 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"3", "city_id"=>"5", "body"=>"<div>bhjsdgjkgačdsgsgd</div>", "published_at"=>"2023-02-04T16:47", "category_id"=>"4"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id, :category_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x000000010e3ae030>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"3", "city_id"=>"5", "body"=>"<div>bhjsdgjkgačdsgsgd</div>", "published_at"=>"2023-02-04T16:47", "category_id"=>"4"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 3029)
+
+
+  
+RuntimeError (#<Post id: nil, title: "hoho", body: nil, created_at: nil, updated_at: nil, user_id: 1, published_at: "2023-02-04 16:47:00.000000000 +0000", category_id: nil, adress: "ulica 10", city_id: nil>):
+  
+app/controllers/posts_controller.rb:31:in `create'
+Started GET "/posts/new" for ::1 at 2023-02-11 16:48:01 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 23.5ms | Allocations: 12688)
+  Rendered posts/new.html.erb within layouts/application (Duration: 23.6ms | Allocations: 12804)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 117)
+  Rendered application/_navbar.html.erb (Duration: 9.7ms | Allocations: 3846)
+  Rendered layout layouts/application.html.erb (Duration: 34.6ms | Allocations: 19327)
+Completed 200 OK in 47ms (Views: 15.3ms | ActiveRecord: 26.9ms | Allocations: 25455)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:48:21 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>dsdagsdg</div>", "published_at"=>"2023-02-10T16:48", "category_id"=>"2"}, "commit"=>"Create Post"}
+[31mUnpermitted parameters: :country_id, :city_id, :category_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x000000010b5db1d0>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>dsdagsdg</div>", "published_at"=>"2023-02-10T16:48", "category_id"=>"2"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 9.8ms | Allocations: 6236)
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.9ms | Allocations: 6331)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 318)
+  Rendered layout layouts/application.html.erb (Duration: 13.7ms | Allocations: 9236)
+Completed 422 Unprocessable Entity in 31ms (Views: 13.1ms | ActiveRecord: 1.6ms | Allocations: 15905)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-11 16:49:36 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 17.8ms | Allocations: 12658)
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.0ms | Allocations: 12774)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 117)
+  Rendered application/_navbar.html.erb (Duration: 7.4ms | Allocations: 3846)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 19254)
+Completed 200 OK in 41ms (Views: 15.3ms | ActiveRecord: 21.5ms | Allocations: 25333)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:49:54 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"2", "body"=>"<div>sdhjkgaksjd</div>", "published_at"=>"2023-02-10T16:49", "category_id"=>"1"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1343)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'country_id' for Post.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/posts_controller.rb:28:in `create'
+Started GET "/posts/new" for ::1 at 2023-02-11 16:51:17 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 20.5ms | Allocations: 13035)
+  Rendered posts/new.html.erb within layouts/application (Duration: 20.6ms | Allocations: 13151)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 117)
+  Rendered application/_navbar.html.erb (Duration: 7.1ms | Allocations: 3846)
+  Rendered layout layouts/application.html.erb (Duration: 29.2ms | Allocations: 19673)
+Completed 200 OK in 39ms (Views: 15.5ms | ActiveRecord: 18.7ms | Allocations: 26130)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:51:27 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hoho", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div><del>sadgsdg</del></div>", "published_at"=>"2023-02-10T16:51", "category_id"=>"3"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1348)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'country_id' for Post.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/posts_controller.rb:28:in `create'
+Started GET "/posts/new" for ::1 at 2023-02-11 16:51:59 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 21.3ms | Allocations: 13504)
+  Rendered posts/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 13620)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 117)
+  Rendered application/_navbar.html.erb (Duration: 6.3ms | Allocations: 3846)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 20142)
+Completed 200 OK in 40ms (Views: 19.0ms | ActiveRecord: 16.5ms | Allocations: 26547)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:52:04 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"adfgasd", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>sdgadg</div>", "published_at"=>"2023-02-08T16:52", "category_id"=>"1"}, "commit"=>"Create Post"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1330)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'country_id' for Post.
+
+          raise UnknownAttributeError.new(self, k.to_s)
+          ^^^^^):
+  
+app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/posts/new" for ::1 at 2023-02-11 16:54:02 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 19.8ms | Allocations: 13432)
+  Rendered posts/new.html.erb within layouts/application (Duration: 19.9ms | Allocations: 13548)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 117)
+  Rendered application/_navbar.html.erb (Duration: 6.9ms | Allocations: 3846)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 20070)
+Completed 200 OK in 42ms (Views: 16.3ms | ActiveRecord: 19.9ms | Allocations: 26476)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:54:09 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sgasdg", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>sgs</div>", "published_at"=>"2023-02-09T16:54", "category_id"=>"1"}, "commit"=>"Create Post"}
+[31mUnpermitted parameter: :country_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x000000011045cca0>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"sgasdg", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>sgs</div>", "published_at"=>"2023-02-09T16:54", "category_id"=>"1"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Create (4.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at", "user_id", "published_at", "category_id", "adress", "city_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "sgasdg"], ["body", nil], ["created_at", "2023-02-11 15:54:09.438991"], ["updated_at", "2023-02-11 15:54:09.438991"], ["user_id", 1], ["published_at", "2023-02-09 16:54:00"], ["category_id", 1], ["adress", "ulica 10"], ["city_id", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActionText::RichText Create (1.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "body"], ["body", "<div>sgs</div>"], ["record_type", "Post"], ["record_id", 1], ["created_at", "2023-02-11 15:54:09.457086"], ["updated_at", "2023-02-11 15:54:09.457086"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Update (1.2ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-11 15:54:09.460055"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 66ms (ActiveRecord: 12.6ms | Allocations: 22803)
+
+
+Started GET "/posts/1" for ::1 at 2023-02-11 16:54:09 +0100
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered comments/_form.html.erb (Duration: 6.6ms | Allocations: 5067)
+  Rendered posts/show.html.erb within layouts/application (Duration: 14.5ms | Allocations: 10461)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | Allocations: 10545)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 3.5ms | Allocations: 13768)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `category' for #<ActionView::Base:0x00000000028730>
+
+            @virtual_path = "comments/_form";comment = local_assigns[:comment]; comment = comment;post = local_assigns[:post]; post = post;;@output_buffer.append=  form_with(model: [post, category, adress, comment]) do |form| @output_buffer.safe_append='
+                                                                                                                                                                                            ^^^^^^^^):
+    1: <%= form_with(model: [post, category, adress, comment]) do |form| %>
+    2:   <div>
+    3:    <%= form.label :body, style: "display: block"%>
+    4:    <%= form.text_area :body, required: true%>
+  
+app/views/comments/_form.html.erb:1
+app/views/posts/show.html.erb:28
+Started GET "/posts/new" for ::1 at 2023-02-11 16:55:30 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 12.3ms | Allocations: 6346)
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 6667)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.9ms | Allocations: 274)
+  Rendered application/_navbar.html.erb (Duration: 4.2ms | Allocations: 1674)
+  Rendered layout layouts/application.html.erb (Duration: 23.0ms | Allocations: 11366)
+Completed 200 OK in 26ms (Views: 23.9ms | ActiveRecord: 1.2ms | Allocations: 12201)
+
+
+Started GET "/" for ::1 at 2023-02-11 16:55:33 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-11 15:55:33.490870')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 2.3ms | Allocations: 1058)
+  Rendered posts/index.html.erb within layouts/application (Duration: 26.8ms | Allocations: 9564)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 1177)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 13359)
+Completed 200 OK in 34ms (Views: 30.3ms | ActiveRecord: 2.0ms | Allocations: 13936)
+
+
+Started GET "/css.css" for ::1 at 2023-02-11 16:55:33 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/1" for ::1 at 2023-02-11 16:55:35 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered comments/_form.html.erb (Duration: 3.2ms | Allocations: 1099)
+  [1m[36mComment Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 28)
+  Rendered posts/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 5420)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 1159)
+  Rendered layout layouts/application.html.erb (Duration: 20.9ms | Allocations: 9167)
+Completed 200 OK in 26ms (Views: 18.6ms | ActiveRecord: 3.4ms | Allocations: 10173)
+
+
+Started DELETE "/posts/1" for ::1 at 2023-02-11 16:55:43 +0100
+Processing by PostsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 1], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mActionText::RichText Destroy (0.4ms)[0m  [1m[31mDELETE FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mPost Destroy (0.6ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 20ms (ActiveRecord: 4.3ms | Allocations: 6919)
+
+
+Started GET "/posts" for ::1 at 2023-02-11 16:55:43 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-11 15:55:43.052293')[0m
+  ↳ app/views/posts/index.html.erb:35
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 1448)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered application/_navbar.html.erb (Duration: 15.9ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 46.5ms | Allocations: 5088)
+Completed 200 OK in 47ms (Views: 46.2ms | ActiveRecord: 0.5ms | Allocations: 5551)
+
+
+Started GET "/css.css" for ::1 at 2023-02-11 16:55:43 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-11 16:55:44 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 13.0ms | Allocations: 5419)
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.3ms | Allocations: 5506)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.3ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 9081)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 1.5ms | Allocations: 9345)
+
+
+Started POST "/posts" for ::1 at 2023-02-11 16:55:54 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"jsjdsj", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>jsdjdsjkdskds</div>", "published_at"=>"2023-02-10T16:55", "category_id"=>"1"}, "commit"=>"Create Post"}
+[31mUnpermitted parameter: :country_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x00000001100ad078>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"jsjdsj", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>jsdjdsjkdskds</div>", "published_at"=>"2023-02-10T16:55", "category_id"=>"1"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at", "user_id", "published_at", "category_id", "adress", "city_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "jsjdsj"], ["body", nil], ["created_at", "2023-02-11 15:55:54.599624"], ["updated_at", "2023-02-11 15:55:54.599624"], ["user_id", 1], ["published_at", "2023-02-10 16:55:00"], ["category_id", 1], ["adress", "ulica 10"], ["city_id", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActionText::RichText Create (0.5ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "body"], ["body", "<div>jsdjdsjkdskds</div>"], ["record_type", "Post"], ["record_id", 2], ["created_at", "2023-02-11 15:55:54.602468"], ["updated_at", "2023-02-11 15:55:54.602468"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-11 15:55:54.604774"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:34:in `block in create'
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 24ms (ActiveRecord: 3.1ms | Allocations: 9024)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-11 16:55:54 +0100
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:10
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 604)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:30
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 3251)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 6804)
+Completed 200 OK in 11ms (Views: 8.1ms | ActiveRecord: 1.0ms | Allocations: 7591)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-11 16:56:49 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered comments/_form.html.erb (Duration: 1.8ms | Allocations: 877)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:34
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4247)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 273)
+  Rendered application/_navbar.html.erb (Duration: 2.8ms | Allocations: 1649)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 8864)
+Completed 200 OK in 21ms (Views: 16.6ms | ActiveRecord: 1.6ms | Allocations: 10236)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-11 16:57:00 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 6302)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 6390)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.3ms | Allocations: 7783)
+
+
+  
+ActionView::Template::Error (undefined method `country' for #<Post id: 2, title: "jsjdsj", body: nil, created_at: "2023-02-11 15:55:54.599624000 +0000", updated_at: "2023-02-11 15:55:54.604774000 +0000", user_id: 1, published_at: "2023-02-10 16:55:00.000000000 +0000", category_id: 1, adress: "ulica 10", city_id: 1>):
+    12: 
+    13:   <p>
+    14:     <strong>Country:</strong>
+    15:     <%= @post.country.name %>
+    16: 
+    17:   <p>
+    18:     <strong>Author:</strong>
+  
+app/views/posts/show.html.erb:15
+Started GET "/posts/2" for ::1 at 2023-02-11 16:57:07 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.9ms | Allocations: 6228)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 6316)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.3ms | Allocations: 7758)
+
+
+  
+ActionView::Template::Error (undefined method `country' for #<Post id: 2, title: "jsjdsj", body: nil, created_at: "2023-02-11 15:55:54.599624000 +0000", updated_at: "2023-02-11 15:55:54.604774000 +0000", user_id: 1, published_at: "2023-02-10 16:55:00.000000000 +0000", category_id: 1, adress: "ulica 10", city_id: 1>):
+    12: 
+    13:   <p>
+    14:     <strong>Country:</strong>
+    15:     <%= @post.country %>
+    16: 
+    17:   <p>
+    18:     <strong>Author:</strong>
+  
+app/views/posts/show.html.erb:15
+Started GET "/posts/2" for ::1 at 2023-02-11 16:57:43 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.9ms | Allocations: 6231)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6319)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 7761)
+
+
+  
+ActionView::Template::Error (undefined method `country' for #<Post id: 2, title: "jsjdsj", body: nil, created_at: "2023-02-11 15:55:54.599624000 +0000", updated_at: "2023-02-11 15:55:54.604774000 +0000", user_id: 1, published_at: "2023-02-10 16:55:00.000000000 +0000", category_id: 1, adress: "ulica 10", city_id: 1>):
+    12: 
+    13:   <p>
+    14:     <strong>Country:</strong>
+    15:     <%= @post.country %>
+    16:   </p>
+    17: 
+    18:     <strong>Author:</strong>
+  
+app/views/posts/show.html.erb:15
+Started GET "/posts/2" for ::1 at 2023-02-11 16:57:48 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.4ms | Allocations: 6228)
+  Rendered layout layouts/application.html.erb (Duration: 14.4ms | Allocations: 6316)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.3ms | Allocations: 7758)
+
+
+  
+ActionView::Template::Error (undefined method `country' for #<Post id: 2, title: "jsjdsj", body: nil, created_at: "2023-02-11 15:55:54.599624000 +0000", updated_at: "2023-02-11 15:55:54.604774000 +0000", user_id: 1, published_at: "2023-02-10 16:55:00.000000000 +0000", category_id: 1, adress: "ulica 10", city_id: 1>):
+    12: 
+    13:   <p>
+    14:     <strong>Country:</strong>
+    15:     <%= @post.country.name %>
+    16:   </p>
+    17: 
+    18:     <strong>Author:</strong>
+  
+app/views/posts/show.html.erb:15
+Started GET "/posts/2" for ::1 at 2023-02-11 16:58:31 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered comments/_form.html.erb (Duration: 1.9ms | Allocations: 877)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:34
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 11.3ms | Allocations: 4234)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 273)
+  Rendered application/_navbar.html.erb (Duration: 3.0ms | Allocations: 1649)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 8893)
+Completed 200 OK in 27ms (Views: 20.8ms | ActiveRecord: 1.9ms | Allocations: 10355)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-11 16:58:51 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered comments/_form.html.erb (Duration: 2.3ms | Allocations: 877)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:34
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.9ms | Allocations: 4251)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 273)
+  Rendered application/_navbar.html.erb (Duration: 3.8ms | Allocations: 1649)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 8868)
+Completed 200 OK in 30ms (Views: 22.7ms | ActiveRecord: 2.1ms | Allocations: 10279)
+
+
+Started GET "/" for ::1 at 2023-02-11 16:58:54 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-11 15:58:54.392701')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 3.2ms | Allocations: 868)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2758)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 6356)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 1.0ms | Allocations: 6841)
+
+
+Started GET "/css.css" for ::1 at 2023-02-11 16:58:54 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-11 16:59:02 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 597)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:34
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 3227)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.3ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6820)
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 1.6ms | Allocations: 7615)
+
+
+Started GET "/posts/2/edit" for ::1 at 2023-02-11 16:59:05 +0100
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:36
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 15.4ms | Allocations: 6894)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 17.2ms | Allocations: 7221)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 9996)
+Completed 200 OK in 29ms (Views: 21.2ms | ActiveRecord: 2.2ms | Allocations: 12106)
+
+
+Started POST "/rails/active_storage/direct_uploads" for ::1 at 2023-02-11 16:59:19 +0100
+Processing by ActiveStorage::DirectUploadsController#create as JSON
+  Parameters: {"blob"=>{"filename"=>"8-R5JB0aCHHggawnT.png", "content_type"=>"image/png", "byte_size"=>89621, "checksum"=>"gvJ9yjv/jtOTWjlzOSuPbg=="}, "direct_upload"=>{"blob"=>{"filename"=>"8-R5JB0aCHHggawnT.png", "content_type"=>"image/png", "byte_size"=>89621, "checksum"=>"gvJ9yjv/jtOTWjlzOSuPbg=="}}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "kp1tj2ltdes7yn52rvt68wob7xsr"], ["filename", "8-R5JB0aCHHggawnT.png"], ["content_type", "image/png"], ["metadata", nil], ["service_name", "local"], ["byte_size", 89621], ["checksum", "gvJ9yjv/jtOTWjlzOSuPbg=="], ["created_at", "2023-02-11 15:59:19.225418"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+[36m  Disk Storage (0.9ms) [0m[34mGenerated URL for file at key: kp1tj2ltdes7yn52rvt68wob7xsr (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhhM0F4ZEdveWJIUmtaWE0zZVc0MU1uSjJkRFk0ZDI5aU4zaHpjZ1k2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaE5qYjI1MFpXNTBYMnhsYm1kMGFHa0RGVjRCT2cxamFHVmphM04xYlVraUhXZDJTamw1YW5ZdmFuUlBWRmRxYkhwUFUzVlFZbWM5UFFZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wMi0xMVQxNjowNDoxOS4yMzNaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--9d604c852ae8c4864ba7c123b3a30c3a3ada3562)[0m
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 8.2ms | Allocations: 10694)
+
+
+Started PUT "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDam9JYTJWNVNTSWhhM0F4ZEdveWJIUmtaWE0zZVc0MU1uSjJkRFk0ZDI5aU4zaHpjZ1k2QmtWVU9oRmpiMjUwWlc1MFgzUjVjR1ZKSWc1cGJXRm5aUzl3Ym1jR093WlVPaE5qYjI1MFpXNTBYMnhsYm1kMGFHa0RGVjRCT2cxamFHVmphM04xYlVraUhXZDJTamw1YW5ZdmFuUlBWRmRxYkhwUFUzVlFZbWM5UFFZN0JsUTZFWE5sY25acFkyVmZibUZ0WlRvS2JHOWpZV3c9IiwiZXhwIjoiMjAyMy0wMi0xMVQxNjowNDoxOS4yMzNaIiwicHVyIjoiYmxvYl90b2tlbiJ9fQ==--9d604c852ae8c4864ba7c123b3a30c3a3ada3562" for ::1 at 2023-02-11 16:59:19 +0100
+Processing by ActiveStorage::DiskController#update as */*
+  Parameters: {"encoded_token"=>"[FILTERED]"}
+[36m  Disk Storage (0.9ms) [0m[32mUploaded file to key: kp1tj2ltdes7yn52rvt68wob7xsr (checksum: gvJ9yjv/jtOTWjlzOSuPbg==)[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 705)
+
+
+Started GET "/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--280f225081d6f889e5aef259a1e137bdd25eca35/8-R5JB0aCHHggawnT.png" for ::1 at 2023-02-11 16:59:19 +0100
+Processing by ActiveStorage::Blobs::RedirectController#show as PNG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--280f225081d6f889e5aef259a1e137bdd25eca35", "filename"=>"8-R5JB0aCHHggawnT"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[36m  Disk Storage (0.7ms) [0m[34mGenerated URL for file at key: kp1tj2ltdes7yn52rvt68wob7xsr (http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhM0F4ZEdveWJIUmtaWE0zZVc0MU1uSjJkRFk0ZDI5aU4zaHpjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpndFVqVktRakJoUTBoSVoyZGhkMjVVTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25PQzFTTlVwQ01HRkRTRWhuWjJGM2JsUXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjMtMDItMTFUMTY6MDQ6MTkuMjczWiIsInB1ciI6ImJsb2Jfa2V5In19--8f1e8495556958b08aeddc8b4559a20cba7cd00c/8-R5JB0aCHHggawnT.png)[0m
+Redirected to http://localhost:3000/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhM0F4ZEdveWJIUmtaWE0zZVc0MU1uSjJkRFk0ZDI5aU4zaHpjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpndFVqVktRakJoUTBoSVoyZGhkMjVVTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25PQzFTTlVwQ01HRkRTRWhuWjJGM2JsUXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjMtMDItMTFUMTY6MDQ6MTkuMjczWiIsInB1ciI6ImJsb2Jfa2V5In19--8f1e8495556958b08aeddc8b4559a20cba7cd00c/8-R5JB0aCHHggawnT.png
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms | Allocations: 2449)
+
+
+Started GET "/rails/active_storage/disk/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdDVG9JYTJWNVNTSWhhM0F4ZEdveWJIUmtaWE0zZVc0MU1uSjJkRFk0ZDI5aU4zaHpjZ1k2QmtWVU9oQmthWE53YjNOcGRHbHZia2tpVldsdWJHbHVaVHNnWm1sc1pXNWhiV1U5SWpndFVqVktRakJoUTBoSVoyZGhkMjVVTG5CdVp5STdJR1pwYkdWdVlXMWxLajFWVkVZdE9DY25PQzFTTlVwQ01HRkRTRWhuWjJGM2JsUXVjRzVuQmpzR1ZEb1JZMjl1ZEdWdWRGOTBlWEJsU1NJT2FXMWhaMlV2Y0c1bkJqc0dWRG9SYzJWeWRtbGpaVjl1WVcxbE9ncHNiMk5oYkE9PSIsImV4cCI6IjIwMjMtMDItMTFUMTY6MDQ6MTkuMjczWiIsInB1ciI6ImJsb2Jfa2V5In19--8f1e8495556958b08aeddc8b4559a20cba7cd00c/8-R5JB0aCHHggawnT.png" for ::1 at 2023-02-11 16:59:19 +0100
+Processing by ActiveStorage::DiskController#show as PNG
+  Parameters: {"encoded_key"=>"[FILTERED]", "filename"=>"8-R5JB0aCHHggawnT"}
+Completed 200 OK in 0ms (ActiveRecord: 0.0ms | Allocations: 170)
+
+
+Started PATCH "/posts/2" for ::1 at 2023-02-11 16:59:21 +0100
+Processing by PostsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"jsjdsj", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div><figure data-trix-attachment=\"{&quot;contentType&quot;:&quot;image/png&quot;,&quot;filename&quot;:&quot;8-R5JB0aCHHggawnT.png&quot;,&quot;filesize&quot;:89621,&quot;height&quot;:256,&quot;sgid&quot;:&quot;BAh7CEkiCGdpZAY6BkVUSSIwZ2lkOi8vYmxvZy9BY3RpdmVTdG9yYWdlOjpCbG9iLzE_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--14b43da25066912f2b0e389eb39c0198158fb43f&quot;,&quot;url&quot;:&quot;http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--280f225081d6f889e5aef259a1e137bdd25eca35/8-R5JB0aCHHggawnT.png&quot;,&quot;width&quot;:256}\" data-trix-content-type=\"image/png\" data-trix-attributes=\"{&quot;presentation&quot;:&quot;gallery&quot;}\" class=\"attachment attachment--preview attachment--png\"><img src=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--280f225081d6f889e5aef259a1e137bdd25eca35/8-R5JB0aCHHggawnT.png\" width=\"256\" height=\"256\"><figcaption class=\"attachment__caption\"><span class=\"attachment__name\">8-R5JB0aCHHggawnT.png</span> <span class=\"attachment__size\">87.52 KB</span></figcaption></figure>jsdjdsjkdskds</div>", "published_at"=>"2023-02-10T16:55", "category_id"=>"1"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :country_id. Context: { controller: PostsController, action: update, request: #<ActionDispatch::Request:0x0000000110ab4f30>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"jsjdsj", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div><figure data-trix-attachment=\"{&quot;contentType&quot;:&quot;image/png&quot;,&quot;filename&quot;:&quot;8-R5JB0aCHHggawnT.png&quot;,&quot;filesize&quot;:89621,&quot;height&quot;:256,&quot;sgid&quot;:&quot;BAh7CEkiCGdpZAY6BkVUSSIwZ2lkOi8vYmxvZy9BY3RpdmVTdG9yYWdlOjpCbG9iLzE_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--14b43da25066912f2b0e389eb39c0198158fb43f&quot;,&quot;url&quot;:&quot;http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--280f225081d6f889e5aef259a1e137bdd25eca35/8-R5JB0aCHHggawnT.png&quot;,&quot;width&quot;:256}\" data-trix-content-type=\"image/png\" data-trix-attributes=\"{&quot;presentation&quot;:&quot;gallery&quot;}\" class=\"attachment attachment--preview attachment--png\"><img src=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--280f225081d6f889e5aef259a1e137bdd25eca35/8-R5JB0aCHHggawnT.png\" width=\"256\" height=\"256\"><figcaption class=\"attachment__caption\"><span class=\"attachment__name\">8-R5JB0aCHHggawnT.png</span> <span class=\"attachment__size\">87.52 KB</span></figcaption></figure>jsdjdsjkdskds</div>", "published_at"=>"2023-02-10T16:55", "category_id"=>"1"}, "commit"=>"Update Post", "controller"=>"posts", "action"=>"update", "id"=>"2"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mCategory Load (1.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.8ms | Allocations: 580)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 14.6ms | Allocations: 3578)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 19.8ms | Allocations: 7356)
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 282)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.8ms | Allocations: 560)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.8ms | Allocations: 4019)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 324)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.5ms | Allocations: 594)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.3ms | Allocations: 4201)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.4ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.4ms | Allocations: 3992)
+  [1m[36mActionText::RichText Update (0.4ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "body" = $1, "updated_at" = $2 WHERE "action_text_rich_texts"."id" = $3[0m  [["body", "<div><action-text-attachment sgid=\"BAh7CEkiCGdpZAY6BkVUSSIwZ2lkOi8vYmxvZy9BY3RpdmVTdG9yYWdlOjpCbG9iLzE_ZXhwaXJlc19pbgY7AFRJIgxwdXJwb3NlBjsAVEkiD2F0dGFjaGFibGUGOwBUSSIPZXhwaXJlc19hdAY7AFQw--14b43da25066912f2b0e389eb39c0198158fb43f\" content-type=\"image/png\" url=\"http://localhost:3000/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--280f225081d6f889e5aef259a1e137bdd25eca35/8-R5JB0aCHHggawnT.png\" filename=\"8-R5JB0aCHHggawnT.png\" filesize=\"89621\" width=\"256\" height=\"256\" presentation=\"gallery\"></action-text-attachment>jsdjdsjkdskds</div>"], ["updated_at", "2023-02-11 15:59:21.236508"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.4ms | Allocations: 281)
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.3ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.6ms | Allocations: 4099)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.3ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.5ms | Allocations: 4041)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true}"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Attachment Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "embeds"], ["record_type", "ActionText::RichText"], ["record_id", 2], ["blob_id", 1], ["created_at", "2023-02-11 15:59:21.251698"]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mPost Update (0.4ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-11 15:59:21.254790"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActionText::RichText Update (0.1ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "updated_at" = $1 WHERE "action_text_rich_texts"."id" = $2[0m  [["updated_at", "2023-02-11 15:59:21.254628"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 249ce906-1637-4ece-aee3-228e2ac3cdd7) to Async(default) with arguments: #<GlobalID:0x0000000112174478 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 109ms (ActiveRecord: 10.4ms | Allocations: 68064)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [249ce906-1637-4ece-aee3-228e2ac3cdd7]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [249ce906-1637-4ece-aee3-228e2ac3cdd7] Performing ActiveStorage::AnalyzeJob (Job ID: 249ce906-1637-4ece-aee3-228e2ac3cdd7) from Async(default) enqueued at 2023-02-11T15:59:21Z with arguments: #<GlobalID:0x00000001121f7148 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+Started GET "/posts/2" for ::1 at 2023-02-11 16:59:21 +0100
+[ActiveJob] [ActiveStorage::AnalyzeJob] [249ce906-1637-4ece-aee3-228e2ac3cdd7] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [249ce906-1637-4ece-aee3-228e2ac3cdd7]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [249ce906-1637-4ece-aee3-228e2ac3cdd7]   [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [249ce906-1637-4ece-aee3-228e2ac3cdd7]   [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [249ce906-1637-4ece-aee3-228e2ac3cdd7] Performed ActiveStorage::AnalyzeJob (Job ID: 249ce906-1637-4ece-aee3-228e2ac3cdd7) from Async(default) in 465.32ms
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 663)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:34
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 3546)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 1148)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 7275)
+Completed 200 OK in 9ms (Views: 6.8ms | ActiveRecord: 0.8ms | Allocations: 8203)
+
+
+Started GET "/posts/2/edit" for ::1 at 2023-02-11 16:59:23 +0100
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:36
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:36
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 17.6ms | Allocations: 8864)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 17.9ms | Allocations: 8987)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 338)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 11762)
+Completed 200 OK in 29ms (Views: 19.7ms | ActiveRecord: 2.8ms | Allocations: 13817)
+
+
+Started PATCH "/posts/2" for ::1 at 2023-02-11 16:59:29 +0100
+Processing by PostsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"jsjdsj", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>jsdjdsjkdskds</div>", "published_at"=>"2023-02-10T16:55", "category_id"=>"1"}, "commit"=>"Update Post", "id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :country_id. Context: { controller: PostsController, action: update, request: #<ActionDispatch::Request:0x000000010f43c1b8>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"jsjdsj", "adress"=>"ulica 10", "country_id"=>"1", "city_id"=>"1", "body"=>"<div>jsdjdsjkdskds</div>", "published_at"=>"2023-02-10T16:55", "category_id"=>"1"}, "commit"=>"Update Post", "controller"=>"posts", "action"=>"update", "id"=>"2"} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.0ms | Allocations: 526)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 6.4ms | Allocations: 4124)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 1.0ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 5.0ms | Allocations: 3865)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.5ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.9ms | Allocations: 4012)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.5ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.7ms | Allocations: 4045)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mActionText::RichText Update (0.4ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "body" = $1, "updated_at" = $2 WHERE "action_text_rich_texts"."id" = $3[0m  [["body", "<div>jsdjdsjkdskds</div>"], ["updated_at", "2023-02-11 15:59:29.684367"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.5ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.5ms | Allocations: 4154)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mCACHE ActiveStorage::Blob Load (0.0ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  Rendered active_storage/blobs/_blob.html.erb (Duration: 0.4ms | Allocations: 478)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.3ms | Allocations: 4095)
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.2ms | Allocations: 281)
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 2], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Attachment Destroy (0.2ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mPost Update (0.3ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-11 15:59:29.701689"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActionText::RichText Update (0.2ms)[0m  [1m[33mUPDATE "action_text_rich_texts" SET "updated_at" = $1 WHERE "action_text_rich_texts"."id" = $2[0m  [["updated_at", "2023-02-11 15:59:29.701607"], ["id", 2]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:47:in `block in update'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 0139464c-ee83-41c5-825a-a6da32ab9f9a) to Async(default) with arguments: #<GlobalID:0x0000000110a06ea8 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 64ms (ActiveRecord: 4.3ms | Allocations: 44882)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/posts/2" for ::1 at 2023-02-11 16:59:29 +0100
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a] Performing ActiveStorage::PurgeJob (Job ID: 0139464c-ee83-41c5-825a-a6da32ab9f9a) from Async(default) enqueued at 2023-02-11T15:59:29Z with arguments: #<GlobalID:0x0000000110a77a90 @uri=#<URI::GID gid://blog/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a]   [1m[36mActiveStorage::Attachment Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a]   [1m[36mActiveStorage::VariantRecord Load (0.9ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a]   [1m[36mActiveStorage::Attachment Load (1.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a]   [1m[36mActiveStorage::Blob Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a] [36m  Disk Storage (0.1ms) [0m[31mDeleted file from key: kp1tj2ltdes7yn52rvt68wob7xsr[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a] [36m  Disk Storage (0.0ms) [0m[31mDeleted files by key prefix: variants/kp1tj2ltdes7yn52rvt68wob7xsr/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [0139464c-ee83-41c5-825a-a6da32ab9f9a] Performed ActiveStorage::PurgeJob (Job ID: 0139464c-ee83-41c5-825a-a6da32ab9f9a) from Async(default) in 16.15ms
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered comments/_form.html.erb (Duration: 0.4ms | Allocations: 665)
+  [1m[36mComment Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:34
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3454)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 1142)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 7176)
+Completed 200 OK in 24ms (Views: 5.4ms | ActiveRecord: 10.0ms | Allocations: 15367)
+
+
+Started GET "/" for ::1 at 2023-02-11 16:59:31 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-11 15:59:31.800717')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 2.5ms | Allocations: 720)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2293)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.3ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 5873)
+Completed 200 OK in 18ms (Views: 14.7ms | ActiveRecord: 1.2ms | Allocations: 6255)
+
+
+Started GET "/css.css" for ::1 at 2023-02-11 16:59:31 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  

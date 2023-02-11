@@ -54,8 +54,6 @@ class PostsController < ApplicationController
     end
   end
 
- 
-
   # DELETE /posts/1 or /posts/1.json
   def destroy
     @post.destroy
@@ -74,7 +72,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body, :adress, :city, :country, :category, :published_at)
+      params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at)
     end
 
     def authorize_user!

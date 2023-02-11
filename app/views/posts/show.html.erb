@@ -6,15 +6,20 @@
   </p>
 
   <p>
+    <strong>Adress:</strong>
+    <%= @post.adress %>
+  </p>
+
+
     <strong>Author:</strong>
     <%= @post.user.name %>
   </p>
 
-  <p>
+ <!--<p>
     <strong>Published at:</strong>
     <% @post.published_at.strftime ("%d.%m.%Y")%>
   </p>
-</div>
+</div>-->
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
