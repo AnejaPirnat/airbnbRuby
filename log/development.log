@@ -20037,3 +20037,3082 @@ Started GET "/css.css" for ::1 at 2023-02-11 16:59:31 +0100
   
 ActionController::RoutingError (No route matches [GET] "/css.css"):
   
+Started GET "/" for ::1 at 2023-02-14 07:59:48 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 06:59:48.555235')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 12.0ms | Allocations: 9765)
+  Rendered posts/index.html.erb within layouts/application (Duration: 104.1ms | Allocations: 40620)
+  Rendered application/_login_buttons.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered application/_navbar.html.erb (Duration: 2.3ms | Allocations: 1022)
+  Rendered layout layouts/application.html.erb (Duration: 110.9ms | Allocations: 44850)
+Completed 200 OK in 131ms (Views: 104.3ms | ActiveRecord: 14.1ms | Allocations: 53059)
+
+
+Started GET "/css.css" for ::1 at 2023-02-14 07:59:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-14 07:59:50 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:15
+  Rendered comments/_form.html.erb (Duration: 8.6ms | Allocations: 2853)
+  [1m[36mComment Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:34
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 28)
+  Rendered posts/show.html.erb within layouts/application (Duration: 22.2ms | Allocations: 10039)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 445)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 13076)
+Completed 200 OK in 39ms (Views: 20.9ms | ActiveRecord: 4.6ms | Allocations: 16810)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:02:55 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:13
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:14
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:19
+  Rendered comments/_form.html.erb (Duration: 1.9ms | Allocations: 906)
+  [1m[36mComment Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:38
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:39
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 46.5ms | Allocations: 18189)
+  Rendered application/_login_buttons.html.erb (Duration: 1.7ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 3.9ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 53.6ms | Allocations: 22065)
+Completed 200 OK in 63ms (Views: 47.9ms | ActiveRecord: 8.3ms | Allocations: 23526)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:03:17 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (4.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered comments/_form.html.erb (Duration: 2.2ms | Allocations: 877)
+  [1m[36mComment Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:40
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:41
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 15.6ms | Allocations: 5337)
+  Rendered application/_login_buttons.html.erb (Duration: 0.7ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 2.3ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 9237)
+Completed 200 OK in 33ms (Views: 23.2ms | ActiveRecord: 5.9ms | Allocations: 10648)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:03:47 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 2.1ms | Allocations: 877)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:46
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 14.8ms | Allocations: 5351)
+  Rendered application/_login_buttons.html.erb (Duration: 2.2ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 4.6ms | Allocations: 906)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 9226)
+Completed 200 OK in 31ms (Views: 24.8ms | ActiveRecord: 2.7ms | Allocations: 10653)
+
+
+Started GET "/posts" for ::1 at 2023-02-14 08:04:18 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 07:04:18.758600')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 2.9ms | Allocations: 944)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 3172)
+  Rendered application/_login_buttons.html.erb (Duration: 0.9ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 3.0ms | Allocations: 904)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 6985)
+Completed 200 OK in 25ms (Views: 17.1ms | ActiveRecord: 0.8ms | Allocations: 7990)
+
+
+Started GET "/css.css" for ::1 at 2023-02-14 08:04:18 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-14 08:04:21 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 2.5ms | Allocations: 869)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:46
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 15)
+  Rendered posts/show.html.erb within layouts/application (Duration: 14.4ms | Allocations: 5008)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 7897)
+Completed 200 OK in 25ms (Views: 16.9ms | ActiveRecord: 2.1ms | Allocations: 8810)
+
+
+Started GET "/posts/2/edit" for ::1 at 2023-02-14 08:04:23 +0100
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.5ms | Allocations: 780)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-14 08:04:23 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 729)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 3188)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 595)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 6575)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 8236)
+
+
+Started DELETE "/posts/2" for ::1 at 2023-02-14 08:04:31 +0100
+Processing by PostsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.2ms | Allocations: 1025)
+
+
+Started GET "/users/sign_in.turbo_stream" for ::1 at 2023-02-14 08:04:31 +0100
+Processing by Devise::SessionsController#new as TURBO_STREAM
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 822)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+responders (3.0.1) lib/action_controller/respond_with.rb:215:in `respond_with'
+devise (4.8.1) app/controllers/devise/sessions_controller.rb:14:in `new'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/posts/2" for ::1 at 2023-02-14 08:04:31 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.6ms | Allocations: 630)
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:46
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.9ms | Allocations: 4429)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 414)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 7412)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.8ms | Allocations: 8225)
+
+
+Started GET "/posts" for ::1 at 2023-02-14 08:04:35 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 07:04:35.354810')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 1.8ms | Allocations: 720)
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 2296)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 5174)
+Completed 200 OK in 16ms (Views: 12.7ms | ActiveRecord: 0.7ms | Allocations: 5563)
+
+
+Started GET "/css.css" for ::1 at 2023-02-14 08:04:35 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-14 08:04:37 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.0ms | Allocations: 597)
+  [1m[36mComment Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:46
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.3ms | Allocations: 4270)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 7116)
+Completed 200 OK in 22ms (Views: 14.1ms | ActiveRecord: 3.1ms | Allocations: 7899)
+
+
+Started DELETE "/posts/2" for ::1 at 2023-02-14 08:04:43 +0100
+Processing by PostsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.3ms | Allocations: 834)
+
+
+Started GET "/users/sign_in.turbo_stream" for ::1 at 2023-02-14 08:04:43 +0100
+Processing by Devise::SessionsController#new as TURBO_STREAM
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 796)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+responders (3.0.1) lib/action_controller/respond_with.rb:215:in `respond_with'
+devise (4.8.1) app/controllers/devise/sessions_controller.rb:14:in `new'
+actionpack (7.0.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rendering.rb:53:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+activesupport (7.0.4) lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+actiontext (7.0.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/posts/2" for ::1 at 2023-02-14 08:04:43 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.4ms | Allocations: 597)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:46
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 4277)
+  Rendered application/_login_buttons.html.erb (Duration: 0.0ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.2ms | Allocations: 409)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 7167)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.9ms | Allocations: 7949)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:06:12 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 2.1ms | Allocations: 952)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:45
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:46
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.7ms | Allocations: 5158)
+  Rendered application/_login_buttons.html.erb (Duration: 0.9ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 2.8ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 8977)
+Completed 200 OK in 31ms (Views: 23.6ms | ActiveRecord: 1.8ms | Allocations: 10350)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:07:17 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.7ms | Allocations: 877)
+  [1m[36mComment Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:48
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:49
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 13.3ms | Allocations: 5493)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 842)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 9303)
+Completed 200 OK in 31ms (Views: 21.2ms | ActiveRecord: 2.5ms | Allocations: 10707)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:08:48 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 17.1ms | Allocations: 8141)
+  Rendered layout layouts/application.html.erb (Duration: 17.4ms | Allocations: 8226)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms | Allocations: 9613)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `form' for #<ActionView::Base:0x0000000000ef88>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=( form.label :reservation_date );@output_buffer.safe_append='
+                                                               ^^^^
+Did you mean?  for
+               fork):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form.label :reservation_date %>
+    43:   <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    44:   <%= button_to "Reserve", @post %>
+    45:   <%= link_to "Back to posts", posts_path %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:15:26 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 15.4ms | Allocations: 16492)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 16580)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 9.6ms | Allocations: 28719)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `rent' for #<ActionView::Base:0x000000000145c8>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [rent,post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [rent,post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:   <% end %>
+  
+app/views/posts/show.html.erb:42
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReservations (20230214071806)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "reservations" ("id" bigserial primary key, "user_id" bigint NOT NULL, "post_id" bigint NOT NULL, "from" date, "to" date, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_48a92fce51"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_ce10df810f"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_user_id" ON "reservations" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_reservations_on_post_id" ON "reservations" ("post_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230214071806"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts/2" for ::1 at 2023-02-14 08:20:36 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 33.2ms | Allocations: 22408)
+  Rendered layout layouts/application.html.erb (Duration: 33.3ms | Allocations: 22518)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 16.5ms | Allocations: 40894)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reserbation' for #<ActionView::Base:0x0000000000d160>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reserbation, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reserbation, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:20:37 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 24.6ms | Allocations: 7225)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 7305)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 2.0ms | Allocations: 8194)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reserbation' for #<ActionView::Base:0x0000000000d458>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reserbation, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reserbation, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:20:43 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 7888)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 7974)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.7ms | Allocations: 9337)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x0000000000d778>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reservation, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reservation, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:20:53 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 15.3ms | Allocations: 7894)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 7980)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.8ms | Allocations: 9375)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reserve' for #<ActionView::Base:0x0000000000da98>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reserve, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reserve, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:21:08 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 21.0ms | Allocations: 7884)
+  Rendered layout layouts/application.html.erb (Duration: 21.3ms | Allocations: 7969)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.3ms | Allocations: 9341)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x0000000000ddb8>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reservation, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reservation, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:24:12 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 23.5ms | Allocations: 17305)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 17393)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 13.1ms | Allocations: 26929)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x000000000133d0>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reservation, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reservation, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:24:56 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 29.3ms | Allocations: 16743)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 16831)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 16.3ms | Allocations: 24454)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x00000000018998>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reservation, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reservation, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:25:42 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 25.1ms | Allocations: 16724)
+  Rendered layout layouts/application.html.erb (Duration: 25.2ms | Allocations: 16813)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 12.6ms | Allocations: 24445)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x0000000001dfb0>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_for [reservation, post, category] do |form| @output_buffer.safe_append='
+                                                                         ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [reservation, post, category] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:26:39 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 13160)
+  Rendered layout layouts/application.html.erb (Duration: 18.3ms | Allocations: 13248)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 12.1ms | Allocations: 21081)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_for [@reservation, @post, @category] do |form| %>
+    43:   <%= form.label :reservation_date %>
+    44:   <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:   <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:29:32 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 24.4ms | Allocations: 7867)
+  Rendered layout layouts/application.html.erb (Duration: 24.6ms | Allocations: 7952)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.9ms | Allocations: 9154)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x00000000023910>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_with [model: reservation] do |form| @output_buffer.safe_append='
+                                                                                 ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_with [model: reservation] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:29:33 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 14.9ms | Allocations: 7048)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 7127)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms | Allocations: 7880)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x00000000023be0>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_with [model: reservation] do |form| @output_buffer.safe_append='
+                                                                                 ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_with [model: reservation] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:29:33 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.7ms | Allocations: 7046)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 7125)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms | Allocations: 7853)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x00000000023eb0>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_with [model: reservation] do |form| @output_buffer.safe_append='
+                                                                                 ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_with [model: reservation] do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:30:26 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1513)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 1602)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.2ms | Allocations: 2794)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div id="<%= dom_id @post %>">
+<% city = City.find(@post.city_id) %>
+<% country = Country.find(city.country_id) %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p>
+    <strong>Adress:</strong>
+    <%= @post.adress %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= city.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= country.name %>
+  </p>
+
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+  </p>
+
+ <!--<p>
+    <strong>Published at:</strong>
+    <% @post.published_at.strftime ("%d.%m.%Y")%>
+  </p>
+</div>-->
+<%if(current_user == @post.user)%>
+<div>
+  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <%= link_to "Back to posts", posts_path %>
+  <%= button_to "Destroy this post", @post, method: :delete %>
+</div>
+<% else %>
+  <%= form_with (model: reservation) do |form| %>
+    <%= form.label :reservation_date %>
+    <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    <%= form.submit "Reserve", class: "btn btn-primary" %>
+<% end %>
+<%= link_to "Back to posts", posts_path %>
+
+<%end%>
+<div>
+  <h3>Comments</h3>
+    <%= render 'comments/form', post: @post, comment: Comment.new %>
+  <p><%= pluralize(@comments.count, 'comment') %></p>
+  <%= render @comments %>
+</div
+):
+1:    
+2:    <div id="<%= dom_id @post %>">
+3:    <% city = City.find(@post.city_id) %>
+4:    <% country = Country.find(city.country_id) %>
+5:    
+6:      <p>
+7:        <strong>Title:</strong>
+8:        <%= @post.title %>
+9:      </p>
+10:    
+11:      <p>
+12:        <strong>Adress:</strong>
+13:        <%= @post.adress %>
+14:      </p>
+15:    
+16:      <p>
+17:        <strong>City:</strong>
+18:        <%= city.name %>
+19:      </p>
+20:    
+21:      <p>
+22:        <strong>Country:</strong>
+23:        <%= country.name %>
+24:      </p>
+25:    
+26:        <strong>Author:</strong>
+27:        <%= @post.user.name %>
+28:      </p>
+29:    
+30:     <!--<p>
+31:        <strong>Published at:</strong>
+32:        <% @post.published_at.strftime ("%d.%m.%Y")%>
+33:      </p>
+34:    </div>-->
+35:    <%if(current_user == @post.user)%>
+36:    <div>
+37:      <%= link_to "Edit this post", edit_post_path(@post) %> |
+38:      <%= link_to "Back to posts", posts_path %>
+39:      <%= button_to "Destroy this post", @post, method: :delete %>
+40:    </div>
+41:    <% else %>
+42:      <%= form_with (model: reservation) do |form| %>
+43:        <%= form.label :reservation_date %>
+44:        <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+45:        <%= form.submit "Reserve", class: "btn btn-primary" %>
+46:    <% end %>
+47:    <%= link_to "Back to posts", posts_path %>
+48:    
+49:    <%end%>
+50:    <div>
+51:      <h3>Comments</h3>
+52:        <%= render 'comments/form', post: @post, comment: Comment.new %>
+53:      <p><%= pluralize(@comments.count, 'comment') %></p>
+54:      <%= render @comments %>
+55:    </div
+  
+app/views/posts/show.html.erb:42: syntax error, unexpected label, expecting ')'
+app/views/posts/show.html.erb:57: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:42: syntax error, unexpected label, expecting ')'
+app/views/posts/show.html.erb:57: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:42: syntax error, unexpected label, expecting ')'
+app/views/posts/show.html.erb:57: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:42: syntax error, unexpected label, expecting ')'
+app/views/posts/show.html.erb:57: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:42: syntax error, unexpected label, expecting ')'
+app/views/posts/show.html.erb:57: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:42: syntax error, unexpected label, expecting ')'
+app/views/posts/show.html.erb:57: syntax error, unexpected `end', expecting end-of-input
+Started GET "/posts/2" for ::1 at 2023-02-14 08:30:59 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 24.1ms | Allocations: 7863)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 7948)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.0ms | Allocations: 9210)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `reservation' for #<ActionView::Base:0x00000000024608>
+
+@output_buffer.safe_append='  '.freeze;@output_buffer.append=  form_with(model: reservation) do |form| @output_buffer.safe_append='
+                                                                                ^^^^^^^^^^^):
+    39:   <%= button_to "Destroy this post", @post, method: :delete %>
+    40: </div>
+    41: <% else %>
+    42:   <%= form_with(model: reservation) do |form| %>
+    43:     <%= form.label :reservation_date %>
+    44:     <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    45:     <%= form.submit "Reserve", class: "btn btn-primary" %>
+  
+app/views/posts/show.html.erb:42
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:11 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 2.8ms | Allocations: 1557)
+  Rendered posts/show.html.erb within layouts/application (Duration: 43.6ms | Allocations: 22090)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 22175)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 4.7ms | Allocations: 23389)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    50: <div>
+    51:   <h3>Comments</h3>
+    52:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    53:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    54:   <%= render @comments %>
+    55: </div
+  
+app/views/posts/show.html.erb:53
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:50 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.5ms | Allocations: 815)
+  Rendered posts/show.html.erb within layouts/application (Duration: 11.6ms | Allocations: 9028)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 9113)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.7ms | Allocations: 10378)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    55:   <%= render @comments %>
+    56: </div
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:51 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.3ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 15.7ms | Allocations: 7750)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 7829)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.0ms | Allocations: 8582)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    55:   <%= render @comments %>
+    56: </div
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:51 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.5ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 7748)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 7827)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 8555)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    55:   <%= render @comments %>
+    56: </div
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:57 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.8ms | Allocations: 906)
+  Rendered posts/show.html.erb within layouts/application (Duration: 10.0ms | Allocations: 5995)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 6080)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.0ms | Allocations: 7258)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    46: <div>
+    47:   <h3>Comments</h3>
+    48:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    49:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    50:   <%= render @comments %>
+    51: </div
+  
+app/views/posts/show.html.erb:49
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:58 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.2ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 10.4ms | Allocations: 4855)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 4934)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.3ms | Allocations: 5687)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    46: <div>
+    47:   <h3>Comments</h3>
+    48:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    49:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    50:   <%= render @comments %>
+    51: </div
+  
+app/views/posts/show.html.erb:49
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:58 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.5ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4853)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4932)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms | Allocations: 5660)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    46: <div>
+    47:   <h3>Comments</h3>
+    48:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    49:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    50:   <%= render @comments %>
+    51: </div
+  
+app/views/posts/show.html.erb:49
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:58 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.9ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.5ms | Allocations: 4853)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 4932)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.1ms | Allocations: 5664)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    46: <div>
+    47:   <h3>Comments</h3>
+    48:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    49:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    50:   <%= render @comments %>
+    51: </div
+  
+app/views/posts/show.html.erb:49
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:58 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 4853)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 4932)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.0ms | Allocations: 5660)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    46: <div>
+    47:   <h3>Comments</h3>
+    48:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    49:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    50:   <%= render @comments %>
+    51: </div
+  
+app/views/posts/show.html.erb:49
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:59 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.7ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 4853)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 4932)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.5ms | Allocations: 5660)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    46: <div>
+    47:   <h3>Comments</h3>
+    48:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    49:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    50:   <%= render @comments %>
+    51: </div
+  
+app/views/posts/show.html.erb:49
+Started GET "/posts/2" for ::1 at 2023-02-14 08:31:59 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.6ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 4853)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 4932)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.0ms | Allocations: 5660)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+  <p>'.freeze;@output_buffer.append=( pluralize(@comments.count, 'comment') );@output_buffer.safe_append='</p>
+                                                         ^^^^^^):
+    46: <div>
+    47:   <h3>Comments</h3>
+    48:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    49:   <p><%= pluralize(@comments.count, 'comment') %></p>
+    50:   <%= render @comments %>
+    51: </div
+  
+app/views/posts/show.html.erb:49
+Started GET "/posts/2" for ::1 at 2023-02-14 08:32:38 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1511)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1600)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2788)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div id="<%= dom_id @post %>">
+<% city = City.find(@post.city_id) %>
+<% country = Country.find(city.country_id) %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p>
+    <strong>Adress:</strong>
+    <%= @post.adress %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= city.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= country.name %>
+  </p>
+
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+  </p>
+
+ <!--<p>
+    <strong>Published at:</strong>
+    <% @post.published_at.strftime ("%d.%m.%Y")%>
+  </p>
+</div>-->
+<%if(current_user == @post.user)%>
+<div>
+  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <%= link_to "Back to posts", posts_path %>
+  <%= button_to "Destroy this post", @post, method: :delete %>
+</div>
+<% else %>
+  <%= form_with(model: @reservation) do |form| %>
+    <%= form.label :reservation_date %>
+    <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    <%= form.submit "Reserve", class: "btn btn-primary" %>
+    
+  <% end %>
+<%= link_to "Back to posts", posts_path %>
+
+<%end%>
+<div>
+  <h3>Comments</h3>
+    <%= render 'comments/form', post: @post, comment: Comment.new %>
+  <p><%= if(@comments.count == 0) then "No comments" else
+    pluralize(@comments.count, 'comment') %></p>
+  <%= render @comments %>
+</div
+):
+1:    
+2:    <div id="<%= dom_id @post %>">
+3:    <% city = City.find(@post.city_id) %>
+4:    <% country = Country.find(city.country_id) %>
+5:    
+6:      <p>
+7:        <strong>Title:</strong>
+8:        <%= @post.title %>
+9:      </p>
+10:    
+11:      <p>
+12:        <strong>Adress:</strong>
+13:        <%= @post.adress %>
+14:      </p>
+15:    
+16:      <p>
+17:        <strong>City:</strong>
+18:        <%= city.name %>
+19:      </p>
+20:    
+21:      <p>
+22:        <strong>Country:</strong>
+23:        <%= country.name %>
+24:      </p>
+25:    
+26:        <strong>Author:</strong>
+27:        <%= @post.user.name %>
+28:      </p>
+29:    
+30:     <!--<p>
+31:        <strong>Published at:</strong>
+32:        <% @post.published_at.strftime ("%d.%m.%Y")%>
+33:      </p>
+34:    </div>-->
+35:    <%if(current_user == @post.user)%>
+36:    <div>
+37:      <%= link_to "Edit this post", edit_post_path(@post) %> |
+38:      <%= link_to "Back to posts", posts_path %>
+39:      <%= button_to "Destroy this post", @post, method: :delete %>
+40:    </div>
+41:    <% else %>
+42:      <%= form_with(model: @reservation) do |form| %>
+43:        <%= form.label :reservation_date %>
+44:        <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+45:        <%= form.submit "Reserve", class: "btn btn-primary" %>
+46:        
+47:      <% end %>
+48:    <%= link_to "Back to posts", posts_path %>
+49:    
+50:    <%end%>
+51:    <div>
+52:      <h3>Comments</h3>
+53:        <%= render 'comments/form', post: @post, comment: Comment.new %>
+54:      <p><%= if(@comments.count == 0) then "No comments" else
+55:        pluralize(@comments.count, 'comment') %></p>
+56:      <%= render @comments %>
+57:    </div
+  
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:59: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:59: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:59: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:59: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:59: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:59: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/posts/2" for ::1 at 2023-02-14 08:32:57 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1509)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | Allocations: 1598)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2870)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div id="<%= dom_id @post %>">
+<% city = City.find(@post.city_id) %>
+<% country = Country.find(city.country_id) %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p>
+    <strong>Adress:</strong>
+    <%= @post.adress %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= city.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= country.name %>
+  </p>
+
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+  </p>
+
+ <!--<p>
+    <strong>Published at:</strong>
+    <% @post.published_at.strftime ("%d.%m.%Y")%>
+  </p>
+</div>-->
+<%if(current_user == @post.user)%>
+<div>
+  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <%= link_to "Back to posts", posts_path %>
+  <%= button_to "Destroy this post", @post, method: :delete %>
+</div>
+<% else %>
+  <%= form_with(model: @reservation) do |form| %>
+    <%= form.label :reservation_date %>
+    <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    <%= form.submit "Reserve", class: "btn btn-primary" %>
+    
+  <% end %>
+<%= link_to "Back to posts", posts_path %>
+
+<%end%>
+<div>
+  <h3>Comments</h3>
+    <%= render 'comments/form', post: @post, comment: Comment.new %>
+  <p><%= if(@comments.count == 0) then "No comments" else pluralize(@comments.count, 'comment') %></p>
+  <%= render @comments %>
+</div
+):
+1:    
+2:    <div id="<%= dom_id @post %>">
+3:    <% city = City.find(@post.city_id) %>
+4:    <% country = Country.find(city.country_id) %>
+5:    
+6:      <p>
+7:        <strong>Title:</strong>
+8:        <%= @post.title %>
+9:      </p>
+10:    
+11:      <p>
+12:        <strong>Adress:</strong>
+13:        <%= @post.adress %>
+14:      </p>
+15:    
+16:      <p>
+17:        <strong>City:</strong>
+18:        <%= city.name %>
+19:      </p>
+20:    
+21:      <p>
+22:        <strong>Country:</strong>
+23:        <%= country.name %>
+24:      </p>
+25:    
+26:        <strong>Author:</strong>
+27:        <%= @post.user.name %>
+28:      </p>
+29:    
+30:     <!--<p>
+31:        <strong>Published at:</strong>
+32:        <% @post.published_at.strftime ("%d.%m.%Y")%>
+33:      </p>
+34:    </div>-->
+35:    <%if(current_user == @post.user)%>
+36:    <div>
+37:      <%= link_to "Edit this post", edit_post_path(@post) %> |
+38:      <%= link_to "Back to posts", posts_path %>
+39:      <%= button_to "Destroy this post", @post, method: :delete %>
+40:    </div>
+41:    <% else %>
+42:      <%= form_with(model: @reservation) do |form| %>
+43:        <%= form.label :reservation_date %>
+44:        <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+45:        <%= form.submit "Reserve", class: "btn btn-primary" %>
+46:        
+47:      <% end %>
+48:    <%= link_to "Back to posts", posts_path %>
+49:    
+50:    <%end%>
+51:    <div>
+52:      <h3>Comments</h3>
+53:        <%= render 'comments/form', post: @post, comment: Comment.new %>
+54:      <p><%= if(@comments.count == 0) then "No comments" else pluralize(@comments.count, 'comment') %></p>
+55:      <%= render @comments %>
+56:    </div
+  
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:58: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:58: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:58: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:58: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:58: syntax error, unexpected end-of-input, expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `end'
+app/views/posts/show.html.erb:58: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/posts/2" for ::1 at 2023-02-14 08:35:07 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1560)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | Allocations: 1649)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2921)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div id="<%= dom_id @post %>">
+<% city = City.find(@post.city_id) %>
+<% country = Country.find(city.country_id) %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p>
+    <strong>Adress:</strong>
+    <%= @post.adress %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= city.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= country.name %>
+  </p>
+
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+  </p>
+
+ <!--<p>
+    <strong>Published at:</strong>
+    <% @post.published_at.strftime ("%d.%m.%Y")%>
+  </p>
+</div>-->
+<%if(current_user == @post.user)%>
+<div>
+  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <%= link_to "Back to posts", posts_path %>
+  <%= button_to "Destroy this post", @post, method: :delete %>
+</div>
+<% else %>
+  <%= form_with(model: @reservation) do |form| %>
+    <%= form.label :reservation_date %>
+    <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    <%= form.submit "Reserve", class: "btn btn-primary" %>
+    
+  <% end %>
+<%= link_to "Back to posts", posts_path %>
+
+<%end%>
+<div>
+  <h3>Comments</h3>
+    <%= render 'comments/form', post: @post, comment: Comment.new %>
+  <%= if(@comments.count == 0)%>
+  <p>No comments </p>
+  <% else %>
+  <p>
+  <%= pluralize(@comments.count, 'comment') %>
+  </p>
+  <%end%>
+  <%= render @comments %>
+</div
+):
+1:    
+2:    <div id="<%= dom_id @post %>">
+3:    <% city = City.find(@post.city_id) %>
+4:    <% country = Country.find(city.country_id) %>
+5:    
+6:      <p>
+7:        <strong>Title:</strong>
+8:        <%= @post.title %>
+9:      </p>
+10:    
+11:      <p>
+12:        <strong>Adress:</strong>
+13:        <%= @post.adress %>
+14:      </p>
+15:    
+16:      <p>
+17:        <strong>City:</strong>
+18:        <%= city.name %>
+19:      </p>
+20:    
+21:      <p>
+22:        <strong>Country:</strong>
+23:        <%= country.name %>
+24:      </p>
+25:    
+26:        <strong>Author:</strong>
+27:        <%= @post.user.name %>
+28:      </p>
+29:    
+30:     <!--<p>
+31:        <strong>Published at:</strong>
+32:        <% @post.published_at.strftime ("%d.%m.%Y")%>
+33:      </p>
+34:    </div>-->
+35:    <%if(current_user == @post.user)%>
+36:    <div>
+37:      <%= link_to "Edit this post", edit_post_path(@post) %> |
+38:      <%= link_to "Back to posts", posts_path %>
+39:      <%= button_to "Destroy this post", @post, method: :delete %>
+40:    </div>
+41:    <% else %>
+42:      <%= form_with(model: @reservation) do |form| %>
+43:        <%= form.label :reservation_date %>
+44:        <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+45:        <%= form.submit "Reserve", class: "btn btn-primary" %>
+46:        
+47:      <% end %>
+48:    <%= link_to "Back to posts", posts_path %>
+49:    
+50:    <%end%>
+51:    <div>
+52:      <h3>Comments</h3>
+53:        <%= render 'comments/form', post: @post, comment: Comment.new %>
+54:      <%= if(@comments.count == 0)%>
+55:      <p>No comments </p>
+56:      <% else %>
+57:      <p>
+58:      <%= pluralize(@comments.count, 'comment') %>
+59:      </p>
+60:      <%end%>
+61:      <%= render @comments %>
+62:    </div
+  
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:56: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:60: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:64: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:56: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:60: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:64: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:56: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:60: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:64: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:56: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:60: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:64: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:56: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:60: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:64: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:54: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:56: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:60: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:64: syntax error, unexpected `end', expecting ')'
+Started GET "/posts/2" for ::1 at 2023-02-14 08:36:06 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1561)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | Allocations: 1650)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2922)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div id="<%= dom_id @post %>">
+<% city = City.find(@post.city_id) %>
+<% country = Country.find(city.country_id) %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p>
+    <strong>Adress:</strong>
+    <%= @post.adress %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= city.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= country.name %>
+  </p>
+
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+  </p>
+
+ <!--<p>
+    <strong>Published at:</strong>
+    <% @post.published_at.strftime ("%d.%m.%Y")%>
+  </p>
+</div>-->
+<%if(current_user == @post.user)%>
+<div>
+  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <%= link_to "Back to posts", posts_path %>
+  <%= button_to "Destroy this post", @post, method: :delete %>
+</div>
+<% else %>
+  <%= form_with(model: @reservation) do |form| %>
+    <%= form.label :reservation_date %>
+    <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    <%= form.submit "Reserve", class: "btn btn-primary" %>
+    
+  <% end %>
+<%= link_to "Back to posts", posts_path %>
+
+<%end%>
+<div>
+  <h3>Comments</h3>
+    <%= render 'comments/form', post: @post, comment: Comment.new %>
+    
+  <%= if(@comments.count == 0)%>
+    <p>No comments </p>
+  <% else %>
+    <p>
+       <%= pluralize(@comments.count, 'comment') %>
+    </p>
+  <%end%>
+  <%= render @comments %>
+</div>
+):
+1:    
+2:    <div id="<%= dom_id @post %>">
+3:    <% city = City.find(@post.city_id) %>
+4:    <% country = Country.find(city.country_id) %>
+5:    
+6:      <p>
+7:        <strong>Title:</strong>
+8:        <%= @post.title %>
+9:      </p>
+10:    
+11:      <p>
+12:        <strong>Adress:</strong>
+13:        <%= @post.adress %>
+14:      </p>
+15:    
+16:      <p>
+17:        <strong>City:</strong>
+18:        <%= city.name %>
+19:      </p>
+20:    
+21:      <p>
+22:        <strong>Country:</strong>
+23:        <%= country.name %>
+24:      </p>
+25:    
+26:        <strong>Author:</strong>
+27:        <%= @post.user.name %>
+28:      </p>
+29:    
+30:     <!--<p>
+31:        <strong>Published at:</strong>
+32:        <% @post.published_at.strftime ("%d.%m.%Y")%>
+33:      </p>
+34:    </div>-->
+35:    <%if(current_user == @post.user)%>
+36:    <div>
+37:      <%= link_to "Edit this post", edit_post_path(@post) %> |
+38:      <%= link_to "Back to posts", posts_path %>
+39:      <%= button_to "Destroy this post", @post, method: :delete %>
+40:    </div>
+41:    <% else %>
+42:      <%= form_with(model: @reservation) do |form| %>
+43:        <%= form.label :reservation_date %>
+44:        <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+45:        <%= form.submit "Reserve", class: "btn btn-primary" %>
+46:        
+47:      <% end %>
+48:    <%= link_to "Back to posts", posts_path %>
+49:    
+50:    <%end%>
+51:    <div>
+52:      <h3>Comments</h3>
+53:        <%= render 'comments/form', post: @post, comment: Comment.new %>
+54:        
+55:      <%= if(@comments.count == 0)%>
+56:        <p>No comments </p>
+57:      <% else %>
+58:        <p>
+59:           <%= pluralize(@comments.count, 'comment') %>
+60:        </p>
+61:      <%end%>
+62:      <%= render @comments %>
+63:    </div>
+  
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:57: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:61: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:65: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:57: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:61: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:65: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:57: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:61: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:65: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:57: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:61: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:65: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:57: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:61: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:65: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:55: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/posts/show.html.erb:57: syntax error, unexpected `else', expecting ')'
+app/views/posts/show.html.erb:61: syntax error, unexpected `end', expecting ')'
+app/views/posts/show.html.erb:65: syntax error, unexpected `end', expecting ')'
+Started GET "/posts/2" for ::1 at 2023-02-14 08:36:37 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.6ms | Allocations: 815)
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.4ms | Allocations: 9045)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 9130)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.9ms | Allocations: 10392)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+'.freeze;   if(@comments.count == 0)
+                        ^^^^^^):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <% if(@comments.count == 0)%>
+    55:   <p>No comments </p>
+    56: <% else %>
+    57:   <p>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:37:49 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.3ms | Allocations: 960)
+  Rendered posts/show.html.erb within layouts/application (Duration: 34.9ms | Allocations: 21953)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 22038)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 23.3ms | Allocations: 29868)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+'.freeze;   if(@comments.count == 0)
+                        ^^^^^^):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <% if(@comments.count == 0)%>
+    55:   <p>No comments </p>
+    56: <% else %>
+    57:   <p>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:38:54 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.9ms | Allocations: 963)
+  Rendered posts/show.html.erb within layouts/application (Duration: 28.0ms | Allocations: 21930)
+  Rendered layout layouts/application.html.erb (Duration: 28.1ms | Allocations: 22015)
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 17.3ms | Allocations: 29842)
+
+
+  
+ActionView::Template::Error (undefined method `count' for nil:NilClass
+
+'.freeze;   if(@comments.count == 0)
+                        ^^^^^^):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <% if(@comments.count == 0)%>
+    55:   <p>No comments </p>
+    56: <% end %>
+    57:   <%= render @comments %>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:39:02 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  Rendered posts/show.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1505)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1594)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms | Allocations: 2853)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+<div id="<%= dom_id @post %>">
+<% city = City.find(@post.city_id) %>
+<% country = Country.find(city.country_id) %>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @post.title %>
+  </p>
+
+  <p>
+    <strong>Adress:</strong>
+    <%= @post.adress %>
+  </p>
+
+  <p>
+    <strong>City:</strong>
+    <%= city.name %>
+  </p>
+
+  <p>
+    <strong>Country:</strong>
+    <%= country.name %>
+  </p>
+
+    <strong>Author:</strong>
+    <%= @post.user.name %>
+  </p>
+
+ <!--<p>
+    <strong>Published at:</strong>
+    <% @post.published_at.strftime ("%d.%m.%Y")%>
+  </p>
+</div>-->
+<%if(current_user == @post.user)%>
+<div>
+  <%= link_to "Edit this post", edit_post_path(@post) %> |
+  <%= link_to "Back to posts", posts_path %>
+  <%= button_to "Destroy this post", @post, method: :delete %>
+</div>
+<% else %>
+  <%= form_with(model: @reservation) do |form| %>
+    <%= form.label :reservation_date %>
+    <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+    <%= form.submit "Reserve", class: "btn btn-primary" %>
+    
+  <% end %>
+<%= link_to "Back to posts", posts_path %>
+
+<%end%>
+<div>
+  <h3>Comments</h3>
+    <%= render 'comments/form', post: @post, comment: Comment.new %>
+<% end %>
+  <%= render @comments %>
+</div>
+):
+1:    
+2:    <div id="<%= dom_id @post %>">
+3:    <% city = City.find(@post.city_id) %>
+4:    <% country = Country.find(city.country_id) %>
+5:    
+6:      <p>
+7:        <strong>Title:</strong>
+8:        <%= @post.title %>
+9:      </p>
+10:    
+11:      <p>
+12:        <strong>Adress:</strong>
+13:        <%= @post.adress %>
+14:      </p>
+15:    
+16:      <p>
+17:        <strong>City:</strong>
+18:        <%= city.name %>
+19:      </p>
+20:    
+21:      <p>
+22:        <strong>Country:</strong>
+23:        <%= country.name %>
+24:      </p>
+25:    
+26:        <strong>Author:</strong>
+27:        <%= @post.user.name %>
+28:      </p>
+29:    
+30:     <!--<p>
+31:        <strong>Published at:</strong>
+32:        <% @post.published_at.strftime ("%d.%m.%Y")%>
+33:      </p>
+34:    </div>-->
+35:    <%if(current_user == @post.user)%>
+36:    <div>
+37:      <%= link_to "Edit this post", edit_post_path(@post) %> |
+38:      <%= link_to "Back to posts", posts_path %>
+39:      <%= button_to "Destroy this post", @post, method: :delete %>
+40:    </div>
+41:    <% else %>
+42:      <%= form_with(model: @reservation) do |form| %>
+43:        <%= form.label :reservation_date %>
+44:        <%= form.date_select :reservation_date, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
+45:        <%= form.submit "Reserve", class: "btn btn-primary" %>
+46:        
+47:      <% end %>
+48:    <%= link_to "Back to posts", posts_path %>
+49:    
+50:    <%end%>
+51:    <div>
+52:      <h3>Comments</h3>
+53:        <%= render 'comments/form', post: @post, comment: Comment.new %>
+54:    <% end %>
+55:      <%= render @comments %>
+56:    </div>
+  
+app/views/posts/show.html.erb:58: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:58: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:58: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:58: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:58: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/show.html.erb:58: syntax error, unexpected `end', expecting end-of-input
+Started GET "/posts/2" for ::1 at 2023-02-14 08:39:26 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.6ms | Allocations: 815)
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.1ms | Allocations: 13722)
+  Rendered layout layouts/application.html.erb (Duration: 12.2ms | Allocations: 13819)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.5ms | Allocations: 15090)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:42:04 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:75:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.8ms | Allocations: 963)
+  Rendered posts/show.html.erb within layouts/application (Duration: 27.4ms | Allocations: 20558)
+  Rendered layout layouts/application.html.erb (Duration: 27.4ms | Allocations: 20643)
+Completed 500 Internal Server Error in 38ms (ActiveRecord: 15.5ms | Allocations: 28470)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:42:05 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:75:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.0ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 6553)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 6632)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.6ms | Allocations: 7434)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:42:06 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (1.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:75:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 0.6ms | Allocations: 597)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 6387)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6466)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 11.6ms | Allocations: 37170)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:43:01 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.8ms | Allocations: 760)
+  Rendered posts/show.html.erb within layouts/application (Duration: 32.8ms | Allocations: 19740)
+  Rendered layout layouts/application.html.erb (Duration: 32.9ms | Allocations: 19825)
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 21.6ms | Allocations: 27547)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:   <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:43:42 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.2ms | Allocations: 960)
+  Rendered posts/show.html.erb within layouts/application (Duration: 29.0ms | Allocations: 20547)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 20632)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 16.0ms | Allocations: 28458)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:   <!--<h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>-->
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started GET "/posts/2" for ::1 at 2023-02-14 08:43:52 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 5789)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 269)
+  Rendered application/_navbar.html.erb (Duration: 1.4ms | Allocations: 869)
+  Rendered layout layouts/application.html.erb (Duration: 98.0ms | Allocations: 31618)
+Completed 200 OK in 103ms (Views: 99.3ms | ActiveRecord: 1.5ms | Allocations: 32936)
+
+
+Started POST "/posts/2" for ::1 at 2023-02-14 08:44:04 +0100
+  
+ActionController::RoutingError (No route matches [POST] "/posts/2"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-14 08:44:04 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 5058)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 371)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 7963)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.8ms | Allocations: 8829)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:44:26 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 1.9ms | Allocations: 815)
+  Rendered posts/show.html.erb within layouts/application (Duration: 12.2ms | Allocations: 7617)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 7702)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms | Allocations: 8880)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:     <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started PUT "/__web_console/repl_sessions/1372e1dde78cfc580e009a2dade4c55f" for ::1 at 2023-02-14 08:45:41 +0100
+Started PUT "/__web_console/repl_sessions/1372e1dde78cfc580e009a2dade4c55f" for ::1 at 2023-02-14 08:45:42 +0100
+Started GET "/posts/2" for ::1 at 2023-02-14 08:46:24 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 2.2ms | Allocations: 1173)
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 4547)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4632)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.9ms | Allocations: 5912)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    36: <div>
+    37:     <h3>Comments</h3>
+    38:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    39:   <%= render @comments %>
+    40: </div>
+  
+app/views/posts/show.html.erb:39
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:46:56 +0100
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:46:57 +0100
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:00 +0100
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:02 +0100
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["post_id", 2], ["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:28 +0100
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:29 +0100
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:37 +0100
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:40 +0100
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["post_id", 2], ["LIMIT", 11]]
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:42 +0100
+Started PUT "/__web_console/repl_sessions/d3a30b53f60bd1a614c638ad4cbf0855" for ::1 at 2023-02-14 08:47:43 +0100
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["post_id", 2], ["LIMIT", 11]]
+Started GET "/posts/2" for ::1 at 2023-02-14 08:48:28 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.7ms | Allocations: 5781)
+  Rendered application/_login_buttons.html.erb (Duration: 1.5ms | Allocations: 264)
+  Rendered application/_navbar.html.erb (Duration: 3.6ms | Allocations: 848)
+  Rendered layout layouts/application.html.erb (Duration: 19.7ms | Allocations: 9649)
+Completed 200 OK in 26ms (Views: 21.5ms | ActiveRecord: 1.4ms | Allocations: 10880)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:48:39 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 6634)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 6719)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.5ms | Allocations: 7921)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    50: <%end%>
+    51: <div>
+    52:    
+    53:   <%= render @comments %>
+    54: </div>
+  
+app/views/posts/show.html.erb:53
+Started GET "/posts/2" for ::1 at 2023-02-14 08:49:51 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered comments/_form.html.erb (Duration: 2.2ms | Allocations: 1564)
+  Rendered posts/show.html.erb within layouts/application (Duration: 43.2ms | Allocations: 29234)
+  Rendered layout layouts/application.html.erb (Duration: 43.3ms | Allocations: 29342)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 24.3ms | Allocations: 44525)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:     <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started GET "/" for ::1 at 2023-02-14 08:49:54 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 07:49:54.963757')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 1.3ms | Allocations: 920)
+  Rendered posts/index.html.erb within layouts/application (Duration: 101.7ms | Allocations: 24911)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 266)
+  Rendered application/_navbar.html.erb (Duration: 1.4ms | Allocations: 925)
+  Rendered layout layouts/application.html.erb (Duration: 107.3ms | Allocations: 28802)
+Completed 200 OK in 111ms (Views: 106.2ms | ActiveRecord: 1.6ms | Allocations: 29489)
+
+
+Started GET "/css.css" for ::1 at 2023-02-14 08:49:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-14 08:49:59 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 729)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 3222)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 595)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6580)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 8248)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-14 08:50:07 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"aneja@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "aneja@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts/2/edit
+Completed 302 Found in 278ms (ActiveRecord: 0.5ms | Allocations: 4153)
+
+
+Started GET "/posts/2/edit" for ::1 at 2023-02-14 08:50:07 +0100
+Processing by PostsController#edit as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mActionText::RichText Load (1.1ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/_form.html.erb:36
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 29.9ms | Allocations: 19512)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 30.6ms | Allocations: 19944)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.4ms | Allocations: 306)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 694)
+  Rendered layout layouts/application.html.erb (Duration: 33.1ms | Allocations: 23237)
+Completed 200 OK in 35ms (Views: 26.1ms | ActiveRecord: 7.5ms | Allocations: 25654)
+
+
+Started GET "/" for ::1 at 2023-02-14 08:50:11 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 07:50:11.744341')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 2.0ms | Allocations: 762)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2350)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 1139)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 6013)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 1.0ms | Allocations: 6466)
+
+
+Started GET "/css.css" for ::1 at 2023-02-14 08:50:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-14 08:50:14 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 10.8ms | Allocations: 5548)
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.0ms | Allocations: 5769)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 18.8ms | Allocations: 9329)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 1.1ms | Allocations: 9657)
+
+
+Started POST "/posts" for ::1 at 2023-02-14 08:50:32 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"lala", "adress"=>"ulica", "country_id"=>"2", "city_id"=>"9", "body"=>"<div>hshssh</div>", "published_at"=>"2023-02-13T08:50", "category_id"=>"3"}, "commit"=>"Create Post"}
+[31mUnpermitted parameter: :country_id. Context: { controller: PostsController, action: create, request: #<ActionDispatch::Request:0x0000000115a27270>, params: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"lala", "adress"=>"ulica", "country_id"=>"2", "city_id"=>"9", "body"=>"<div>hshssh</div>", "published_at"=>"2023-02-13T08:50", "category_id"=>"3"}, "commit"=>"Create Post", "controller"=>"posts", "action"=>"create"} }[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:32:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at", "user_id", "published_at", "category_id", "adress", "city_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "lala"], ["body", nil], ["created_at", "2023-02-14 07:50:32.467132"], ["updated_at", "2023-02-14 07:50:32.467132"], ["user_id", 1], ["published_at", "2023-02-13 08:50:00"], ["category_id", 3], ["adress", "ulica"], ["city_id", 9]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mActionText::RichText Create (0.6ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "body"], ["body", "<div>hshssh</div>"], ["record_type", "Post"], ["record_id", 3], ["created_at", "2023-02-14 07:50:32.484030"], ["updated_at", "2023-02-14 07:50:32.484030"]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 3], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mPost Update (0.5ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-14 07:50:32.485841"], ["id", 3]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 63ms (ActiveRecord: 6.2ms | Allocations: 28904)
+
+
+Started GET "/posts/3" for ::1 at 2023-02-14 08:50:32 +0100
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:72:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered comments/_form.html.erb (Duration: 0.5ms | Allocations: 667)
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 4875)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 4955)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.8ms | Allocations: 5746)
+
+
+  
+ActionView::Template::Error ('nil' is not an ActiveModel-compatible object. It must implement :to_partial_path.):
+    51: <div>
+    52:     <h3>Comments</h3>
+    53:     <%= render 'comments/form', post: @post, comment: Comment.new %>
+    54:   <%= render @comments %>
+    55: </div>
+  
+app/views/posts/show.html.erb:54
+Started PUT "/__web_console/repl_sessions/e563a28d434c9bf0281b00efc02c1783" for ::1 at 2023-02-14 08:51:12 +0100
+Started PUT "/__web_console/repl_sessions/e563a28d434c9bf0281b00efc02c1783" for ::1 at 2023-02-14 08:51:14 +0100
+Started PUT "/__web_console/repl_sessions/e563a28d434c9bf0281b00efc02c1783" for ::1 at 2023-02-14 08:51:16 +0100
+Started PUT "/__web_console/repl_sessions/e563a28d434c9bf0281b00efc02c1783" for ::1 at 2023-02-14 08:51:18 +0100
+Started GET "/posts/new" for ::1 at 2023-02-14 08:52:11 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:46:in `map'
+  Rendered posts/_form.html.erb (Duration: 16.2ms | Allocations: 13977)
+  Rendered posts/new.html.erb within layouts/application (Duration: 16.8ms | Allocations: 14306)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 283)
+  Rendered application/_navbar.html.erb (Duration: 10.1ms | Allocations: 4342)
+  Rendered layout layouts/application.html.erb (Duration: 29.4ms | Allocations: 21730)
+Completed 200 OK in 40ms (Views: 20.5ms | ActiveRecord: 14.3ms | Allocations: 28477)
+
+
+Started GET "/posts" for ::1 at 2023-02-14 08:52:14 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 07:52:15.013254')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 3.5ms | Allocations: 2446)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 1.0ms | Allocations: 653)
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.2ms | Allocations: 5224)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 1114)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 8828)
+Completed 200 OK in 16ms (Views: 12.6ms | ActiveRecord: 1.0ms | Allocations: 9405)
+
+
+Started GET "/css.css" for ::1 at 2023-02-14 08:52:15 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-14 08:52:16 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered comments/_form.html.erb (Duration: 1.4ms | Allocations: 950)
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:54
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 28)
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.1ms | Allocations: 11005)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 106)
+  Rendered application/_navbar.html.erb (Duration: 0.2ms | Allocations: 342)
+  Rendered layout layouts/application.html.erb (Duration: 18.1ms | Allocations: 13927)
+Completed 200 OK in 42ms (Views: 13.4ms | ActiveRecord: 5.4ms | Allocations: 15276)
+
+
+Started POST "/posts/2/comments" for ::1 at 2023-02-14 08:53:24 +0100
+Processing by CommentsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "comment"=>{"body"=>"sdhdsjjds"}, "commit"=>"Create Comment", "post_id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:3:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:5:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:7:in `block in create'
+  [1m[36mComment Create (2.2ms)[0m  [1m[32mINSERT INTO "comments" ("body", "user_id", "post_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["body", "sdhdsjjds"], ["user_id", 1], ["post_id", 2], ["created_at", "2023-02-14 07:53:24.098710"], ["updated_at", "2023-02-14 07:53:24.098710"]]
+  ↳ app/controllers/comments_controller.rb:7:in `block in create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:7:in `block in create'
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 10ms (ActiveRecord: 3.5ms | Allocations: 5264)
+
+
+Started GET "/posts/2" for ::1 at 2023-02-14 08:53:24 +0100
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:70:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered comments/_form.html.erb (Duration: 0.9ms | Allocations: 664)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:54
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:3
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 2.2ms | Allocations: 1923)
+  Rendered posts/show.html.erb within layouts/application (Duration: 9.0ms | Allocations: 6717)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 103)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 335)
+  Rendered layout layouts/application.html.erb (Duration: 11.4ms | Allocations: 9597)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 1.1ms | Allocations: 10434)
+
+
+Started GET "/" for ::1 at 2023-02-14 08:53:36 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 07:53:36.690476')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 2.0ms | Allocations: 721)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 1.6ms | Allocations: 645)
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3059)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 16.2ms | Allocations: 6636)
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 1.2ms | Allocations: 7023)
+
+
+Started GET "/css.css" for ::1 at 2023-02-14 08:53:36 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/edit" for ::1 at 2023-02-14 08:53:48 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 214)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 6.7ms | Allocations: 2889)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 109)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 6230)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 8732)
+
+
+Started GET "/" for ::1 at 2023-02-14 08:53:55 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-14 07:53:55.355160')[0m
+  ↳ app/views/posts/index.html.erb:35
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+Started GET "/css.css" for ::1 at 2023-02-14 08:53:55 +0100
+  Rendered posts/_post.html.erb (Duration: 1.6ms | Allocations: 946)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:9
+  Rendered posts/_post.html.erb (Duration: 0.7ms | Allocations: 645)
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 3698)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 1147)
+  Rendered layout layouts/application.html.erb (Duration: 18.0ms | Allocations: 7437)
+Completed 200 OK in 21ms (Views: 17.9ms | ActiveRecord: 0.9ms | Allocations: 7882)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/edit" for ::1 at 2023-02-14 08:54:01 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1663)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 101)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 344)
+  Rendered layout layouts/application.html.erb (Duration: 7.0ms | Allocations: 4502)
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 6105)
+
+
