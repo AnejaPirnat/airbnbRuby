@@ -8,6 +8,9 @@ class PostsController < ApplicationController
     @posts = Post.published
   end
 
+  def post_params
+    params.require(:post).permit(:title, :body, :adress, :city_id, :category_id, :published_at)
+  end
 
   # GET /posts/1 or /posts/1.json
   def show
@@ -72,7 +75,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at)
+      params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at, :image)
     end
    
     def show
