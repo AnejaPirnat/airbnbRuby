@@ -33,6 +33,9 @@
 </div>-->
 <%if(current_user == @post.user)%>
 <div>
+  </p>
+      <iframe width="100%"height="500" src="https://maps.google.com/maps?q=<%=@post.adress%>&output=embed"></iframe>
+    <br>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
   <%= link_to "Back to posts", posts_path %>
   <%= button_to "Destroy this post", @post, method: :delete %>

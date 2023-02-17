@@ -43,160 +43,38 @@
                         <form action="#" class="career-form mb-60">
                             <div class="row">
                                 <div class="col-md-6 col-lg-3 my-3">
-                                   <div class="select-container">
-                                        <select class="custom-select">
-                                            <option selected="">airbnb type</option>
-                                            <option value="1">Jaipur</option>
-                                            <option value="2">Pune</option>
-                                            <option value="3">Bangalore</option>
-                                        </select>
+                                   <div>
+                                        <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id] }, params[:category]), prompt: 'Select Category', class: 'custom-select' %>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 my-3">
-                                    <div class="select-container">
-                                        <select class="custom-select">
-                                            <option selected="">Country</option>
-                                            <option value="1">Jaipur</option>
-                                            <option value="2">Pune</option>
-                                            <option value="3">Bangalore</option>
-                                        </select>
+                                    <div>
+                                        <%= select_tag :country, options_for_select(Country.all.map{ |co| [co.name, co.id] }, params[:country]), prompt: 'Select Country', class: 'custom-select' %>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3 my-3">
-                                    <div class="select-container">
-                                        <select class="custom-select">
-                                            <option selected="">City</option>
-                                            <option value="1">Ui designer</option>
-                                            <option value="2">JS developer</option>
-                                            <option value="3">Web developer</option>
-                                        </select>
+                                <div  class="col-md-6 col-lg-3 my-3">
+                                    <div>
+                                        <%= select_tag :city, options_for_select(City.all.map{ |ci| [ci.name, ci.id] }, params[:city]), prompt: 'Select City', class: 'custom-select' %>
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-3 my-3">
                                     <button type="button" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
-                                        Search
+                                        Filter results
                                     </button>
                                 </div>
                             </div>
                         </form>
 
                         <div class="filter-result">
-
                             <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
                                 <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                    <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                        FD
-                                    </div>
-                                    <div class="job-content">
-                                        <h5 class="text-center text-md-left">Front End Developer</h5>
-                                        <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                            </li>
-                                        </ul>
-                                    </div>
+                                   
+                                   </div>
                                 </div>
-                                <div class="job-right my-4 flex-shrink-0">
-                                    <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
+                                    <div id="posts">
+                                        <% @posts.each do |post| %>
+                                    <%= render post %>
+                                    <% end %>
                                 </div>
                             </div>
-
-                            <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                                <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                    <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                        UX
-                                    </div>
-                                    <div class="job-content">
-                                        <h5 class="text-center text-md-left">Ui/Ux Developer</h5>
-                                        <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="job-right my-4 flex-shrink-0">
-                                    <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                </div>
-                            </div>
-
-                            <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                                <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                    <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                        GD
-                                    </div>
-                                    <div class="job-content">
-                                        <h5 class="text-center text-md-left">Graphic Designer</h5>
-                                        <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="job-right my-4 flex-shrink-0">
-                                    <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                </div>
-                            </div>
-
-                            <div class="job-box d-md-flex align-items-center justify-content-between mb-30">
-                                <div class="job-left my-4 d-md-flex align-items-center flex-wrap">
-                                    <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
-                                        JS
-                                    </div>
-                                    <div class="job-content">
-                                        <h5 class="text-center text-md-left">Javascript Developer</h5>
-                                        <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-pin mr-2"></i> Los Angeles
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-money mr-2"></i> 2500-3500/pm
-                                            </li>
-                                            <li class="mr-md-4">
-                                                <i class="zmdi zmdi-time mr-2"></i> Full Time
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="job-right my-4 flex-shrink-0">
-                                    <a href="#" class="btn d-block w-100 d-sm-inline-block btn-light">Apply now</a>
-                                </div>
-                            </div>
-
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-</div>
-
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
-
-<%= link_to "New post", new_post_path %>

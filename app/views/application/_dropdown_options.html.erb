@@ -6,6 +6,13 @@
     <li>
       <%= link_to 'Edit Profile', edit_user_registration_path, class: 'dropdown-item' %>
     </li>
+
+    <li>
+      <%= link_to 'My airbnbs', my_posts_path , class: 'dropdown-item' %>
+    </li>
+      <li>
+      <%= link_to 'Reservations', edit_user_registration_path, class: 'dropdown-item' %>
+    </li>
     <li><hr class="dropdown-divider"></li>
     <li>
       <%= link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete } %>

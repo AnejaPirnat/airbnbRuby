@@ -8,8 +8,8 @@ class PostsController < ApplicationController
     @posts = Post.published
   end
 
-  def post_params
-    params.require(:post).permit(:title, :body, :adress, :city_id, :category_id, :published_at)
+  def my_posts
+    @posts = current_user.posts
   end
 
   # GET /posts/1 or /posts/1.json
@@ -28,9 +28,16 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new(post_params)
-    @post.published_at = TimeDate.now if @post.published_at.blank?
+    @post = Post.new
+    @post.title = params[:post][:title]
+    @post.adress = params[:post][:adress]
+    @post.city_id = params[:post][:city_id]
+    @post.body = params[:post][:body]
+    @post.category_id = params[:post][:category_id]
+    @post.published_at = params[:post][:published_at]
+    @post.published_at = DateTime.now if @post.published_at.blank?
     @post.user = current_user
+    
 
 
     respond_to do |format|
