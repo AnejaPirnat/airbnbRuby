@@ -3,63 +3,87 @@
 <% city = City.find(@post.city_id) %>
 <% country = Country.find(city.country_id) %>
 
-  <p>
-    <h2><strong><%= @post.title %></strong></h2>
-  </p>
+<!-- Page Content -->
+<div class="container">
 
-  <p>
-    <strong>Adress:</strong>
-    <%= @post.adress %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= city.name %>
-  </p>
-
-  <p>
-    <strong>Country:</strong>
-    <%= country.name %>
-  </p>
+    <!-- Portfolio Item Heading -->
+    <h1 class="my-4">     
+      <p>
+           <h6>AirBnB Host: <%= @post.user.name %></h6>
+          <h2><strong><%= @post.title %></strong></h2>
+      </p>
+    </h1>
   
-    <strong>AirBnB Host:</strong>
-    <%= @post.user.name %>
-  </p>
+    <!-- Portfolio Item Row -->
+    <div class="row">
+      <div class="col-md-8">
+        
+      </div>
 
- <!--<p>
-    <strong>Published at:</strong>
-    <% @post.published_at.strftime ("%d.%m.%Y")%>
-  </p>
-</div>-->
-<%if(current_user == @post.user)%>
+      <div class="col-md-4">
+        <h3 class="my-3">Description</h3>
+        <p>
+          <p>
+            <%= @post.body %>
+           </p>
+
+        </p>
+        <h3 class="my-3">Location</h3>
+        <p>
+          <strong>Country:</strong>
+          <%= country.name %>
+        <br>
+          <strong>City:</strong>
+          <%= city.name %>
+        <br>
+            <strong> Adress </strong>
+            <%= @post.adress %>
+        </p>
+        <h3 class="my-3">Price per night</h3>
+        
+        <br>
+        <hr>
+        <% if @post.user != current_user%>
+        <%= form_with(model: @reservation) do |form| %>
+        <div>
+          <h3>Reserve the AirBnB</h3>
+           <h4>Check in date</h4>
+           <%= form.date_select :from, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control col-md-6" %>
+           <br>
+           <h4>Check out date </h4>
+           <%= form.date_select :to, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control col-md-6" %>
+        </div>
+        <br>
+          <%= form.submit "Reserve", class: "btn btn-primary btn-lg" %>
+          <% end %>
+          <% else %>
 <div>
-  </p>
-      <iframe width="100%"height="500" src="https://maps.google.com/maps?q=<%=@post.adress%>&output=embed"></iframe>
-    <br>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
   <%= link_to "Back to posts", posts_path %>
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
-<% else %>
-  <%= form_with(model: @reservation) do |form| %>
-  <h3><strong>Reserve the AirBnB</strong></h3>
-    <br>    
-    <%= form.label :from %>
-    <%= form.date_select :from, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
-    <br>
-    <%= form.label :to %>
-    <%= form.date_select :to, order: [:month, :day, :year], prompt: { day: 'Day', month: 'Month', year: 'Year' }, class: "form-control" %>
-    <br>
-    <%= form.submit "Reserve", class: "btn btn-primary" %>
-  </p>
+          <% end %>
+      </div>
+  
+    </div>
+    <h3 class="my-4">Več slik</h3>
+  
+    <div class="row" >
+    <section class="gallery min-vh-100">
+     <div class="container-lg">
+        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+                                <div class="col">
+                               <img width="300"   height="200" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" class="img-fluid gallery-item" src="'.$pictures['path'].'"/>
+                               </div>
+                      </div>
+                    </div>
+</p>
       <iframe width="100%"height="500" src="https://maps.google.com/maps?q=<%=@post.adress%>&output=embed"></iframe>
-    <br>
+<br>
+  
+<script src="bootstrap.bundle.min.js"></script>
+<script src="main.js"></script>
 
-      <% end %>
-          <%= link_to "Back to posts", posts_path %>
-      <%end%>
-<div>
     <h3>Comments</h3>
     <%= render 'comments/form', post: @post, comment: Comment.new %>
   <%= render @post.comments %>
-</div>
