@@ -10,6 +10,7 @@
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.9.1",
     "esbuild": "^0.15.13",
+    "jquery": "^3.6.3",
     "sass": "^1.56.1",
     "trix": "^2.0.4"
   },

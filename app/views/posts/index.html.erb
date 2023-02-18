@@ -33,7 +33,7 @@
 <div>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
-
+<%= form_tag posts_path, method: :get, id: 'filter-form' do %>
 <div class="container">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
@@ -44,16 +44,41 @@
                                         <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id] }, params[:category]), prompt: 'Select Category', class: 'custom-select' %>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-3 my-3">
-                                    <div>
-                                        <%= select_tag :country, options_for_select(Country.all.map{ |co| [co.name, co.id] }, params[:country]), prompt: 'Select Country', class: 'custom-select' %>
+                                    <div class="col-md-6 col-lg-3 my-3">
+                                        <div>
+                                            <%= select_tag :country, options_for_select(Country.all.map{ |co| [co.name, co.id] }, params[:country]), prompt: 'Select Country', class: 'custom-select', id: "country", remote: true %>
+                                         </div>
                                     </div>
-                                </div>
-                                <div  class="col-md-6 col-lg-3 my-3">
-                                    <div>
-                                        <%= select_tag :city, options_for_select(City.all.map{ |ci| [ci.name, ci.id] }, params[:city]), prompt: 'Select City', class: 'custom-select' %>
+                                    <div  class="col-md-6 col-lg-3 my-3">
+                                        <div>
+                                            <%= select_tag :city, options_for_select([], params[:city]), prompt: 'Select City', class: 'custom-select', id: "city" %>
+                                        </div>
                                     </div>
-                                </div>
+                                <% end %>
+                                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                <script>
+                                    $(document).ready(function() {
+                                    // On country dropdown change
+                                    $('#country').change(function() {
+                                    var country_id = $(this).val();
+                                    // Send an AJAX request to get the cities for the selected country
+                                    $.ajax({
+                                    url: '/cities',
+                                    data: { country_id: country_id },
+                                    success: function(cities) {
+                                    // Replace the city dropdown options with the new cities
+                                    var options = '<option value="">Select City</option>';
+                                    for (var i = 0; i < cities.length; i++) {
+                                    options += '<option value="' + cities[i].id + '">' + cities[i].name + '</option>';
+                                    }
+                                     $('#city').html(options);
+                                    }
+                                        });
+                                    });
+                                });
+                            </script>
+
+
                                 <div class="col-md-6 col-lg-3 my-3">
                                     <button type="button" class="btn btn-lg btn-block btn-light btn-custom" id="contact-submit">
                                         Filter results
