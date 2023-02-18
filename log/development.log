@@ -41007,3 +41007,1562 @@ ActionController::RoutingError (No route matches [GET] "/css.css"):
 Completed 200 OK in 50ms (Views: 33.4ms | ActiveRecord: 15.5ms | Allocations: 28675)
 
 
+Started GET "/" for ::1 at 2023-02-18 18:59:12 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.8ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 17:59:12.364886')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.7ms | Allocations: 5787)
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.3ms | Allocations: 1719)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.8ms | Allocations: 1527)
+  Rendered posts/index.html.erb within layouts/application (Duration: 117.3ms | Allocations: 51226)
+  Rendered application/_login_buttons.html.erb (Duration: 1.0ms | Allocations: 267)
+  Rendered application/_navbar.html.erb (Duration: 5.8ms | Allocations: 1025)
+  Rendered layout layouts/application.html.erb (Duration: 140.3ms | Allocations: 55396)
+Completed 200 OK in 160ms (Views: 127.1ms | ActiveRecord: 19.5ms | Allocations: 63601)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 18:59:12 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-18 18:59:15 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.6ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.9ms | Allocations: 635)
+  Rendered comments/_form.html.erb (Duration: 2.7ms | Allocations: 1834)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:89
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:3
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 2.4ms | Allocations: 2497)
+  Rendered posts/show.html.erb within layouts/application (Duration: 75.8ms | Allocations: 38543)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 387)
+  Rendered layout layouts/application.html.erb (Duration: 78.4ms | Allocations: 41542)
+Completed 200 OK in 83ms (Views: 64.4ms | ActiveRecord: 14.8ms | Allocations: 43077)
+
+
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-18 18:59:15 +0100
+Started GET "/posts/main.js" for ::1 at 2023-02-18 18:59:15 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-18 18:59:15 +0100
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (1.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+Completed 404 Not Found in 8ms (ActiveRecord: 1.2ms | Allocations: 11294)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:80:in `set_post'
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Started GET "/users/sign_up" for ::1 at 2023-02-18 18:59:26 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 217)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 621)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 3577)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 596)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 6981)
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 8509)
+
+
+Started GET "/users/'.$pictures['path'].'" for ::1 at 2023-02-18 18:59:26 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/'.$pictures['path'].'"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-18 18:59:30 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 288)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2356)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 530)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 5589)
+Completed 200 OK in 18ms (Views: 16.9ms | ActiveRecord: 0.0ms | Allocations: 6957)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:00:08 +0100
+Started GET "/css.css" for ::1 at 2023-02-18 19:00:08 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  [1m[36mCategory Load (20.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:00:08.187942')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (5.9ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (6.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 29.1ms | Allocations: 19994)
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 5.1ms | Allocations: 2825)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 5.9ms | Allocations: 3509)
+  Rendered posts/index.html.erb within layouts/application (Duration: 85.2ms | Allocations: 54360)
+  Rendered application/_login_buttons.html.erb (Duration: 1.1ms | Allocations: 718)
+  Rendered application/_navbar.html.erb (Duration: 4.0ms | Allocations: 2186)
+  Rendered layout layouts/application.html.erb (Duration: 102.7ms | Allocations: 61276)
+Completed 200 OK in 114ms (Views: 72.4ms | ActiveRecord: 36.5ms | Allocations: 62430)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 19:00:08 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/2" for ::1 at 2023-02-18 19:00:12 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.5ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-18 19:00:12 +0100
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.6ms | Allocations: 934)
+  Rendered comments/_form.html.erb (Duration: 2.4ms | Allocations: 857)
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:89
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/comments/_comment.html.erb:3
+  Rendered collection of comments/_comment.html.erb [1 times] (Duration: 3.7ms | Allocations: 981)
+  Rendered posts/show.html.erb within layouts/application (Duration: 30.9ms | Allocations: 12546)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 377)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 15684)
+Completed 200 OK in 41ms (Views: 33.8ms | ActiveRecord: 3.8ms | Allocations: 16672)
+
+
+Started GET "/posts/main.js" for ::1 at 2023-02-18 19:00:12 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:80:in `set_post'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.7ms | Allocations: 2397)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:80:in `set_post'
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-18 19:00:12 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Started GET "/css.css" for ::1 at 2023-02-18 19:00:16 +0100
+Started GET "/'.$pictures['path'].'" for ::1 at 2023-02-18 19:00:16 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/'.$pictures['path'].'"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-18 19:02:21 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:48:in `map'
+  Rendered posts/_form.html.erb (Duration: 30.9ms | Allocations: 14544)
+  Rendered posts/new.html.erb within layouts/application (Duration: 32.0ms | Allocations: 14870)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 909)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | Allocations: 18867)
+Completed 200 OK in 42ms (Views: 39.1ms | ActiveRecord: 1.2ms | Allocations: 19715)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:04:47 +0100
+Started GET "/css.css" for ::1 at 2023-02-18 19:04:47 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:04:47.656111')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 9.2ms | Allocations: 3323)
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 3.9ms | Allocations: 3378)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.3ms | Allocations: 2465)
+  Rendered posts/index.html.erb within layouts/application (Duration: 48.4ms | Allocations: 30097)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 2.8ms | Allocations: 6967)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 42584)
+Completed 200 OK in 66ms (Views: 55.8ms | ActiveRecord: 4.4ms | Allocations: 43206)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:05:54 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (1.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:05:54.998070')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 7.5ms | Allocations: 2042)
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 3.5ms | Allocations: 1719)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.9ms | Allocations: 1519)
+  Rendered posts/index.html.erb within layouts/application (Duration: 27.3ms | Allocations: 10602)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 34.2ms | Allocations: 14425)
+Completed 200 OK in 41ms (Views: 32.1ms | ActiveRecord: 5.7ms | Allocations: 15370)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 19:05:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:05:56 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.3ms | Allocations: 6928)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 7016)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms | Allocations: 8082)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `post' for #<ActionView::Base:0x00000000010838>
+
+                    '.freeze;@output_buffer.append=( link_to 'More info', post, class: 'btn d-block w-100 d-sm-inline-block btn-light' );@output_buffer.safe_append='
+                                                                          ^^^^):
+    37:                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+    38:                     <div class="actions">
+    39:                     <%= f.submit "Log in" %>
+    40:                     <%= link_to 'More info', post, class: 'btn d-block w-100 d-sm-inline-block btn-light' %>
+    41:                     </div>
+    42:                   </div>
+    43:                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+  
+app/views/devise/sessions/new.html.erb:40
+app/views/devise/sessions/new.html.erb:1
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:06:31 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2304)
+  Rendered application/_login_buttons.html.erb (Duration: 0.9ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.7ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6376)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 7710)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:06:44 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2304)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6330)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 7628)
+
+
+Started GET "/users/password/new" for ::1 at 2023-02-18 19:06:49 +0100
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 211)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 150)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1591)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 529)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4821)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 6027)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:06:51 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2043)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5268)
+Completed 200 OK in 18ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 6307)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:07:33 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2305)
+  Rendered application/_login_buttons.html.erb (Duration: 0.9ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 6331)
+Completed 200 OK in 11ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 7635)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:07:58 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.2ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2305)
+  Rendered application/_login_buttons.html.erb (Duration: 0.6ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 6331)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.0ms | Allocations: 7656)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:08:04 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2304)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 6330)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 7643)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:09:22 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 558)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2325)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 6351)
+Completed 200 OK in 19ms (Views: 17.5ms | ActiveRecord: 0.0ms | Allocations: 7655)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:09:36 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 558)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2320)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 6346)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 7653)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:09:45 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 571)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2336)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 6405)
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 7714)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:10:04 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 577)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.9ms | Allocations: 2339)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.3ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 6383)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 7717)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:10:18 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 577)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2340)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 6366)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 7685)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:10:37 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 89)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2293)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 10.4ms | Allocations: 5518)
+Completed 200 OK in 16ms (Views: 14.4ms | ActiveRecord: 0.0ms | Allocations: 6549)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:11:38 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.8ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2847)
+  Rendered application/_login_buttons.html.erb (Duration: 2.4ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 5.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 6877)
+Completed 200 OK in 40ms (Views: 35.3ms | Allocations: 8147)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:11:49 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2847)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6877)
+Completed 200 OK in 8ms (Views: 7.7ms | Allocations: 8123)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:07 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2839)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 6869)
+Completed 200 OK in 8ms (Views: 7.6ms | Allocations: 8127)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:14 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 2828)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 6858)
+Completed 200 OK in 11ms (Views: 10.4ms | Allocations: 8113)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:21 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2820)
+  Rendered application/_login_buttons.html.erb (Duration: 0.9ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 4.7ms | Allocations: 979)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 6899)
+Completed 200 OK in 17ms (Views: 17.0ms | Allocations: 8146)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:28 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2823)
+  Rendered application/_login_buttons.html.erb (Duration: 1.0ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.1ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 6894)
+Completed 200 OK in 20ms (Views: 19.4ms | Allocations: 8168)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:31 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2829)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.4ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 6877)
+Completed 200 OK in 8ms (Views: 7.4ms | Allocations: 8139)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:37 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2825)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 6855)
+Completed 200 OK in 10ms (Views: 9.0ms | Allocations: 8113)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:52 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2824)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 6856)
+Completed 200 OK in 8ms (Views: 7.7ms | Allocations: 8123)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:12:56 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2825)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 6855)
+Completed 200 OK in 19ms (Views: 17.6ms | Allocations: 8113)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:13:07 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2821)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.8ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6851)
+Completed 200 OK in 10ms (Views: 9.5ms | Allocations: 8103)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:13:19 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 166)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1873)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 526)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 5092)
+Completed 200 OK in 14ms (Views: 12.7ms | Allocations: 6137)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:13:22 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1433)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4288)
+Completed 200 OK in 11ms (Views: 9.1ms | Allocations: 4914)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:13:44 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 2823)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 6898)
+Completed 200 OK in 19ms (Views: 18.5ms | Allocations: 8067)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:13:52 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 499)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2820)
+  Rendered application/_login_buttons.html.erb (Duration: 0.6ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.1ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 14.9ms | Allocations: 6891)
+Completed 200 OK in 22ms (Views: 20.8ms | Allocations: 8138)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:13:52 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 166)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1873)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 526)
+  Rendered layout layouts/application.html.erb (Duration: 11.2ms | Allocations: 5110)
+Completed 200 OK in 17ms (Views: 15.5ms | Allocations: 6159)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:14:21 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 1571)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 3335)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 3421)
+Completed 500 Internal Server Error in 5ms (Allocations: 4696)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Sign up", new_registration_path(resource_name)%><br />
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name), %><br />
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+  <% end %>
+<% end %>
+
+):
+1:    <%- if controller_name != 'sessions' %>
+2:      <%= link_to "Log in", new_session_path(resource_name) %><br />
+3:    <% end %>
+4:    
+5:    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+6:      <%= link_to "Sign up", new_registration_path(resource_name)%><br />
+7:    <% end %>
+8:    
+9:    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+10:      <%= link_to "Forgot your password?", new_password_path(resource_name), %><br />
+11:    <% end %>
+12:    
+13:    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+14:      <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+15:    <% end %>
+16:    
+17:    <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+18:      <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+19:    <% end %>
+20:    
+21:    <%- if devise_mapping.omniauthable? %>
+22:      <%- resource_class.omniauth_providers.each do |provider| %>
+23:        <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+24:      <% end %>
+25:    <% end %>
+  
+app/views/devise/shared/_links.html.erb:10: syntax error, unexpected ')'
+app/views/devise/shared/_links.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:10: syntax error, unexpected ')'
+app/views/devise/shared/_links.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:10: syntax error, unexpected ')'
+app/views/devise/shared/_links.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:10: syntax error, unexpected ')'
+app/views/devise/shared/_links.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:10: syntax error, unexpected ')'
+app/views/devise/shared/_links.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:10: syntax error, unexpected ')'
+app/views/devise/shared/_links.html.erb:11: syntax error, unexpected `end', expecting ')'
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected `end', expecting ')'
+app/views/devise/sessions/new.html.erb:48
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:14:38 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 563)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2325)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.8ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 6393)
+Completed 200 OK in 24ms (Views: 22.2ms | Allocations: 7705)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:14:43 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 548)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2310)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 6336)
+Completed 200 OK in 9ms (Views: 8.4ms | Allocations: 7638)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:14:49 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 1541)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 3305)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 3391)
+Completed 500 Internal Server Error in 5ms (Allocations: 4677)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Sign up", new_registration_path(resource_name)%><br />
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)" %><br />
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name,  style: "color:#EE817B") %><br />
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+  <% end %>
+<% end %>
+
+):
+1:    <%- if controller_name != 'sessions' %>
+2:      <%= link_to "Log in", new_session_path(resource_name) %><br />
+3:    <% end %>
+4:    
+5:    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+6:      <%= link_to "Sign up", new_registration_path(resource_name)%><br />
+7:    <% end %>
+8:    
+9:    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+10:      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+11:    <% end %>
+12:    
+13:    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+14:      <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)" %><br />
+15:    <% end %>
+16:    
+17:    <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+18:      <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name,  style: "color:#EE817B") %><br />
+19:    <% end %>
+20:    
+21:    <%- if devise_mapping.omniauthable? %>
+22:      <%- resource_class.omniauth_providers.each do |provider| %>
+23:        <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+24:      <% end %>
+25:    <% end %>
+  
+app/views/devise/shared/_links.html.erb:14: syntax error, unexpected string literal, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected constant, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected regexp literal, expecting `do' or '{' or '('
+app/views/devise/shared/_links.html.erb:27: unterminated string meets end of file
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected end-of-input, expecting ')'
+app/views/devise/shared/_links.html.erb:14: syntax error, unexpected string literal, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected constant, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected regexp literal, expecting `do' or '{' or '('
+app/views/devise/shared/_links.html.erb:27: unterminated string meets end of file
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected end-of-input, expecting ')'
+app/views/devise/shared/_links.html.erb:14: syntax error, unexpected string literal, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected constant, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected regexp literal, expecting `do' or '{' or '('
+app/views/devise/shared/_links.html.erb:27: unterminated string meets end of file
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected end-of-input, expecting ')'
+app/views/devise/shared/_links.html.erb:14: syntax error, unexpected string literal, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected constant, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected regexp literal, expecting `do' or '{' or '('
+app/views/devise/shared/_links.html.erb:27: unterminated string meets end of file
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected end-of-input, expecting ')'
+app/views/devise/shared/_links.html.erb:14: syntax error, unexpected string literal, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected constant, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected regexp literal, expecting `do' or '{' or '('
+app/views/devise/shared/_links.html.erb:27: unterminated string meets end of file
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected end-of-input, expecting ')'
+app/views/devise/shared/_links.html.erb:14: syntax error, unexpected string literal, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected constant, expecting ')'
+app/views/devise/shared/_links.html.erb:18: syntax error, unexpected regexp literal, expecting `do' or '{' or '('
+app/views/devise/shared/_links.html.erb:27: unterminated string meets end of file
+app/views/devise/shared/_links.html.erb:27: syntax error, unexpected end-of-input, expecting ')'
+app/views/devise/sessions/new.html.erb:48
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:14:54 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 545)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 2307)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 977)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 6383)
+Completed 200 OK in 7ms (Views: 7.0ms | Allocations: 7713)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:14:59 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 2304)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6330)
+Completed 200 OK in 7ms (Views: 6.4ms | Allocations: 7635)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:15:04 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2304)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.6ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 15.7ms | Allocations: 6330)
+Completed 200 OK in 20ms (Views: 18.8ms | Allocations: 7626)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:15:16 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 2306)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 6373)
+Completed 200 OK in 12ms (Views: 10.2ms | Allocations: 7671)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:15:19 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 89)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2357)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 5582)
+Completed 200 OK in 20ms (Views: 16.2ms | Allocations: 6591)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:15:20 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1258)
+  Rendered application/_login_buttons.html.erb (Duration: 0.6ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 4113)
+Completed 200 OK in 8ms (Views: 7.0ms | Allocations: 4779)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:15:20 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1431)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4286)
+Completed 200 OK in 9ms (Views: 7.6ms | Allocations: 4800)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:15:24 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1253)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4108)
+Completed 200 OK in 11ms (Views: 9.4ms | Allocations: 4692)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:15:25 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1431)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4286)
+Completed 200 OK in 13ms (Views: 11.3ms | Allocations: 4828)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:15:26 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1253)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 4108)
+Completed 200 OK in 9ms (Views: 8.0ms | Allocations: 4674)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:15:30 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.7ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (1.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:15:30.717281')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.6ms | Allocations: 2078)
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.8ms | Allocations: 1718)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.4ms | Allocations: 1519)
+  Rendered posts/index.html.erb within layouts/application (Duration: 24.0ms | Allocations: 10750)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 528)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 13896)
+Completed 200 OK in 56ms (Views: 25.1ms | ActiveRecord: 17.0ms | Allocations: 17615)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 19:15:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:15:33 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1325)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 4222)
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.0ms | Allocations: 4831)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:15:35 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1432)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4287)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 4817)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:16:20 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 2807)
+  Rendered application/_login_buttons.html.erb (Duration: 1.0ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.7ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 16.5ms | Allocations: 6837)
+Completed 200 OK in 23ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 8041)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:17:03 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3088)
+  Rendered application/_login_buttons.html.erb (Duration: 0.6ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 16.6ms | Allocations: 7118)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.0ms | Allocations: 8389)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:17:15 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 3086)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 7117)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 8385)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:17:46 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.1ms | Allocations: 3086)
+  Rendered application/_login_buttons.html.erb (Duration: 0.6ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 4.1ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 7116)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.0ms | Allocations: 8385)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:17:59 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 3084)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 7142)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 8389)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:18:10 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 490)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 3085)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 7158)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.0ms | Allocations: 8439)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:18:21 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1679)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 4576)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:18:32 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 3082)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 7112)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 8308)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:19:19 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 3147)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 7177)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 8454)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:19:25 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 3143)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 7174)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 8445)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:19:59 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3164)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 7194)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 8457)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:20:06 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 3163)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 7221)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 8480)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:20:23 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 488)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 3167)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.1ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 7239)
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 8520)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:21:01 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.4ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2846)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.0ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 6918)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.0ms | Allocations: 8181)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:21:48 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2933)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 974)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 6964)
+Completed 200 OK in 7ms (Views: 7.0ms | Allocations: 8223)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:15 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 2.3ms | Allocations: 487)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 2861)
+  Rendered application/_login_buttons.html.erb (Duration: 1.4ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 3.4ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 6891)
+Completed 200 OK in 23ms (Views: 21.7ms | Allocations: 8152)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:22 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 490)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2858)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 6888)
+Completed 200 OK in 10ms (Views: 9.6ms | Allocations: 8146)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:30 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 491)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.4ms | Allocations: 2861)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 14.6ms | Allocations: 6891)
+Completed 200 OK in 20ms (Views: 19.0ms | Allocations: 8147)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:33 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 490)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 2861)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.4ms | Allocations: 978)
+  Rendered layout layouts/application.html.erb (Duration: 13.5ms | Allocations: 6925)
+Completed 200 OK in 16ms (Views: 15.3ms | Allocations: 8208)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:38 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 490)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 2856)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 973)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 6926)
+Completed 200 OK in 7ms (Views: 6.9ms | Allocations: 8186)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:43 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 210)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2242)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 978)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 6305)
+Completed 200 OK in 8ms (Views: 7.8ms | Allocations: 7561)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:22:45 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2303)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 526)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5522)
+Completed 200 OK in 14ms (Views: 12.6ms | Allocations: 6569)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:47 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 2.0ms | Allocations: 14)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1349)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 4204)
+Completed 200 OK in 12ms (Views: 10.6ms | Allocations: 4812)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:22:48 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1253)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 4108)
+Completed 200 OK in 12ms (Views: 10.6ms | Allocations: 4680)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:48 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1347)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4202)
+Completed 200 OK in 10ms (Views: 8.5ms | Allocations: 4738)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:22:49 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1253)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 4108)
+Completed 200 OK in 11ms (Views: 9.8ms | Allocations: 4692)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-18 19:22:50 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1347)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4202)
+Completed 200 OK in 12ms (Views: 10.1ms | Allocations: 4756)
+
+
+Started POST "/users" for ::1 at 2023-02-18 19:23:09 +0100
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"name"=>"testt", "email"=>"testt@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "testt@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "testt@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-02-18 18:23:09.605071"], ["updated_at", "2023-02-18 18:23:09.605071"], ["name", "testt"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 300ms (ActiveRecord: 14.0ms | Allocations: 11881)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:23:09 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.9ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (1.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:23:09.628989')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 3.1ms | Allocations: 2075)
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.7ms | Allocations: 1718)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.1ms | Allocations: 1519)
+  Rendered posts/index.html.erb within layouts/application (Duration: 19.5ms | Allocations: 10762)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 414)
+  Rendered application/_navbar.html.erb (Duration: 2.9ms | Allocations: 1931)
+  Rendered layout layouts/application.html.erb (Duration: 25.9ms | Allocations: 15674)
+Completed 200 OK in 28ms (Views: 21.9ms | ActiveRecord: 5.5ms | Allocations: 16711)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 19:23:09 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/edit" for ::1 at 2023-02-18 19:23:15 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 209)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 6.1ms | Allocations: 2671)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 188)
+  Rendered application/_navbar.html.erb (Duration: 6.3ms | Allocations: 599)
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 5954)
+Completed 200 OK in 33ms (Views: 28.4ms | ActiveRecord: 0.4ms | Allocations: 7780)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-18 19:23:18 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1023)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 179)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 415)
+  Rendered layout layouts/application.html.erb (Duration: 29.1ms | Allocations: 3887)
+Completed 200 OK in 47ms (Views: 29.0ms | ActiveRecord: 0.9ms | Allocations: 5585)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-18 19:23:22 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1663)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 177)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 420)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 4536)
+Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 6143)
+
+
