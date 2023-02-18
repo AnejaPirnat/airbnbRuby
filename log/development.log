@@ -42566,3 +42566,312 @@ Processing by Devise::RegistrationsController#edit as HTML
 Completed 200 OK in 14ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 6143)
 
 
+Started GET "/css.css" for ::1 at 2023-02-18 19:23:56 +0100
+Started GET "/" for ::1 at 2023-02-18 19:23:56 +0100
+Processing by PostsController#index as HTML
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:23:56.862222')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 5.1ms | Allocations: 2684)
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.9ms | Allocations: 2389)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.2ms | Allocations: 2124)
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.0ms | Allocations: 15152)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 7.5ms | Allocations: 10573)
+  Rendered application/_navbar.html.erb (Duration: 13.7ms | Allocations: 19662)
+  Rendered layout layouts/application.html.erb (Duration: 34.3ms | Allocations: 40956)
+Completed 200 OK in 50ms (Views: 46.1ms | ActiveRecord: 2.4ms | Allocations: 56443)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-18 19:23:59 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 210)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2684)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 189)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 607)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 6079)
+Completed 200 OK in 22ms (Views: 16.7ms | ActiveRecord: 0.4ms | Allocations: 8178)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-18 19:24:00 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.8ms | Allocations: 871)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 179)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 415)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3733)
+Completed 200 OK in 15ms (Views: 7.5ms | ActiveRecord: 0.7ms | Allocations: 5159)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-18 19:24:02 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1663)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 177)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 420)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 4536)
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 6155)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-18 19:24:10 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 9.8ms | Allocations: 1663)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 177)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 420)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 4578)
+Completed 200 OK in 21ms (Views: 15.1ms | ActiveRecord: 0.3ms | Allocations: 6194)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:24:11 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:24:11.301789')[0m
+  ↳ app/views/posts/index.html.erb:71
+Started GET "/css.css" for ::1 at 2023-02-18 19:24:11 +0100
+  [1m[36mCity Load (1.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 7.4ms | Allocations: 2158)
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 3.7ms | Allocations: 1764)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.2ms | Allocations: 1539)
+  Rendered posts/index.html.erb within layouts/application (Duration: 25.3ms | Allocations: 10465)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 178)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 1272)
+  Rendered layout layouts/application.html.erb (Duration: 31.5ms | Allocations: 14297)
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Completed 200 OK in 38ms (Views: 28.9ms | ActiveRecord: 4.6ms | Allocations: 15162)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2023-02-18 19:24:51 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 1.6ms | Allocations: 7598)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:24:51 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:24:51.158060')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.9ms | Allocations: 2041)
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.4ms | Allocations: 1718)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 0.9ms | Allocations: 1519)
+  Rendered posts/index.html.erb within layouts/application (Duration: 14.2ms | Allocations: 10650)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 913)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 14541)
+Completed 200 OK in 22ms (Views: 18.5ms | ActiveRecord: 2.0ms | Allocations: 15644)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 19:24:51 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-18 19:25:36 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:26:in `map'
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:31:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:48:in `map'
+  Rendered posts/_form.html.erb (Duration: 15.9ms | Allocations: 6312)
+  Rendered posts/new.html.erb within layouts/application (Duration: 17.5ms | Allocations: 6632)
+  Rendered application/_login_buttons.html.erb (Duration: 0.7ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 24.5ms | Allocations: 10560)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 1.3ms | Allocations: 11410)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-18 19:26:34 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 542)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2304)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 975)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | Allocations: 6333)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms | Allocations: 7599)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-18 19:26:36 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 286ms (ActiveRecord: 0.3ms | Allocations: 8188)
+
+
+Started GET "/" for ::1 at 2023-02-18 19:26:36 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/index.html.erb:54:in `map'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 18:26:36.398092')[0m
+  ↳ app/views/posts/index.html.erb:71
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.9ms | Allocations: 2041)
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.1ms | Allocations: 1718)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 0.9ms | Allocations: 1519)
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 10664)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered application/_navbar.html.erb (Duration: 1.8ms | Allocations: 1607)
+  Rendered layout layouts/application.html.erb (Duration: 12.8ms | Allocations: 14949)
+Completed 200 OK in 14ms (Views: 11.9ms | ActiveRecord: 1.6ms | Allocations: 15803)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 19:26:36 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPriceToPost (20230218182854)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "posts" ADD "price" float[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230218182854"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateReservationns (20230218183120)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "reservationns" ("id" bigserial primary key, "from" date, "to" date, "totalprice" float, "post_id" bigint NOT NULL, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_8fbfa3108d"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+, CONSTRAINT "fk_rails_f62bfc2327"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE INDEX "index_reservationns_on_post_id" ON "reservationns" ("post_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE INDEX "index_reservationns_on_user_id" ON "reservationns" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230218183120"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(511626824538614085)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
