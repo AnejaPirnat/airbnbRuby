@@ -46393,3 +46393,56 @@ Processing by CitiesController#index as */*
 Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 1332)
 
 
+Started GET "/" for ::1 at 2023-02-18 20:45:39 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-18 19:45:39.916570')[0m
+  ↳ app/views/posts/index.html.erb:96
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 10.0ms | Allocations: 8889)
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.3ms | Allocations: 1723)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 0.7ms | Allocations: 1527)
+  Rendered posts/index.html.erb within layouts/application (Duration: 138.9ms | Allocations: 53078)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.6ms | Allocations: 418)
+  Rendered application/_navbar.html.erb (Duration: 10.4ms | Allocations: 6443)
+  Rendered layout layouts/application.html.erb (Duration: 155.9ms | Allocations: 63893)
+Completed 200 OK in 180ms (Views: 133.6ms | ActiveRecord: 27.1ms | Allocations: 72183)
+
+
+Started GET "/css.css" for ::1 at 2023-02-18 20:45:40 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/cities?country_id=1" for ::1 at 2023-02-18 20:45:43 +0100
+Processing by CitiesController#index as */*
+  Parameters: {"country_id"=>"1"}
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1]]
+  ↳ app/controllers/cities_controller.rb:4:in `index'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.7ms | Allocations: 1780)
+
+
