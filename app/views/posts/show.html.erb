@@ -39,12 +39,17 @@
             <strong> Adress </strong>
             <%= @post.adress %>
         </p>
-        <h3 class="my-3">Price per night</h3>
-        
+        <h3 class="my-3">
+        <p>
+          Price per night:
+          <br>
+          <%= @post.price %>€
+        </p>
         <br>
         <hr>
+        <% if current_user %>
         <% if @post.user == current_user || current_user.admin == true %>
-            <div>
+        <div>
           <%= link_to "Edit this post", edit_post_path(@post) %> |
           <%= link_to "Back to posts", posts_path %>
           <%= button_to "Destroy this post", @post, method: :delete %>
@@ -62,10 +67,9 @@
         <br>
           <%= form.submit "Reserve", class: "btn btn-primary btn-lg" %>
           <% end %>
-
+          <% end %>
           <% end %>
       </div>
-  
     </div>
     <h3 class="my-4">Več slik</h3>
   

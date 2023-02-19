@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[ index show ]
   before_action :authenticate_user!, only: %i[ edit update destroy ]
   before_action :authorize_user!, only: %i[ edit update destroy ]
+  before_action :destroy_children, only: %i[ destroy ]
   before_action :admin!, only: %i[ admin ]
 
   # GET /posts or /posts.json
@@ -84,6 +85,11 @@ class PostsController < ApplicationController
       unless current_user.admin == true
         redirect_to root_path, notice: "You dont have permissions to do that."
       end
+    end
+
+    def destroy_children
+      @post.comments.destroy_all
+      #@post.reservations.destroy_all
     end
 
     # Only allow a list of trusted parameters through.
