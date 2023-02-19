@@ -43,8 +43,14 @@
         
         <br>
         <hr>
-        <% if @post.user != current_user%>
-        <%= form_with(model: @reservation) do |form| %>
+        <% if @post.user == current_user || current_user.admin == true %>
+            <div>
+          <%= link_to "Edit this post", edit_post_path(@post) %> |
+          <%= link_to "Back to posts", posts_path %>
+          <%= button_to "Destroy this post", @post, method: :delete %>
+        </div>
+          <% else %>
+      <%= form_with(model: @reservation) do |form| %>
         <div>
           <h3>Reserve the AirBnB</h3>
            <h4>Check in date</h4>
@@ -56,12 +62,7 @@
         <br>
           <%= form.submit "Reserve", class: "btn btn-primary btn-lg" %>
           <% end %>
-          <% else %>
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-  <%= button_to "Destroy this post", @post, method: :delete %>
-</div>
+
           <% end %>
       </div>
   

@@ -74,18 +74,22 @@
   <div class="field">
   <%= form.label :country_id %>
   <%= select_tag :country, options_for_select(Country.all.map{ |co| [co.name, co.id] }, params[:country]), prompt: 'Select Country', class: 'form-control', id: "country" %>
-  <%= form.hidden_field :country_id, id: "hidden_country_id" %>
 </div>
 
 <div class="field">
   <%= form.label :city_id %>
   <%= select_tag :city_id, options_for_select([], params[:city]), prompt: 'Select City', class: 'form-control', id: "city" %>
+  <%= form.hidden_field :city_id, id: "hidden_city_id" %>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
   $(document).ready(function() {
     // On country dropdown change
+    $('#city').change(function() {
+      // Set the hidden city_id field to the selected city
+      $('#hidden_city_id').val($(this).val());
+    });
     $('#country').change(function() {
       var country_id = $(this).val();
       // Send an AJAX request to get the cities for the selected country

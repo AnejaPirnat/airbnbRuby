@@ -37,7 +37,6 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.published_at = DateTime.now if @post.published_at.blank?
     @post.user = current_user
-    raise @post
     
 
 
