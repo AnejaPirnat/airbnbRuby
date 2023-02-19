@@ -10,6 +10,8 @@ gem "rails", "~> 7.0.4"
 
 gem "devise"
 
+gem "figaro"
+
 gem 'coffee-script-source', '~> 1.11', '>= 1.11.1'
 
 gem 'jsbundling-rails'  # needed for bootstrap javascript
@@ -33,6 +35,10 @@ gem "turbo-rails"
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
+
+gem "omniauth-google-oauth2"
+
+gem "omniauth-rails_csrf_protection"
 
 gem 'jquery-rails'
 

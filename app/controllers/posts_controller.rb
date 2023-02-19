@@ -28,15 +28,10 @@ class PostsController < ApplicationController
 
   # POST /posts or /posts.json
   def create
-    @post = Post.new
-    @post.title = params[:post][:title]
-    @post.adress = params[:post][:adress]
-    @post.city_id = params[:post][:city_id]
-    @post.body = params[:post][:body]
-    @post.category_id = params[:post][:category_id]
-    @post.published_at = params[:post][:published_at]
+    @post = Post.new(post_params)
     @post.published_at = DateTime.now if @post.published_at.blank?
     @post.user = current_user
+    raise @post
     
 
 
@@ -82,7 +77,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at, :image)
+      params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at, :price)
     end
    
     def show

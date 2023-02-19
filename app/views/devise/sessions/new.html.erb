@@ -40,7 +40,7 @@
                     </div>
                   </div>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <a href="#"> Google prijava</a>
+                    <%= button_to  'Login with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-lg btn-block btn-light btn-custom", method: :post, :data => {turbo: "false"} %>
                   </div>
 
                   <% end %>
