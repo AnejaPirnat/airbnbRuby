@@ -55,26 +55,56 @@
                 </div>
               </div>
             </div>
-
+<%= form_tag posts_path, method: :get, id: 'filter-form' do %>
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title, required: true %>
   </div>
 
-    <div>
+  <div>
    <%= form.label :adress, style: "display: block"%>
    <%= form.text_field :adress, required: true%>
   </div>
 
-  <div class="field">
-    <%= form.label :country_id %>
-    <%= form.select :country_id, Country.all.map { |co| [co.name, co.id] }, {}, class: "form-control" %>
-  </div>
+<div>
+  <%= form.label :price, style: "display: block" %>
+  <%= form.number_field :price, required: true, min: 0 %>
+</div>
+
 
   <div class="field">
-    <%= form.label :city_id %>
-    <%= form.select :city_id, City.all.map { |ci| [ci.name, ci.id] }, {}, class: "form-control" %>
-  </div>
+    <%= form.label :country_id %>
+    <%= select_tag :country, options_for_select(Country.all.map{ |co| [co.name, co.id] }, params[:country]), prompt: 'Select Country', class: 'form-control', id: "country", remote: true %>
+</div>
+
+<div  class="field">
+   <%= form.label :city %>
+   <%= select_tag :city, options_for_select([], params[:city]), prompt: 'Select City', class: 'form-control', id: "city" %>
+</div>
+<% end %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+          $(document).ready(function() {
+          // On country dropdown change
+          $('#country').change(function() {
+          var country_id = $(this).val();
+          // Send an AJAX request to get the cities for the selected country
+          $.ajax({
+          url: '/cities',
+          data: { country_id: country_id },
+          success: function(cities) {
+          // Replace the city dropdown options with the new cities
+          var options = '<option value="">Select City</option>';
+          for (var i = 0; i < cities.length; i++) {
+          options += '<option value="' + cities[i].id + '">' + cities[i].name + '</option>';
+          }
+          $('#city').html(options);
+          }
+        });
+      });
+});
+</script>
+
 
   <div>
     <%= form.label :body, style: "display: block" %>

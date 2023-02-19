@@ -46446,3 +46446,737 @@ Processing by CitiesController#index as */*
 Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.7ms | Allocations: 1780)
 
 
+Started GET "/" for ::1 at 2023-02-19 17:18:54 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-19 16:18:54.918050')[0m
+  ↳ app/views/posts/index.html.erb:96
+  [1m[36mCity Load (1.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 12.2ms | Allocations: 8887)
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.4ms | Allocations: 1723)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 0.8ms | Allocations: 1527)
+  Rendered posts/index.html.erb within layouts/application (Duration: 122.3ms | Allocations: 53459)
+  Rendered application/_login_buttons.html.erb (Duration: 0.6ms | Allocations: 267)
+  Rendered application/_navbar.html.erb (Duration: 2.8ms | Allocations: 1025)
+  Rendered layout layouts/application.html.erb (Duration: 130.5ms | Allocations: 58728)
+Completed 200 OK in 155ms (Views: 114.4ms | ActiveRecord: 20.9ms | Allocations: 67028)
+
+
+Started GET "/css.css" for ::1 at 2023-02-19 17:18:55 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-19 17:18:58 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:71:in `map'
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:76:in `map'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:93:in `map'
+  Rendered posts/_form.html.erb (Duration: 32.4ms | Allocations: 17232)
+  Rendered posts/new.html.erb within layouts/application (Duration: 33.4ms | Allocations: 17539)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 441)
+  Rendered layout layouts/application.html.erb (Duration: 36.6ms | Allocations: 21621)
+Completed 200 OK in 38ms (Views: 32.8ms | ActiveRecord: 4.0ms | Allocations: 22031)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:22:35 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:83:in `map'
+  [1m[36mCity Load (1.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:88:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:105:in `map'
+  Rendered posts/_form.html.erb (Duration: 16.6ms | Allocations: 7674)
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.0ms | Allocations: 8010)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 29.7ms | Allocations: 12949)
+Completed 200 OK in 34ms (Views: 29.6ms | ActiveRecord: 2.3ms | Allocations: 13845)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:22:55 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:83:in `map'
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities"[0m
+  ↳ app/views/posts/_form.html.erb:88:in `map'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:105:in `map'
+  Rendered posts/_form.html.erb (Duration: 5.1ms | Allocations: 7636)
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 7975)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 12958)
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.4ms | Allocations: 13812)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:23:02 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:95:in `map'
+  Rendered posts/_form.html.erb (Duration: 5.4ms | Allocations: 5117)
+  Rendered posts/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 5453)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 907)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 10391)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.4ms | Allocations: 11257)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:23:47 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.1ms | Allocations: 2069)
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 2648)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2745)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 6.3ms | Allocations: 16652)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+              <div class="tab-content pt-3">
+                <div class="tab-pane active">
+                  <form class="form" novalidate="">
+                    <div class="row">
+                      <div class="col">
+                        <div class="row">
+                          <div class="col1">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <div class="form-group">
+                                 
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                          <div class="col">
+                              <div class="field"> 
+                          </div>   
+                          </div>
+                        </div>
+                        <div class="row">
+                        <div class="col">
+                          <div class="col-12 col-sm-6 mb-3">
+                        <div class="row">
+                        <div class="field">
+                            
+                        </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                              <div class="field">
+                              
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title, required: true %>
+  </div>
+
+    <div>
+   <%= form.label :adress, style: "display: block"%>
+   <%= form.text_field :adress, required: true%>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= select_tag :country, options_for_select(Country.all.map{ |co| [co.name, co.id] }, params[:country]), prompt: 'Select Country', class: 'form-control', id: "country", remote: true %>
+</div>
+
+<div  class="field">
+   <%= form.label :city %>
+   <%= select_tag :city, options_for_select([], params[:city]), prompt: 'Select City', class: 'form-control', id: "city" %>
+</div>
+<% end %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                <script>
+                                    $(document).ready(function() {
+                                    // On country dropdown change
+                                    $('#country').change(function() {
+                                    var country_id = $(this).val();
+                                    // Send an AJAX request to get the cities for the selected country
+                                    $.ajax({
+                                    url: '/cities',
+                                    data: { country_id: country_id },
+                                    success: function(cities) {
+                                    // Replace the city dropdown options with the new cities
+                                    var options = '<option value="">Select City</option>';
+                                    for (var i = 0; i < cities.length; i++) {
+                                    options += '<option value="' + cities[i].id + '">' + cities[i].name + '</option>';
+                                    }
+                                     $('#city').html(options);
+                                    }
+                                        });
+                                    });
+                                });
+                            </script>
+
+
+  <div>
+    <%= form.label :body, style: "display: block" %>
+    <%= form.rich_text_area :body %>
+  </div>
+  
+  <br>
+
+   <div>
+    <%= form.label :published_at, style: "display: block" %>
+    <%= form.datetime_field :published_at %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.select :category_id, Category.all.map { |c| [c.name, c.id] }, {}, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+):
+1:    <%= form_with(model: post) do |form| %>
+2:      <% if post.errors.any? %>
+3:        <div style="color: red">
+4:          <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+5:          <ul>
+6:            <% post.errors.each do |error| %>
+7:              <li><%= error.full_message %></li>
+8:            <% end %>
+9:          </ul>
+10:        </div>
+11:      <% end %>
+12:                  <div class="tab-content pt-3">
+13:                    <div class="tab-pane active">
+14:                      <form class="form" novalidate="">
+15:                        <div class="row">
+16:                          <div class="col">
+17:                            <div class="row">
+18:                              <div class="col1">
+19:                              </div>
+20:                            </div>
+21:                            <div class="row">
+22:                              <div class="col">
+23:                                <div class="form-group">
+24:                                     
+25:                                </div>
+26:                              </div>
+27:                            </div>
+28:                          </div>
+29:                        </div>
+30:                        <div class="row">
+31:                              <div class="col">
+32:                                  <div class="field"> 
+33:                              </div>   
+34:                              </div>
+35:                            </div>
+36:                            <div class="row">
+37:                            <div class="col">
+38:                              <div class="col-12 col-sm-6 mb-3">
+39:                            <div class="row">
+40:                            <div class="field">
+41:                                
+42:                            </div>
+43:                              </div>
+44:                            </div>
+45:                            <div class="row">
+46:                              <div class="col">
+47:                                  <div class="field">
+48:                                  
+49:                                </div>
+50:                            </div>
+51:                          </div>
+52:                        </div>
+53:                      </div>
+54:                      </form>
+55:                    </div>
+56:                  </div>
+57:                </div>
+58:    
+59:      <div>
+60:        <%= form.label :title, style: "display: block" %>
+61:        <%= form.text_field :title, required: true %>
+62:      </div>
+63:    
+64:        <div>
+65:       <%= form.label :adress, style: "display: block"%>
+66:       <%= form.text_field :adress, required: true%>
+67:      </div>
+68:    
+69:    
+70:      <div class="field">
+71:        <%= form.label :country_id %>
+72:        <%= select_tag :country, options_for_select(Country.all.map{ |co| [co.name, co.id] }, params[:country]), prompt: 'Select Country', class: 'form-control', id: "country", remote: true %>
+73:    </div>
+74:    
+75:    <div  class="field">
+76:       <%= form.label :city %>
+77:       <%= select_tag :city, options_for_select([], params[:city]), prompt: 'Select City', class: 'form-control', id: "city" %>
+78:    </div>
+79:    <% end %>
+80:    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+81:                                    <script>
+82:                                        $(document).ready(function() {
+83:                                        // On country dropdown change
+84:                                        $('#country').change(function() {
+85:                                        var country_id = $(this).val();
+86:                                        // Send an AJAX request to get the cities for the selected country
+87:                                        $.ajax({
+88:                                        url: '/cities',
+89:                                        data: { country_id: country_id },
+90:                                        success: function(cities) {
+91:                                        // Replace the city dropdown options with the new cities
+92:                                        var options = '<option value="">Select City</option>';
+93:                                        for (var i = 0; i < cities.length; i++) {
+94:                                        options += '<option value="' + cities[i].id + '">' + cities[i].name + '</option>';
+95:                                        }
+96:                                         $('#city').html(options);
+97:                                        }
+98:                                            });
+99:                                        });
+100:                                    });
+101:                                </script>
+102:    
+103:    
+104:      <div>
+105:        <%= form.label :body, style: "display: block" %>
+106:        <%= form.rich_text_area :body %>
+107:      </div>
+108:      
+109:      <br>
+110:    
+111:       <div>
+112:        <%= form.label :published_at, style: "display: block" %>
+113:        <%= form.datetime_field :published_at %>
+114:      </div>
+115:    
+116:      <div class="field">
+117:        <%= form.label :category_id %>
+118:        <%= form.select :category_id, Category.all.map { |c| [c.name, c.id] }, {}, class: "form-control" %>
+119:      </div>
+120:    
+121:      <div>
+122:        <%= form.submit %>
+123:      </div>
+124:    <% end %>
+  
+app/views/posts/_form.html.erb:126: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/_form.html.erb:126: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/_form.html.erb:126: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/_form.html.erb:126: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/_form.html.erb:126: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/_form.html.erb:126: syntax error, unexpected `end', expecting end-of-input
+app/views/posts/new.html.erb:20
+Started GET "/posts/new" for ::1 at 2023-02-19 17:24:10 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (1.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:118:in `map'
+  Rendered posts/_form.html.erb (Duration: 40.7ms | Allocations: 21719)
+  Rendered posts/new.html.erb within layouts/application (Duration: 41.4ms | Allocations: 22072)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 266)
+  Rendered application/_navbar.html.erb (Duration: 1.8ms | Allocations: 1033)
+  Rendered layout layouts/application.html.erb (Duration: 130.6ms | Allocations: 51442)
+Completed 200 OK in 132ms (Views: 121.8ms | ActiveRecord: 10.0ms | Allocations: 52360)
+
+
+Started GET "/cities?country_id=2" for ::1 at 2023-02-19 17:24:13 +0100
+Processing by CitiesController#index as */*
+  Parameters: {"country_id"=>"2"}
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 2]]
+  ↳ app/controllers/cities_controller.rb:4:in `index'
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 3.8ms | Allocations: 5664)
+
+
+Started GET "/cities?country_id=3" for ::1 at 2023-02-19 17:24:16 +0100
+Processing by CitiesController#index as */*
+  Parameters: {"country_id"=>"3"}
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 3]]
+  ↳ app/controllers/cities_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.7ms | Allocations: 1215)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-19 17:26:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 729)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3302)
+  Rendered application/_login_buttons.html.erb (Duration: 0.5ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 979)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 8407)
+Completed 200 OK in 41ms (Views: 16.6ms | ActiveRecord: 9.5ms | Allocations: 14746)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-19 17:26:06 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 282ms (ActiveRecord: 1.7ms | Allocations: 4700)
+
+
+Started GET "/" for ::1 at 2023-02-19 17:26:06 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.8ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-19 16:26:06.607762')[0m
+  ↳ app/views/posts/index.html.erb:96
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 28.5ms | Allocations: 4468)
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.1ms | Allocations: 1719)
+  [1m[36mCACHE City Load (0.0ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCACHE Country Load (0.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 0.7ms | Allocations: 1526)
+  Rendered posts/index.html.erb within layouts/application (Duration: 47.7ms | Allocations: 12417)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.6ms | Allocations: 421)
+  Rendered application/_navbar.html.erb (Duration: 2.3ms | Allocations: 1618)
+  Rendered layout layouts/application.html.erb (Duration: 52.2ms | Allocations: 17830)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 3.8ms | Allocations: 18886)
+
+
+Started GET "/css.css" for ::1 at 2023-02-19 17:26:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/new" for ::1 at 2023-02-19 17:26:11 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:118:in `map'
+  Rendered posts/_form.html.erb (Duration: 13.0ms | Allocations: 5148)
+  Rendered posts/new.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5442)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 179)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 1246)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 10302)
+Completed 200 OK in 25ms (Views: 21.4ms | ActiveRecord: 1.0ms | Allocations: 10666)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:27:19 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:121:in `map'
+  Rendered posts/_form.html.erb (Duration: 10.9ms | Allocations: 5604)
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.7ms | Allocations: 5936)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 1.5ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 6.0ms | Allocations: 1800)
+  Rendered layout layouts/application.html.erb (Duration: 24.0ms | Allocations: 11768)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 1.1ms | Allocations: 12594)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:27:29 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:121:in `map'
+  Rendered posts/_form.html.erb (Duration: 15.1ms | Allocations: 12942)
+  Rendered posts/new.html.erb within layouts/application (Duration: 15.7ms | Allocations: 13279)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.4ms | Allocations: 400)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 1800)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 19181)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.7ms | Allocations: 20038)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:28:03 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:77:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:121:in `map'
+  Rendered posts/_form.html.erb (Duration: 10.5ms | Allocations: 5559)
+  Rendered posts/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 5891)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 1.3ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 6.2ms | Allocations: 1799)
+  Rendered layout layouts/application.html.erb (Duration: 24.4ms | Allocations: 11721)
+Completed 200 OK in 29ms (Views: 26.5ms | ActiveRecord: 1.1ms | Allocations: 12577)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:28:25 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:76:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:114:in `map'
+  Rendered posts/_form.html.erb (Duration: 9.5ms | Allocations: 4764)
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 5096)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.8ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 4.7ms | Allocations: 1818)
+  Rendered layout layouts/application.html.erb (Duration: 21.2ms | Allocations: 10945)
+Completed 200 OK in 26ms (Views: 23.7ms | ActiveRecord: 1.0ms | Allocations: 11797)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:28:37 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:79:in `map'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:117:in `map'
+  Rendered posts/_form.html.erb (Duration: 3.5ms | Allocations: 4776)
+  Rendered posts/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 5108)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 1818)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 10957)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 11814)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:28:45 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:74:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:118:in `map'
+  Rendered posts/_form.html.erb (Duration: 9.0ms | Allocations: 4776)
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 5108)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 400)
+  Rendered application/_navbar.html.erb (Duration: 3.0ms | Allocations: 1822)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | Allocations: 11013)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.7ms | Allocations: 11871)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:28:52 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:116:in `map'
+  Rendered posts/_form.html.erb (Duration: 11.1ms | Allocations: 4751)
+  Rendered posts/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 5083)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 2.2ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 12.5ms | Allocations: 1818)
+  Rendered layout layouts/application.html.erb (Duration: 37.9ms | Allocations: 10932)
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 2.5ms | Allocations: 11789)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:28:59 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:72:in `map'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:121:in `map'
+  Rendered posts/_form.html.erb (Duration: 5.2ms | Allocations: 5587)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 5919)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 3.7ms | Allocations: 1800)
+  Rendered layout layouts/application.html.erb (Duration: 13.4ms | Allocations: 11750)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.7ms | Allocations: 12608)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:29:09 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:77:in `map'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:123:in `map'
+  Rendered posts/_form.html.erb (Duration: 4.7ms | Allocations: 5582)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 5914)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 3.6ms | Allocations: 1799)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 11744)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 12596)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:30:28 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:77:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:123:in `map'
+  Rendered posts/_form.html.erb (Duration: 11.0ms | Allocations: 5604)
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.4ms | Allocations: 5936)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 2.4ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 8.3ms | Allocations: 1799)
+  Rendered layout layouts/application.html.erb (Duration: 27.9ms | Allocations: 11808)
+Completed 200 OK in 35ms (Views: 30.7ms | ActiveRecord: 1.4ms | Allocations: 12660)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-19 17:31:17 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 5.3ms | Allocations: 6894)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 7200)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 7285)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 8121)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `night' for #<ActionView::Base:0x0000000000f460>
+
+  '.freeze;@output_buffer.append=( form.label Price per night, style: "display: block" );@output_buffer.safe_append='
+                                                        ^^^^^):
+    67:   </div>
+    68: 
+    69: <div>
+    70:   <%= form.label Price per night, style: "display: block" %>
+    71:   <%= form.number_field :price, required: true, min: 0 %>
+    72: </div>
+    73: 
+  
+app/views/posts/_form.html.erb:70
+app/views/posts/_form.html.erb:58
+app/views/posts/_form.html.erb:1
+app/views/posts/new.html.erb:20
+Started GET "/posts/new" for ::1 at 2023-02-19 17:31:31 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:77:in `map'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:123:in `map'
+  Rendered posts/_form.html.erb (Duration: 12.5ms | Allocations: 5576)
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.8ms | Allocations: 5908)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 1.7ms | Allocations: 399)
+  Rendered application/_navbar.html.erb (Duration: 5.0ms | Allocations: 1802)
+  Rendered layout layouts/application.html.erb (Duration: 29.0ms | Allocations: 11786)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 1.1ms | Allocations: 12639)
+
+
+Started GET "/cities?country_id=1" for ::1 at 2023-02-19 17:31:44 +0100
+Processing by CitiesController#index as */*
+  Parameters: {"country_id"=>"1"}
+  [1m[36mCity Load (0.7ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 1]]
+  ↳ app/controllers/cities_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 1331)
+
+
