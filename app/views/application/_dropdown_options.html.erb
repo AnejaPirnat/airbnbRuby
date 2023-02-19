@@ -12,6 +12,11 @@
       <li>
       <%= link_to 'Reservations', edit_user_registration_path, class: 'dropdown-item' %>
     </li>
+    <% if current_user.admin == true %>
+    <li>
+      <%= link_to 'Admin panel', admin_path, class: 'dropdown-item' %>
+    </li>
+    <% end %>
     <li><hr class="dropdown-divider"></li>
     <li>
       <%= link_to 'Log out', destroy_user_session_path, class: 'dropdown-item', data: { turbo_method: :delete } %>

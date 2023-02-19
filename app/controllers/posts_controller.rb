@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: %i[ index show ]
   before_action :authenticate_user!, only: %i[ edit update destroy ]
+  before_action :authorize_user!, only: %i[ edit update destroy ]
+  before_action :admin!, only: %i[ admin ]
 
   # GET /posts or /posts.json
   def index
@@ -10,6 +12,10 @@ class PostsController < ApplicationController
 
   def my_posts
     @posts = current_user.posts
+  end
+
+  def admin
+    @posts = Post.all
   end
 
   # GET /posts/1 or /posts/1.json
@@ -75,6 +81,12 @@ class PostsController < ApplicationController
       @post = Post.find(params[:id])
     end
 
+    def admin!
+      unless current_user.admin == true
+        redirect_to root_path, notice: "You dont have permissions to do that."
+      end
+    end
+
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at, :price)
@@ -86,7 +98,7 @@ class PostsController < ApplicationController
     end
 
     def authorize_user!
-      unless @post.user == current_user
+      unless @post.user == current_user || current_user.admin == true
       redirect_to root_path, notice: "You dont have permissions to do that."
       end
     end
