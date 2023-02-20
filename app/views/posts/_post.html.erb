@@ -2,6 +2,7 @@
 <% city = City.find(post.city_id) %>
 <% country = Country.find(city.country_id) %>
 <% category = Category.find(post.category_id) %>
+<% price = post.price %>
 
 <div class="job-content">
     <h5 class="text-center text-md-left">
@@ -13,6 +14,9 @@
               </li>
             <li class="mr-md-4">
             <i class="zmdi zmdi-pin mr-2"></i> <%= city.name %>
+            </li>
+            <li class="mr-md-4">
+            <i class="bi bi-currency-euro"></i> <%= price %>
             </li>
             <li class="mr-md-4">
                 <i class="bi bi-house-door-fill"></i><%= category.name %>

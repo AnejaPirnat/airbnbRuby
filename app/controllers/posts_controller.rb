@@ -9,11 +9,24 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.published
+    if params[:category].present?
+    @posts = @posts.where(category_id: params[:category])
+    end
+    if params[:city].present?
+      @posts = @posts.where(city_id: params[:city])
+    end 
   end
 
   def my_posts
     @posts = current_user.posts
   end
+  def create_reservation
+    @reservation = @reservation.new(reservation_params)
+    @reservation.user = current_user
+    @reservation.post = Post.find(params[:post_id])
+    @reservation.save
+  end
+
 
   def admin
     @posts = Post.all

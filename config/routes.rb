@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: {
+  devise_for :users, 
+  controllers: {
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
   resources :posts do 
@@ -10,7 +11,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "posts#index"
   get '/Myairbnbs', to: 'posts#my_posts', as: 'my_posts'
+  get '/Reservations', to: 'reservations#index', as: 'reservations'
   get '/Admin', to: 'posts#admin', as: 'admin'
   get '/cities', to: 'cities#index', as: 'cities'
+
   
 end
