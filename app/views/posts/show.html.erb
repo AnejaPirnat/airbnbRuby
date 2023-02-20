@@ -17,7 +17,7 @@
     <!-- Portfolio Item Row -->
     <div class="row">
       <div class="col-md-8">
-        
+      <%= image_tag @post.images.first, style:"width: 780px; height: 550px; box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" %>
       </div>
 
       <div class="col-md-4">
@@ -39,13 +39,8 @@
             <strong> Adress </strong>
             <%= @post.adress %>
         </p>
-        <h3 class="my-3">
-        <p>
-          Price per night:
-          <br>
-          <%= @post.price %>€
-        </p>
-        <br>
+        <h3 class="my-3">Price per night:</h3>
+          <h6><%= @post.price %>€</h6>
         <hr>
         <% if current_user %>
         <% if @post.user == current_user || current_user.admin == true %>
@@ -71,19 +66,20 @@
           <% end %>
       </div>
     </div>
-    <h3 class="my-4">Več slik</h3>
-  
+    <h3 class="my-4">More pictures</h3>
     <div class="row" >
     <section class="gallery min-vh-100">
      <div class="container-lg">
-        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
-                                <div class="col">
-                               <img width="300"   height="200" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px" class="img-fluid gallery-item" src="'.$pictures['path'].'"/>
-                               </div>
-                      </div>
-                    </div>
+        <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <% @post.images.each do |pictures| %>
+              <div class="col">
+                 <%= image_tag pictures, style: "width: 300px; height: 200px, box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"%>
+            </div>
+          <% end %>
+      </div>
+  </div>
 </p>
-      <iframe width="100%"height="500" src="https://maps.google.com/maps?q=<%=@post.adress%>&output=embed"></iframe>
+      <iframe width="100%"height="500"  style="box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px"   src="https://maps.google.com/maps?q=<%=@post.adress%>&output=embed"></iframe>
 <br>
   
 <script src="bootstrap.bundle.min.js"></script>

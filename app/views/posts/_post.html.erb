@@ -4,6 +4,10 @@
 <% category = Category.find(post.category_id) %>
 <% price = post.price %>
 
+<div class="job-left my-4 d-md-flex align-items-center flex-wrap">
+<div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 d-md-none d-lg-flex">
+<%= image_tag post.images.first, style: "width: 250px; height: 100%; border-radius: 20px; margin-right: 10px; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;" %>
+</div>
 <div class="job-content">
     <h5 class="text-center text-md-left">
     <%= post.title %>
@@ -21,10 +25,10 @@
             <li class="mr-md-4">
                 <i class="bi bi-house-door-fill"></i><%= category.name %>
             </li>
-        </ul>
+            </ul>
+            </div>
+        </div>
+      <div class="job-right my-4 flex-shrink-0">
+        <%= link_to 'More info', post, class: 'btn d-block w-100 d-sm-inline-block btn-light' %>
     </div>
-</div>
-    <div class="job-right my-4 flex-shrink-0">
-      <%= link_to 'More info', post, class: 'btn d-block w-100 d-sm-inline-block btn-light' %>
-  </div>
 </div>

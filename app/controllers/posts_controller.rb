@@ -51,9 +51,8 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.published_at = DateTime.now if @post.published_at.blank?
     @post.user = current_user
-    
 
-
+  
     respond_to do |format|
       if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully created." }
@@ -107,7 +106,7 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at, :price)
+      params.require(:post).permit(:title, :adress, :city_id, :body, :category_id, :published_at, :price, images: [])
     end
    
     def show

@@ -6,4 +6,5 @@ class Post < ApplicationRecord
     has_rich_text :body
     has_many :categories
     has_many :cities
+    has_many_attached :images
 end
