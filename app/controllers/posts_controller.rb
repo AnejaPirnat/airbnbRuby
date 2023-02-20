@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @posts = Post.published
+    @reservation = Reservation.new
     if params[:category].present?
     @posts = @posts.where(category_id: params[:category])
     end
@@ -19,13 +20,9 @@ class PostsController < ApplicationController
 
   def my_posts
     @posts = current_user.posts
+    @reservation = Reservation.new
   end
-  def create_reservation
-    @reservation = @reservation.new(reservation_params)
-    @reservation.user = current_user
-    @reservation.post = Post.find(params[:post_id])
-    @reservation.save
-  end
+
 
 
   def admin
@@ -35,11 +32,13 @@ class PostsController < ApplicationController
   # GET /posts/1 or /posts/1.json
   def show
     @post = Post.find(params[:id])
+    @reservation = Reservation.new
   end
 
   # GET /posts/new
   def new
     @post = Post.new
+    @reservation = Reservation.new
   end
 
   # GET /posts/1/edit
@@ -111,7 +110,6 @@ class PostsController < ApplicationController
    
     def show
       @post = Post.find(params[:id])
-      @reservation = Reservation.new
     end
 
     def authorize_user!

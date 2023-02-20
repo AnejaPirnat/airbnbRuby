@@ -2,21 +2,17 @@ class ReservationsController < ApplicationController
     def index
         @reservations = Reservation.find_by(user_id: current_user.id)
     end
-
     def create
-        @reservation = @reservation.new(reservation_params)
+        @reservation = Reservation.new(reservation_params)
         @reservation.user = current_user
-        @reservation.post = Post.find(params[:post_id])
         @reservation.save
+        redirect_to @reservation.post, notice: "Reservation created"
     end
-    def destroy
-        @reservation = Reservation.find(params[:id])
-        @reservation.destroy
-        redirect_to reservations_path
-    end
-    
-end
-private
+    private
     def reservation_params
-        params.require(:reservation).permit(:start_date, :end_date, :post_id)
+        params.require(:reservation).permit(:from, :to, :post_id)
     end
+    def new
+        @reservation = Reservation.new
+    end
+end

@@ -7,4 +7,5 @@ class Post < ApplicationRecord
     has_many :categories
     has_many :cities
     has_many_attached :images
+    has_many :reservations
 end

@@ -10,5 +10,4 @@ class User < ApplicationRecord
     create_with(uid: u[:uid], name: u[:name], provider: 'google',
                 password: Devise.friendly_token[0, 20]).find_or_create_by!(email: u[:email])
   end
-
 end
