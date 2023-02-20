@@ -58733,3 +58733,2455 @@ ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
   
 app/controllers/posts_controller.rb:94:in `set_post'
   [1m[36mReservation Load (0.8ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" ORDER BY "reservations"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/" for ::1 at 2023-02-20 13:05:52 +0100
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (1.0ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:05:52.882682')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (1.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 9.8ms | Allocations: 8962)
+  Rendered posts/index.html.erb within layouts/application (Duration: 132.4ms | Allocations: 49770)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 267)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 1023)
+  Rendered layout layouts/application.html.erb (Duration: 138.4ms | Allocations: 55045)
+Completed 200 OK in 153ms (Views: 125.3ms | ActiveRecord: 17.4ms | Allocations: 63532)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:05:53 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/6" for ::1 at 2023-02-20 13:06:01 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.8ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 3.1ms | Allocations: 641)
+  Rendered comments/_form.html.erb (Duration: 6.0ms | Allocations: 2938)
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:94
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 28)
+  Rendered posts/show.html.erb within layouts/application (Duration: 66.0ms | Allocations: 31768)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 388)
+  Rendered layout layouts/application.html.erb (Duration: 69.1ms | Allocations: 35808)
+Completed 200 OK in 74ms (Views: 55.7ms | ActiveRecord: 14.1ms | Allocations: 37361)
+
+
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-20 13:06:01 +0100
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-20 13:06:01 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Started GET "/posts/main.js" for ::1 at 2023-02-20 13:06:01 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 1986)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:94:in `set_post'
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:06:11 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 883)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3718)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.4ms | Allocations: 584)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 8143)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 9793)
+
+
+Started GET "/users/'.$pictures['path'].'" for ::1 at 2023-02-20 13:06:11 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/users/'.$pictures['path'].'"):
+  
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:06:13 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 915)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:07:01 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 267)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1839)
+  Rendered application/_login_buttons.html.erb (Duration: 0.0ms | Allocations: 127)
+  Rendered application/_navbar.html.erb (Duration: 0.2ms | Allocations: 461)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 6006)
+Completed 200 OK in 13ms (Views: 4.3ms | ActiveRecord: 5.6ms | Allocations: 10580)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:07:02 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 223)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1537)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 5426)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 6084)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:07:03 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 780)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:07:18 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 986)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:11:12 +0100
+  
+NoMethodError (undefined method `skip_before_filter' for ApplicationController:Class
+
+skip_before_filter :verify_authenticity_token, if: -> { controller_name == 'sessions' && action_name == 'create' }
+^^^^^^^^^^^^^^^^^^
+Did you mean?  skip_before_action):
+  
+app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:11:28 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 267)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1839)
+  Rendered application/_login_buttons.html.erb (Duration: 0.0ms | Allocations: 127)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 461)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 6006)
+Completed 200 OK in 12ms (Views: 4.4ms | ActiveRecord: 5.1ms | Allocations: 10575)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:11:32 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms | Allocations: 840)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:11:34 +0100
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 9)
+Completed 404 Not Found in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 746)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:11:34 +0100
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 225)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:12:58 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 267)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1839)
+  Rendered application/_login_buttons.html.erb (Duration: 0.0ms | Allocations: 127)
+  Rendered application/_navbar.html.erb (Duration: 0.2ms | Allocations: 461)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 6006)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 3.5ms | Allocations: 10579)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:12:59 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 834)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:18:in `block in <class:Constraints>'
+actionpack (7.0.4) lib/action_dispatch/routing/mapper.rb:48:in `serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4) lib/action_dispatch/routing/route_set.rb:852:in `call'
+omniauth (2.1.1) lib/omniauth/strategy.rb:202:in `call!'
+omniauth (2.1.1) lib/omniauth/strategy.rb:169:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:16:45 +0100
+  
+NoMethodError (undefined method `skip_before_filter' for ApplicationController:Class
+
+skip_before_filter :verify_authenticity_token, if: -> { controller_name == 'sessions' && action_name == 'create' }
+^^^^^^^^^^^^^^^^^^
+Did you mean?  skip_before_action):
+  
+app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+app/controllers/application_controller.rb:1:in `<main>'
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:16:56 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 259ms (ActiveRecord: 6.0ms | Allocations: 7855)
+
+
+Started GET "/" for ::1 at 2023-02-20 13:16:56 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:16:56.928099')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 8.7ms | Allocations: 6421)
+  Rendered posts/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 16685)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.8ms | Allocations: 509)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 1739)
+  Rendered layout layouts/application.html.erb (Duration: 29.9ms | Allocations: 22173)
+Completed 200 OK in 36ms (Views: 17.4ms | ActiveRecord: 14.9ms | Allocations: 26203)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:16:57 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started DELETE "/users/sign_out" for ::1 at 2023-02-20 13:16:59 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 2825)
+
+
+Started GET "/" for ::1 at 2023-02-20 13:16:59 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:16:59.580311')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.5ms | Allocations: 1760)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 5321)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 127)
+  Rendered application/_navbar.html.erb (Duration: 0.2ms | Allocations: 444)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 9295)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.8ms | Allocations: 9825)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:16:59 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:17:00 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 252)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1716)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 0.8ms | Allocations: 426)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 5740)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.0ms | Allocations: 6389)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:17:05 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 287)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 620)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+devise (4.8.1) lib/devise/controllers/helpers.rb:255:in `handle_unverified_request'
+actionpack (7.0.4) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4) lib/active_support/callbacks.rb:180:in `block (2 levels) in halting_and_conditional'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:181:in `block in halting_and_conditional'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+actiontext (7.0.4) lib/action_text/rendering.rb:20:in `with_renderer'
+actiontext (7.0.4) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `instance_exec'
+activesupport (7.0.4) lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+activesupport (7.0.4) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:235:in `block in action'
+devise (4.8.1) lib/devise/failure_app.rb:74:in `recall'
+devise (4.8.1) lib/devise/failure_app.rb:41:in `respond'
+actionpack (7.0.4) lib/abstract_controller/base.rb:215:in `process_action'
+actionpack (7.0.4) lib/abstract_controller/base.rb:151:in `process'
+actionpack (7.0.4) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4) lib/action_controller/metal.rb:235:in `block in action'
+devise (4.8.1) lib/devise/failure_app.rb:23:in `call'
+devise (4.8.1) lib/devise/delegator.rb:7:in `call'
+warden (1.2.9) lib/warden/manager.rb:143:in `call_failure_app'
+warden (1.2.9) lib/warden/manager.rb:129:in `process_unauthenticated'
+warden (1.2.9) lib/warden/manager.rb:44:in `call'
+rack (2.2.4) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.4) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.4) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/cookies.rb:696:in `call'
+activerecord (7.0.4) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:19:23 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 6.0ms | Allocations: 657)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2706)
+  Rendered application/_login_buttons.html.erb (Duration: 0.3ms | Allocations: 263)
+  Rendered application/_navbar.html.erb (Duration: 1.8ms | Allocations: 980)
+  Rendered layout layouts/application.html.erb (Duration: 17.9ms | Allocations: 7853)
+Completed 200 OK in 31ms (Views: 19.3ms | ActiveRecord: 7.4ms | Allocations: 12809)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:19:24 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 223)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1537)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 13.2ms | Allocations: 5426)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 6111)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:19:25 +0100
+Started GET "/" for ::1 at 2023-02-20 13:20:19 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:20:19.420393')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 9.3ms | Allocations: 6653)
+  Rendered posts/index.html.erb within layouts/application (Duration: 36.6ms | Allocations: 17468)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 21759)
+Completed 200 OK in 58ms (Views: 29.2ms | ActiveRecord: 17.1ms | Allocations: 25960)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:20:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:20:20 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1616)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5552)
+Completed 200 OK in 12ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 6202)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:20:22 +0100
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:21:01 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 223)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1537)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 5426)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 6006)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:21:02 +0100
+Started GET "/users/auth/google_oauth2/callback?state=5ad48daaa3ac352bfce87dc0fe1428c195e1675f83c81b98&code=4%2F0AWtgzh74ntqxzko-5sm4903uDFTQk415twgxmYl0SdkKAgslCLIG1vKulO1haAsVYYYLzg&scope=email+profile+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile+openid&authuser=1&prompt=consent" for ::1 at 2023-02-20 13:21:04 +0100
+Processing by Users::OmniauthCallbacksController#google_oauth2 as HTML
+  Parameters: {"state"=>"5ad48daaa3ac352bfce87dc0fe1428c195e1675f83c81b98", "code"=>"4/0AWtgzh74ntqxzko-5sm4903uDFTQk415twgxmYl0SdkKAgslCLIG1vKulO1haAsVYYYLzg", "scope"=>"email profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid", "authuser"=>"1", "prompt"=>"consent"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pirnat.aneja@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_google'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:11:in `from_google'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "pirnat.aneja@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11:in `from_google'
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at", "name", "provider", "uid", "admin") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["email", "pirnat.aneja@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-02-20 12:21:05.956625"], ["updated_at", "2023-02-20 12:21:05.956625"], ["name", "Aneja Pirnat"], ["provider", "google"], ["uid", "116290167353581030734"], ["admin", nil]]
+  ↳ app/models/user.rb:11:in `from_google'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:11:in `from_google'
+Redirected to http://localhost:3000/
+Completed 302 Found in 274ms (ActiveRecord: 3.5ms | Allocations: 6408)
+
+
+Started GET "/" for ::1 at 2023-02-20 13:21:05 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:21:05.970335')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.7ms | Allocations: 1745)
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 5199)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 490)
+  Rendered application/_navbar.html.erb (Duration: 3.1ms | Allocations: 1759)
+  Rendered layout layouts/application.html.erb (Duration: 11.1ms | Allocations: 10557)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.5ms | Allocations: 11000)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:21:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/edit" for ::1 at 2023-02-20 13:21:12 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 216)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 6.5ms | Allocations: 2912)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.4ms | Allocations: 193)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 616)
+  Rendered layout layouts/application.html.erb (Duration: 13.0ms | Allocations: 7309)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.7ms | Allocations: 9794)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-20 13:21:22 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1663)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 179)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 422)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5613)
+Completed 200 OK in 17ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 7425)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:21:25 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1031)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 4928)
+Completed 200 OK in 15ms (Views: 9.6ms | ActiveRecord: 0.8ms | Allocations: 6652)
+
+
+Started GET "/Reservations" for ::1 at 2023-02-20 13:21:26 +0100
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:3:in `index'
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "reservations" WHERE "reservations"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:3
+  Rendered reservations/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1891)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 203)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 562)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6228)
+Completed 200 OK in 25ms (Views: 10.8ms | ActiveRecord: 2.7ms | Allocations: 10922)
+
+
+Started GET "/" for ::1 at 2023-02-20 13:21:29 +0100
+Started GET "/css.css" for ::1 at 2023-02-20 13:21:29 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:21:29.094011')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 2.4ms | Allocations: 1761)
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.2ms | Allocations: 5179)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 180)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 1286)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 10116)
+Completed 200 OK in 19ms (Views: 16.1ms | ActiveRecord: 1.5ms | Allocations: 10552)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/posts/6" for ::1 at 2023-02-20 13:21:32 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.1ms | Allocations: 516)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:50
+  Rendered comments/_form.html.erb (Duration: 2.4ms | Allocations: 959)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 6]]
+  ↳ app/views/posts/show.html.erb:94
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 19)
+  Rendered posts/show.html.erb within layouts/application (Duration: 34.8ms | Allocations: 18431)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 184)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 420)
+  Rendered layout layouts/application.html.erb (Duration: 39.0ms | Allocations: 22467)
+Completed 200 OK in 43ms (Views: 33.3ms | ActiveRecord: 6.6ms | Allocations: 23827)
+
+
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-20 13:21:32 +0100
+Started GET "/posts/main.js" for ::1 at 2023-02-20 13:21:32 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-20 13:21:32 +0100
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (0.9ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.9ms | Allocations: 2500)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:94:in `set_post'
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Started GET "/css.css" for ::1 at 2023-02-20 13:21:42 +0100
+Started GET "/'.$pictures['path'].'" for ::1 at 2023-02-20 13:21:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/'.$pictures['path'].'"):
+  
+Started DELETE "/users/sign_out" for ::1 at 2023-02-20 13:21:45 +0100
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 2104)
+
+
+Started GET "/" for ::1 at 2023-02-20 13:21:45 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:21:45.630850')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 3.5ms | Allocations: 1733)
+  Rendered posts/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5121)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 423)
+  Rendered layout layouts/application.html.erb (Duration: 41.5ms | Allocations: 9072)
+Completed 200 OK in 43ms (Views: 40.5ms | ActiveRecord: 1.3ms | Allocations: 9533)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:21:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:21:47 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 228)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1558)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 12.6ms | Allocations: 5449)
+Completed 200 OK in 15ms (Views: 13.4ms | ActiveRecord: 0.0ms | Allocations: 6035)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:21:49 +0100
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.2ms | Allocations: 7)
+Completed 404 Not Found in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms | Allocations: 499)
+
+
+Started GET "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:21:49 +0100
+Processing by Users::OmniauthCallbacksController#passthru as HTML
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 404 Not Found in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 218)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:21:53 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 228)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1665)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 412)
+  Rendered layout layouts/application.html.erb (Duration: 10.9ms | Allocations: 5659)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 6327)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:22:27 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 1536)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 3535)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3621)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 4833)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%- if controller_name != 'sessions' %>
+  <%= link_to "Log in", new_session_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+  <%= link_to "Sign up", new_registration_path(resource_name)%><br />
+<% end %>
+
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)%><br />
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+<% end %>
+
+<% end %>
+
+):
+1:    <%- if controller_name != 'sessions' %>
+2:      <%= link_to "Log in", new_session_path(resource_name) %><br />
+3:    <% end %>
+4:    
+5:    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+6:      <%= link_to "Sign up", new_registration_path(resource_name)%><br />
+7:    <% end %>
+8:    
+9:    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+10:      <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+11:    <% end %>
+12:    
+13:    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+14:      <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)%><br />
+15:    <% end %>
+16:    
+17:    <%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+18:      <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+19:    <% end %>
+20:    
+21:    <% end %>
+  
+app/views/devise/shared/_links.html.erb:23: syntax error, unexpected `end', expecting end-of-input
+app/views/devise/shared/_links.html.erb:23: syntax error, unexpected `end', expecting end-of-input
+app/views/devise/shared/_links.html.erb:23: syntax error, unexpected `end', expecting end-of-input
+app/views/devise/shared/_links.html.erb:23: syntax error, unexpected `end', expecting end-of-input
+app/views/devise/shared/_links.html.erb:23: syntax error, unexpected `end', expecting end-of-input
+app/views/devise/shared/_links.html.erb:23: syntax error, unexpected `end', expecting end-of-input
+app/views/devise/sessions/new.html.erb:49
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:22:32 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 463)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 2460)
+  Rendered application/_login_buttons.html.erb (Duration: 0.8ms | Allocations: 262)
+  Rendered application/_navbar.html.erb (Duration: 2.6ms | Allocations: 966)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 7590)
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 8925)
+
+
+Started POST "/users/auth/google_oauth2" for ::1 at 2023-02-20 13:22:33 +0100
+Started GET "/" for ::1 at 2023-02-20 13:23:03 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:23:03.879609')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.2ms | Allocations: 2044)
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.8ms | Allocations: 6256)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 125)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 527)
+  Rendered layout layouts/application.html.erb (Duration: 22.9ms | Allocations: 10415)
+Completed 200 OK in 30ms (Views: 24.5ms | ActiveRecord: 1.7ms | Allocations: 11271)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:23:03 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:23:42 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 129)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1517)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 119)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 402)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 5420)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 6075)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-02-20 13:23:49 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 210)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2274)
+  Rendered application/_login_buttons.html.erb (Duration: 0.2ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 532)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 6539)
+Completed 200 OK in 20ms (Views: 18.7ms | ActiveRecord: 0.0ms | Allocations: 7520)
+
+
+Started GET "/" for ::1 at 2023-02-20 13:23:58 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.4ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:23:58.036283')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 5.7ms | Allocations: 1814)
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.9ms | Allocations: 5393)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 118)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 425)
+  Rendered layout layouts/application.html.erb (Duration: 24.7ms | Allocations: 9541)
+Completed 200 OK in 27ms (Views: 22.9ms | ActiveRecord: 2.4ms | Allocations: 10007)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:23:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/" for ::1 at 2023-02-20 13:29:58 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.6ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (1.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:29:58.620930')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.8ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 5.6ms | Allocations: 2077)
+  Rendered posts/index.html.erb within layouts/application (Duration: 18.0ms | Allocations: 6406)
+  Rendered application/_login_buttons.html.erb (Duration: 0.4ms | Allocations: 261)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 910)
+  Rendered layout layouts/application.html.erb (Duration: 25.6ms | Allocations: 11353)
+Completed 200 OK in 65ms (Views: 24.1ms | ActiveRecord: 21.0ms | Allocations: 15193)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:29:58 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/users/sign_in" for ::1 at 2023-02-20 13:30:03 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 463)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 2459)
+  Rendered application/_login_buttons.html.erb (Duration: 0.1ms | Allocations: 126)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 583)
+  Rendered layout layouts/application.html.erb (Duration: 11.8ms | Allocations: 6847)
+Completed 200 OK in 17ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 7978)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-02-20 13:30:04 +0100
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 280ms (ActiveRecord: 1.2ms | Allocations: 2845)
+
+
+Started GET "/" for ::1 at 2023-02-20 13:30:05 +0100
+Processing by PostsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:30:05.241656')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 1.6ms | Allocations: 1744)
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 5130)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.6ms | Allocations: 458)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 1601)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 10237)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 1.1ms | Allocations: 10687)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:30:05 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/Reservations" for ::1 at 2023-02-20 13:30:08 +0100
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:3:in `index'
+  [1m[36mReservation Load (0.6ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "reservations" WHERE "reservations"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:65
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/reservations/index.html.erb:68
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:70
+  Rendered reservations/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 5477)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 200)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 519)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 9781)
+Completed 200 OK in 61ms (Views: 19.9ms | ActiveRecord: 6.6ms | Allocations: 14555)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:30:08 +0100
+Started GET "/'.$pictures['path'].'" for ::1 at 2023-02-20 13:30:08 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/'.$pictures['path'].'"):
+  
+Started GET "/Reservations" for ::1 at 2023-02-20 13:30:21 +0100
+Processing by ReservationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:3:in `index'
+  [1m[36mReservation Load (0.1ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/reservations_controller.rb:3:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering reservations/index.html.erb within layouts/application
+  [1m[36mReservation Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "reservations" WHERE "reservations"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:4
+  [1m[36mReservation Load (0.2ms)[0m  [1m[34mSELECT "reservations".* FROM "reservations" WHERE "reservations"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/reservations/index.html.erb:7
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/reservations/index.html.erb:9
+  Rendered reservations/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2629)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.4ms | Allocations: 461)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 1027)
+  Rendered layout layouts/application.html.erb (Duration: 9.2ms | Allocations: 7770)
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 1.3ms | Allocations: 10052)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-20 13:30:26 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 210)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2685)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 193)
+  Rendered application/_navbar.html.erb (Duration: 1.0ms | Allocations: 613)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 7096)
+Completed 200 OK in 15ms (Views: 11.1ms | ActiveRecord: 0.3ms | Allocations: 9286)
+
+
+Started GET "/users/edit" for ::1 at 2023-02-20 13:30:28 +0100
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1663)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 179)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 422)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 5572)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.4ms | Allocations: 7430)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:30:30 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1043)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 203)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 551)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 5355)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.8ms | Allocations: 6937)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:32:03 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1057)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.9ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 4.4ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 6206)
+Completed 200 OK in 25ms (Views: 16.9ms | ActiveRecord: 1.2ms | Allocations: 8097)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:32:58 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1057)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.4ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 6206)
+Completed 200 OK in 17ms (Views: 11.8ms | ActiveRecord: 0.7ms | Allocations: 8065)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:33:12 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1056)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.4ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.5ms | Allocations: 6205)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.7ms | Allocations: 8086)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:33:12 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 3.9ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 17.2ms | Allocations: 4562)
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 0.8ms | Allocations: 5852)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:33:12 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.6ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 4578)
+Completed 200 OK in 8ms (Views: 5.3ms | ActiveRecord: 0.5ms | Allocations: 5767)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:33:13 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.3ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 4562)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.5ms | Allocations: 5771)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:33:13 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.3ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 6.1ms | Allocations: 4562)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.5ms | Allocations: 5774)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:33:48 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1079)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.9ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 6229)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.6ms | Allocations: 8017)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:33:49 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:16
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.5ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4562)
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 0.7ms | Allocations: 5861)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:34:07 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:15
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1073)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6222)
+Completed 200 OK in 8ms (Views: 6.0ms | ActiveRecord: 0.3ms | Allocations: 7977)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:34:10 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:15
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1073)
+  Rendered application/_dropdown_options.html.erb (Duration: 2.5ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 3.4ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6222)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms | Allocations: 8088)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:35:37 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:14
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1087)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 2.1ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.8ms | Allocations: 6252)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 8136)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:35:49 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:14
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1079)
+  Rendered application/_dropdown_options.html.erb (Duration: 1.0ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 6228)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.8ms | Allocations: 8108)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:35:50 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:14
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 3.1ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | Allocations: 4562)
+Completed 200 OK in 20ms (Views: 13.9ms | ActiveRecord: 1.7ms | Allocations: 5860)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:35:50 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:14
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.0ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4562)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 5763)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:35:50 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:14
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.1ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4562)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 5747)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:36:00 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1061)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.3ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 6210)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.4ms | Allocations: 7992)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:36:48 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1063)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.6ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.6ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 6258)
+Completed 200 OK in 14ms (Views: 10.6ms | ActiveRecord: 0.6ms | Allocations: 8115)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:02 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1059)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.5ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 6251)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 8138)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:08 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1058)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 0.9ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 6207)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 8093)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:12 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1058)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.6ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.5ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 6207)
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 0.6ms | Allocations: 8090)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:14 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1058)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 6207)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.3ms | Allocations: 8082)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:15 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 0.8ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 4562)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.4ms | Allocations: 5866)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:15 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 0.8ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.2ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 4562)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.4ms | Allocations: 5753)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:15 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.0ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4606)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 5816)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:15 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 0.9ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 4591)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 5783)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:15 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.7ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 4575)
+Completed 200 OK in 9ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 5773)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:15 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.4ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 4562)
+Completed 200 OK in 9ms (Views: 5.0ms | ActiveRecord: 0.6ms | Allocations: 5783)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:16 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.4ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 4562)
+Completed 200 OK in 9ms (Views: 4.6ms | ActiveRecord: 1.0ms | Allocations: 5786)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:16 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.8ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 4562)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.5ms | Allocations: 5760)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:16 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.9ms | Allocations: 665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.4ms | Allocations: 417)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4562)
+Completed 200 OK in 10ms (Views: 7.2ms | ActiveRecord: 0.5ms | Allocations: 5765)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:32 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:4
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1064)
+  Rendered application/_dropdown_options.html.erb (Duration: 1.6ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 2.4ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 6213)
+Completed 200 OK in 9ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 7981)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:37:37 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1059)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 464)
+  Rendered application/_navbar.html.erb (Duration: 1.1ms | Allocations: 1059)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 6251)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 0.7ms | Allocations: 8120)
+
+
+Started GET "/posts/new" for ::1 at 2023-02-20 13:37:39 +0100
+Processing by PostsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/new.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/_form.html.erb:76:in `map'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:125:in `map'
+  Rendered posts/_form.html.erb (Duration: 36.8ms | Allocations: 15180)
+  Rendered posts/new.html.erb within layouts/application (Duration: 38.4ms | Allocations: 15492)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 182)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 1374)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 20467)
+Completed 200 OK in 46ms (Views: 43.4ms | ActiveRecord: 0.9ms | Allocations: 20837)
+
+
+Started GET "/cities?country_id=3" for ::1 at 2023-02-20 13:37:51 +0100
+Processing by CitiesController#index as */*
+  Parameters: {"country_id"=>"3"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 3]]
+  ↳ app/controllers/cities_controller.rb:4:in `index'
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 1468)
+
+
+Started POST "/posts" for ::1 at 2023-02-20 13:38:06 +0100
+Processing by PostsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "post"=>{"title"=>"hišica ", "adress"=>"klobasa 23", "price"=>"49", "city_id"=>"12", "body"=>"<div>lllllllldsjdsjnasdakjkwrnjkadsnmasknbvshjlfbhjfsdnasdlnbarjkersiopsfjksdbfjbdfsncsnblkjrjkbersbjnfnbsmdnfm,jklebsgkbdfnfkgdljkfdgbdfg</div>", "published_at"=>"2023-02-19T13:38", "category_id"=>"1"}, "country"=>"3", "city_id"=>"12", "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:53:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/posts_controller.rb:58:in `block in create'
+  [1m[36mPost Create (2.7ms)[0m  [1m[32mINSERT INTO "posts" ("title", "body", "created_at", "updated_at", "user_id", "published_at", "category_id", "adress", "city_id", "price") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "hišica "], ["body", nil], ["created_at", "2023-02-20 12:38:06.584511"], ["updated_at", "2023-02-20 12:38:06.584511"], ["user_id", 2], ["published_at", "2023-02-19 13:38:00"], ["category_id", 1], ["adress", "klobasa 23"], ["city_id", 12], ["price", 49.0]]
+  ↳ app/controllers/posts_controller.rb:58:in `block in create'
+  [1m[36mActionText::RichText Create (1.1ms)[0m  [1m[32mINSERT INTO "action_text_rich_texts" ("name", "body", "record_type", "record_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "body"], ["body", "<div>lllllllldsjdsjnasdakjkwrnjkadsnmasknbvshjlfbhjfsdnasdlnbarjkersiopsfjksdbfjbdfsncsnblkjrjkbersbjnfnbsmdnfm,jklebsgkbdfnfkgdljkfdgbdfg</div>"], ["record_type", "Post"], ["record_id", 7], ["created_at", "2023-02-20 12:38:06.604563"], ["updated_at", "2023-02-20 12:38:06.604563"]]
+  ↳ app/controllers/posts_controller.rb:58:in `block in create'
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3[0m  [["record_id", 7], ["record_type", "ActionText::RichText"], ["name", "embeds"]]
+  ↳ app/controllers/posts_controller.rb:58:in `block in create'
+  [1m[36mPost Update (0.7ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = $1 WHERE "posts"."id" = $2[0m  [["updated_at", "2023-02-20 12:38:06.607565"], ["id", 7]]
+  ↳ app/controllers/posts_controller.rb:58:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/posts_controller.rb:58:in `block in create'
+Redirected to http://localhost:3000/posts/7
+Completed 302 Found in 49ms (ActiveRecord: 11.2ms | Allocations: 17180)
+
+
+Started GET "/posts/7" for ::1 at 2023-02-20 13:38:06 +0100
+Processing by PostsController#show as TURBO_STREAM
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.3ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.2ms | Allocations: 549)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:50
+  Rendered comments/_form.html.erb (Duration: 2.9ms | Allocations: 845)
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:94
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 18.4ms | Allocations: 7665)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.3ms | Allocations: 413)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 11642)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 2.5ms | Allocations: 12506)
+
+
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-20 13:38:06 +0100
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-20 13:38:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Started GET "/posts/main.js" for ::1 at 2023-02-20 13:38:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms | Allocations: 2467)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:94:in `set_post'
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:38:19 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/my_posts.html.erb:6
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 3.0ms | Allocations: 2160)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.2ms | Allocations: 408)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 6091)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 1.8ms | Allocations: 7314)
+
+
+Started GET "/'.$pictures['path'].'" for ::1 at 2023-02-20 13:38:19 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/'.$pictures['path'].'"):
+  
+Started GET "/posts/7" for ::1 at 2023-02-20 13:38:48 +0100
+Started GET "/posts/main.js" for ::1 at 2023-02-20 13:38:48 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.5ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 0.3ms | Allocations: 281)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:50
+  Rendered comments/_form.html.erb (Duration: 0.8ms | Allocations: 597)
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:94
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 13)
+  Rendered posts/show.html.erb within layouts/application (Duration: 11.0ms | Allocations: 6213)
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-20 13:38:48 +0100
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 180)
+  Rendered application/_navbar.html.erb (Duration: 0.6ms | Allocations: 413)
+  Rendered layout layouts/application.html.erb (Duration: 20.4ms | Allocations: 10679)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 2.7ms | Allocations: 11502)
+
+
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 972)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:94:in `set_post'
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-20 13:38:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Started GET "/posts/7" for ::1 at 2023-02-20 13:39:04 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.2ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 1.9ms | Allocations: 550)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:50
+  Rendered comments/_form.html.erb (Duration: 2.1ms | Allocations: 875)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:94
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.7ms | Allocations: 7826)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.6ms | Allocations: 455)
+  Rendered application/_navbar.html.erb (Duration: 1.7ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 12920)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 1.5ms | Allocations: 14134)
+
+
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-20 13:39:04 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Started GET "/posts/main.js" for ::1 at 2023-02-20 13:39:04 +0100
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-20 13:39:04 +0100
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms | Allocations: 8745)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:94:in `set_post'
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:39:06 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/my_posts.html.erb:7
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1538)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 0.7ms | Allocations: 408)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 5469)
+Completed 200 OK in 13ms (Views: 8.3ms | ActiveRecord: 1.1ms | Allocations: 6744)
+
+
+Started GET "/'.$pictures['path'].'" for ::1 at 2023-02-20 13:39:06 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/'.$pictures['path'].'"):
+  
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:40:04 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/my_posts.html.erb:7
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1805)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.4ms | Allocations: 462)
+  Rendered application/_navbar.html.erb (Duration: 1.2ms | Allocations: 1023)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 6898)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.8ms | Allocations: 8674)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:40:23 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/my_posts.html.erb:7
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1806)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 462)
+  Rendered application/_navbar.html.erb (Duration: 2.7ms | Allocations: 1023)
+  Rendered layout layouts/application.html.erb (Duration: 16.1ms | Allocations: 6899)
+Completed 200 OK in 26ms (Views: 17.5ms | ActiveRecord: 2.1ms | Allocations: 8773)
+
+
+Started GET "/Myairbnbs" for ::1 at 2023-02-20 13:40:35 +0100
+Processing by PostsController#my_posts as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:21:in `my_posts'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/my_posts.html.erb within layouts/application
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/my_posts.html.erb:3
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/views/posts/my_posts.html.erb:7
+  Rendered posts/my_posts.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1806)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.7ms | Allocations: 462)
+  Rendered application/_navbar.html.erb (Duration: 1.4ms | Allocations: 1023)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 6899)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 8794)
+
+
+Started GET "/posts/7" for ::1 at 2023-02-20 13:40:42 +0100
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+  Rendering layout layouts/application.html.erb
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCity Load (1.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:3
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:12
+  [1m[36mActionText::RichText Load (0.4ms)[0m  [1m[34mSELECT "action_text_rich_texts".* FROM "action_text_rich_texts" WHERE "action_text_rich_texts"."record_id" = $1 AND "action_text_rich_texts"."record_type" = $2 AND "action_text_rich_texts"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Post"], ["name", "body"], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:27
+  Rendered /Users/anejapirnat/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views/action_text/contents/_content.html.erb within layouts/action_text/contents/_content (Duration: 2.0ms | Allocations: 547)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:50
+  Rendered comments/_form.html.erb (Duration: 2.0ms | Allocations: 870)
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = $1[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:94
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 17)
+  Rendered posts/show.html.erb within layouts/application (Duration: 23.9ms | Allocations: 7531)
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 180)
+  Rendered application/_navbar.html.erb (Duration: 0.5ms | Allocations: 407)
+  Rendered layout layouts/application.html.erb (Duration: 30.2ms | Allocations: 11409)
+Completed 200 OK in 33ms (Views: 27.8ms | ActiveRecord: 3.2ms | Allocations: 12199)
+
+
+Started GET "/posts/bootstrap.bundle.min.js" for ::1 at 2023-02-20 13:40:42 +0100
+Started GET "/posts/'.$pictures['path'].'" for ::1 at 2023-02-20 13:40:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/bootstrap.bundle.min.js"):
+  
+Started GET "/posts/main.js" for ::1 at 2023-02-20 13:40:42 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/posts/'.$pictures['path'].'"):
+  
+Processing by PostsController#show as JS
+  Parameters: {"id"=>"main"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:94:in `set_post'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms | Allocations: 1576)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post with 'id'=main):
+  
+app/controllers/posts_controller.rb:94:in `set_post'
+Started GET "/'.$pictures['path'].'" for ::1 at 2023-02-20 13:40:45 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/'.$pictures['path'].'"):
+  
+Started GET "/" for ::1 at 2023-02-20 13:40:48 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:40:48.603503')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.6ms | Allocations: 1985)
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 4.0ms | Allocations: 1727)
+  Rendered posts/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 7656)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.2ms | Allocations: 180)
+  Rendered application/_navbar.html.erb (Duration: 2.2ms | Allocations: 1201)
+  Rendered layout layouts/application.html.erb (Duration: 26.3ms | Allocations: 12391)
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 2.1ms | Allocations: 12869)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:40:48 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/cities?country_id=2" for ::1 at 2023-02-20 13:41:28 +0100
+Processing by CitiesController#index as */*
+  Parameters: {"country_id"=>"2"}
+  [1m[36mCity Load (0.4ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."country_id" = $1[0m  [["country_id", 2]]
+  ↳ app/controllers/cities_controller.rb:4:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms | Allocations: 1063)
+
+
+Started GET "/posts?category=2&country=2&city=10&button=" for ::1 at 2023-02-20 13:41:30 +0100
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"2", "country"=>"2", "city"=>"10", "button"=>""}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:41:30.768077') AND "posts"."category_id" = $1 AND "posts"."city_id" = $2[0m  [["category_id", 2], ["city_id", 10]]
+  ↳ app/views/posts/index.html.erb:95
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3251)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.3ms | Allocations: 181)
+  Rendered application/_navbar.html.erb (Duration: 2.5ms | Allocations: 1201)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 7934)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 1.1ms | Allocations: 8355)
+
+
+Started GET "/css.css" for ::1 at 2023-02-20 13:41:30 +0100
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+Started GET "/" for ::1 at 2023-02-20 13:41:32 +0100
+Started GET "/css.css" for ::1 at 2023-02-20 13:41:32 +0100
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:44:in `map'
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  ↳ app/views/posts/index.html.erb:49:in `map'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE ("posts"."published_at" IS NULL OR published_at <= '2023-02-20 12:41:32.955199')[0m
+  ↳ app/views/posts/index.html.erb:95
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 3.1ms | Allocations: 1788)
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT "cities".* FROM "cities" WHERE "cities"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:2
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries" WHERE "countries"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:3
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/_post.html.erb:4
+  Rendered posts/_post.html.erb (Duration: 3.5ms | Allocations: 1791)
+  Rendered posts/index.html.erb within layouts/application (Duration: 13.9ms | Allocations: 7039)
+  
+ActionController::RoutingError (No route matches [GET] "/css.css"):
+  
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/application_helper.rb:11:in `display_navbar_options'
+  Rendered application/_dropdown_options.html.erb (Duration: 0.1ms | Allocations: 180)
+  Rendered application/_navbar.html.erb (Duration: 2.0ms | Allocations: 1880)
+  Rendered layout layouts/application.html.erb (Duration: 37.7ms | Allocations: 28088)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 2.3ms | Allocations: 28507)
+
+

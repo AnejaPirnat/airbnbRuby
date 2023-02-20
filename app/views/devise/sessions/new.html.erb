@@ -39,15 +39,16 @@
                     <%= f.submit 'Log in', class: 'btn btn-primary btn-lg' %>
                     </div>
                   </div>
+                    <% end %>
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                     <%= button_to  'Login with Google', user_google_oauth2_omniauth_authorize_path, class: "btn btn-lg btn-block btn-light btn-custom", method: :post, :data => {turbo: "false"} %>
                   </div>
 
-                  <% end %>
+                
 
                   <%= render "devise/shared/links" %>
 
-                </form>
+
 
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">

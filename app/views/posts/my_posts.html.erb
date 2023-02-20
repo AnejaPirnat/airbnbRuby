@@ -1,11 +1,13 @@
-<h1>My airbnbs</h1>
-
-<% if current_user.posts.empty? %>
-  <p>You haven't uploaded any Airbnbs yet.</p>
-<% else %>
-  <% current_user.posts.each do |post| %>
-    <div class="post">
-    <%= link_to post.title, post%>
-    </div>
+<div class="text-center">
+  <h1>My airbnbs</h1>
+  <% if current_user.posts.empty? %>
+  <br>
+    <p>You haven't uploaded any Airbnbs yet.</p>
+  <% else %>
+    <% current_user.posts.each do |post| %>
+      <div class="post">
+        <%= link_to post.title, post%>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
