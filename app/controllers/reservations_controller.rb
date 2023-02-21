@@ -2,6 +2,10 @@ class ReservationsController < ApplicationController
     def index
         @reservations = Reservation.find_by(user_id: current_user.id)
     end
+    def destroy
+        @reservation = Reservation.find(params[:id])
+        @reservation.destroy
+    end
     def create
         @reservation = Reservation.new(reservation_params)
         @reservation.user = current_user

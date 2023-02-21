@@ -1,5 +1,5 @@
 
-<div>
+<div class="text-center">
     <h1>My reservations</h1>
     <% if current_user.reservations.empty? %>
         <p>You haven't made any reservations yet.</p>
@@ -9,10 +9,12 @@
             <%= link_to reservation.post.title, reservation.post%>
         </div>
         <div>
+        <ul>
             <p>Check-in: <%= reservation.from.strftime("%d/%m/%y") %></p>
             <p>Check-out: <%= reservation.to.strftime("%d/%m/%y")  %></p>
             <p>Price per night: <%= reservation.post.price %>€</p>
             <p>Total price: <%= ((reservation.to - reservation.from).to_i * reservation.post.price) %>€</p>
+            <%= button_to "Delete", reservation , method: :delete %>
         </div>
         <% end %> 
     <% end %>
