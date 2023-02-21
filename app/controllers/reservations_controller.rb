@@ -2,6 +2,7 @@ class ReservationsController < ApplicationController
     def index
         @reservations = Reservation.find_by(user_id: current_user.id)
     end
+    
     def destroy
         @reservation = Reservation.find(params[:id])
         @reservation.destroy

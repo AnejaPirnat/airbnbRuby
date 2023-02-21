@@ -1,21 +1,54 @@
-
-<div class="text-center">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha256-3sPp8BkKUE7QyPSl6VfBByBroQbKxKG7tsusY2mhbVY=" crossorigin="anonymous" />
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="career-search mb-60">
+                <div class="row">
     <h1>My reservations</h1>
     <% if current_user.reservations.empty? %>
         <p>You haven't made any reservations yet.</p>
     <% else %>
         <% current_user.reservations.each do |reservation| %>
-        <div class="reservation">
-            <%= link_to reservation.post.title, reservation.post%>
-        </div>
-        <div>
-        <ul>
-            <p>Check-in: <%= reservation.from.strftime("%d/%m/%y") %></p>
-            <p>Check-out: <%= reservation.to.strftime("%d/%m/%y")  %></p>
-            <p>Price per night: <%= reservation.post.price %>€</p>
-            <p>Total price: <%= ((reservation.to - reservation.from).to_i * reservation.post.price) %>€</p>
-            <%= button_to "Delete", reservation , method: :delete %>
-        </div>
+        <% city = City.find(reservation.post.city_id) %>
+        <% country = Country.find(city.country_id) %>
+        <% category = Category.find(reservation.post.category_id) %>
+        <% price = reservation.post.price %>
+   <div class="job-left my-4 d-md-flex align-items-center">
+  <div class="img-holder mr-md-4 mb-md-0 mb-4 mx-auto mx-md-0 ">
+    <%= image_tag reservation.post.images.first, style: "width: 250px; height: 100%; border-radius: 20px; margin-right: 10px; box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;" %>
+  </div>
+  <div class="job-content">
+    <h5 class="text-center text-md-left">
+      <%= reservation.post.title %>
+    </h5>
+    <ul class="text-capitalize ff-open-sans">
+      <li class="mr-md-4">
+        <p><b>Check in: </b><%= reservation.from.strftime("%d/%m/%y") %></p>
+      </li>
+      <li class="mr-md-4">
+        <p><b>Check-out: </b><%= reservation.to.strftime("%d/%m/%y")  %></p>
+      </li>
+      <li class="mr-md-4">
+        <p><b>Price per night: </b><%= reservation.post.price %>€</p>
+      </li>
+      <li class="mr-md-4">
+        <p><b>Total price: </b><%= ((reservation.to - reservation.from).to_i * reservation.post.price) %>€</p>
+      </li>
+    </ul>
+  </div>
+  <div class="ml-auto my-12">
+    <%= button_to "Delete", reservation, method: :delete, class: 'btn d-block w-100 d-sm-inline-block btn-light' %>
+    <br>
+    <%= link_to 'More info', reservation.post, class: 'btn d-block w-100 d-sm-inline-block btn-light' %>
+  </div>
+</div>
+<hr>
         <% end %> 
+
     <% end %>
 </div>
+</div>
+</div>
+</div>
+
+
