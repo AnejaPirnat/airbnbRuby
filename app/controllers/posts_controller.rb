@@ -65,8 +65,14 @@ class PostsController < ApplicationController
 
   # PATCH/PUT /posts/1 or /posts/1.json
   def update
+    @post = Post.find(params[:id])
+    params = post_params
+    @post.images << params[:images]
+    #update post with everything except images
+    params.delete(:images)
+    @post.update(params)
     respond_to do |format|
-      if @post.update(post_params)
+      if @post.save
         format.html { redirect_to post_url(@post), notice: "Post was successfully updated." }
         format.json { render :show, status: :ok, location: @post }
       else
