@@ -10,8 +10,8 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
-APP_ID: '<facebook_app_id>'
-APP_SECRET: '<facebook_app_secret>'
+APP_ID: '1520516298415143'
+APP_SECRET: '2d44d76cf26e86195d971a1d5d9af2f1'
 
 GOOGLE_OAUTH_CLIENT_ID: '773965477130-su4su40jgl2o2ggmul9q0cuvvir73a5p.apps.googleusercontent.com'
 GOOGLE_OAUTH_CLIENT_SECRET: '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'
