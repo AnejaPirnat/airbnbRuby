@@ -40,7 +40,7 @@
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                      <%= button_to '<i class="bi bi-google"></i>Google Login'.html_safe, user_google_oauth2_omniauth_authorize_path, class: "btn btn-lg btn-block btn-light btn-custom", method: :post, :data => {turbo: "false"} %>
                      <br>
-                     <%= link_to "<i class='bi bi-facebook'></i> Facebook Login".html_safe, user_facebook_omniauth_authorize_path,  class: "btn btn-lg btn-block btn-light btn-custom" %>
+                     <%= button_to "<i class='bi bi-facebook'></i> Facebook Login".html_safe, user_facebook_omniauth_authorize_path,  class: "btn btn-lg btn-block btn-light btn-custom", method: :post, :data => {turbo: "false"} %>
                   </div>
                 
 
