@@ -46,8 +46,7 @@ Uporabnik lahko objavi svoj BnB. Ko uporabnik naredi objavo, jo lahko tudi po sv
 ## Rezervacija <a name = "rezervacija"></a>
 Ko uporabnik klikne na objavo, se odpre več informacij o BnBju, kjer lahko spodaj tudi vidi lokacijo BnBja s pomočjo 
 Google maps. Ko se odloči za rezervacijo, ga stran preusmeri na košarico, kjer mu izpiše ceno glede na število dni, ki jih je rezerviral, 
-datum checkina in datum checkouta. Ob strani ima dva gumba, prvi gumb je "plačaj" drugi pa "odstrani". Če klikne na gumb plačaj ga stran preusmeri 
-na nov zavihek, ki pa je le vizualen. Izpiše ceno plačila vendar trenutno form za plačilo nič ne naredi. Iz košarice lahko rezervacijo tudi izbriše.
+datum checkina in datum checkouta. Ob strani ima dva gumba, prvi gumb je "več informacij" drugi pa "odstrani". Rezervacijo lahko tudi izbriše.
 
 ## Kaj lahko dela admin? <a name = "admin"></a>
 Admini na BnBs imajo v navigation baru tudi možnost Admin panele, kjer lahko pridejo do vseh objav na spletni strani, in če se jim objave ne zdijo
