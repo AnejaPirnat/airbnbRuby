@@ -1,5 +1,5 @@
 <%= form_for(reservation) do |form| %>
-      <h4>Reserve this airbnb</h4>
+      <h4>Reserve this rental</h4>
       <div class="form-group">
         <%= form.label :from %>
         <%= form.date_field :from, class: "form-control", value: "" %>
@@ -10,5 +10,5 @@
       </div>
       <%= form.hidden_field :post_id, value: @post.id %>
       <br>
-      <%= form.submit "Book this airbnb", class: "btn btn-primary" %>
+      <%= form.submit "Book this rental", class: "btn btn-primary" %>
 <% end %>

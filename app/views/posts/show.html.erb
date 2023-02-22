@@ -9,7 +9,7 @@
     <!-- Portfolio Item Heading -->
     <h1 class="my-4">     
       <p>
-           <h6>AirBnB Host: <%= @post.user.name %></h6>
+           <h6>Rental Host: <%= @post.user.name %></h6>
           <h2><strong><%= @post.title %></strong></h2>
       </p>
     </h1>
@@ -51,7 +51,7 @@
         </div>
       <% else %>
           <%= form_for(Reservation.new) do |form| %>
-      <h4>Reserve this airbnb</h4>
+      <h4>Reserve this rental</h4>
       <div class="form-group">
         <%= form.label :from %>
         <%= form.date_field :from, class: "form-control", value: "" %>
@@ -62,7 +62,7 @@
       </div>
       <%= form.hidden_field :post_id, value: @post.id %>
       <br>
-      <%= form.submit "Book this airbnb", class: "btn btn-primary" %>
+      <%= form.submit "Book this rental", class: "btn btn-primary" %>
     <% end %>
     <% end %>
     <% end %>

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "posts#index"
-  get '/Myairbnbs', to: 'posts#my_posts', as: 'my_posts'
+  get '/Myrentals', to: 'posts#my_posts', as: 'my_posts'
   get '/Admin', to: 'posts#admin', as: 'admin'
   get '/cities', to: 'cities#index', as: 'cities'
   get '/reservations', to: 'reservations#index', as: 'my_reservations'

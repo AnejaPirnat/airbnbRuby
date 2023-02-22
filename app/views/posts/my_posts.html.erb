@@ -4,11 +4,11 @@
         <div class="col-lg-10 mx-auto">
             <div class="career-search mb-60">
                 <div class="row">
-  <h1>My airbnbs</h1>
+  <h1>My rentals</h1>
 </div>
   <% if current_user.posts.empty? %>
   <br>
-    <p>You haven't uploaded any Airbnbs yet.</p>
+    <p>You haven't uploaded any rentals yet.</p>
   <% else %>
   <% current_user.posts.each do |post| %>
     <% city = City.find(post.city_id) %>
@@ -26,7 +26,7 @@
         </h5>
       </div>
       <div class="job-right my-4 flex-shrink-0">
-        <%= link_to 'Edit airbnb', post, class: 'btn d-block w-100 d-sm-inline-block btn-light' %>
+        <%= link_to 'Edit rental', post, class: 'btn d-block w-100 d-sm-inline-block btn-light' %>
       </div>
     </div>
     <hr>
