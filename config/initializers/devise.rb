@@ -12,7 +12,7 @@ Devise.setup do |config|
 
 config.navigational_formats = ['*/*', :html, :turbo_stream]
 
-config.omniauth :facebook, "APP_ID", "APP_SECRET"
+config.omniauth :facebook, ENV['APP_ID'], ENV['APP_SECRET']
 
 config.omniauth :google_oauth2, ENV['GOOGLE_OAUTH_CLIENT_ID'], ENV['GOOGLE_OAUTH_CLIENT_SECRET']
 
