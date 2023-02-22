@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
         @reservation = Reservation.new(reservation_params)
         @reservation.user = current_user
         @reservation.save
-        redirect_to @reservation.post, notice: "Reservation created"
+        redirect_to reservations_path, notice: "Reservation created"
     end
     private
     def reservation_params
