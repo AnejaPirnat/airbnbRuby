@@ -23,6 +23,21 @@ class PostsController < ApplicationController
     @reservation = Reservation.new
   end
 
+  def villas
+    @posts = Post.published.where(category_id: 1)
+  end
+
+  def apartments
+    @posts = Post.published.where(category_id: 3)
+  end
+
+  def cottages
+    @posts = Post.published.where(category_id: 2)
+  end
+
+  def rooms
+    @posts = Post.published.where(category_id: 4)
+  end
 
 
   def admin

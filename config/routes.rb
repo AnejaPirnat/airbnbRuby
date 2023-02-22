@@ -16,4 +16,8 @@ Rails.application.routes.draw do
   get '/Admin', to: 'posts#admin', as: 'admin'
   get '/cities', to: 'cities#index', as: 'cities'
   get '/reservations', to: 'reservations#index', as: 'my_reservations'
+  get '/Villas', to: 'posts#index', category: 1, as: 'villas'
+  get '/Apartments', to: 'posts#index', category: 3, as: 'apartments'
+  get '/Cottages', to: 'posts#index', category: 2, as: 'cottages'
+  get '/Rooms', to: 'posts#index', category: 4, as: 'rooms'
 end

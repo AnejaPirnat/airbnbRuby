@@ -11,8 +11,19 @@
           <%= link_to 'Home', root_path, class: "nav-link #{ display_active_class(root_path)}"%>
         </li>
         <li class="nav-item">
-          <%= link_to 'New Post', new_post_path, class: "nav-link #{ display_active_class(new_post_path)}"%>
+          <%= link_to '<i class="bi bi-gem"></i> Villas'.html_safe, villas_path, class: "nav-link #{ display_active_class(villas_path)}"%>
         </li>
+        <li class="nav-item">
+          <%= link_to '<i class="bi bi-tree"></i> Cottages'.html_safe, cottages_path, class: "nav-link #{ display_active_class(cottages_path)}"%>
+        </li>
+
+        <li class="nav-item">
+          <%= link_to '<i class="bi bi-building"></i> Apartments'.html_safe, apartments_path, class: "nav-link #{ display_active_class(apartments_path)}"%>
+        </li>
+          <li class="nav-item">
+          <%= link_to '<i class="bi bi-house-heart"></i> Rooms'.html_safe, rooms_path, class: "nav-link #{ display_active_class(rooms_path)}"%>
+        </li>
+        
       </ul>
       <ul class="navbar-nav">
         <%= display_navbar_options %>
